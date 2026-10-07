@@ -1,0 +1,72 @@
+.ui-msg-a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-10);
+  align-self: flex-start;
+  max-width: 92%;
+  color: var(--ink);
+  font: var(--type-body);
+}
+
+.ui-msg-a__heading {
+  margin: 0;
+  font: var(--type-chat-title);
+}
+
+.ui-msg-a__text {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  min-width: 0;
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+.ui-msg-a__body > p,
+.ui-msg-a__body > ul {
+  margin: 0;
+}
+.ui-msg-a__body > * + * {
+  margin-top: var(--space-8);
+}
+.ui-msg-a__body > ul {
+  padding-left: 20px;
+}
+
+.ui-msg-a[data-variant='error'] .ui-msg-a__text {
+  padding: 10px 12px;
+  border: var(--border-ink);
+  border-radius: var(--radius-14);
+  background: var(--peach);
+}
+.ui-msg-a__icon {
+  flex: none;
+  margin-top: 3px;
+}
+
+/* Blinking caret after the last word while text streams in. */
+.ui-msg-a__text[data-streaming] .ui-msg-a__body > :last-child::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--ink);
+  animation: ui-msg-a-caret 1s steps(1) infinite;
+}
+@keyframes ui-msg-a-caret {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ui-msg-a__text[data-streaming] .ui-msg-a__body > :last-child::after {
+    animation: none;
+  }
+}
+
+.ui-msg-a__body .as-chip {
+  vertical-align: baseline;
+  margin-inline: 2px;
+}

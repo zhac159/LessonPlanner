@@ -1,0 +1,62 @@
+/* The editor fills the module slot and never scrolls the page (06 §3). */
+.editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.editor__body {
+  display: flex;
+  flex: 1 1 auto;
+  gap: var(--editor-gap);
+  min-height: 0;
+  padding: var(--space-4) var(--editor-pad-x) var(--editor-pad-x);
+}
+
+.editor__main {
+  display: flex;
+  flex: 999 1 600px;
+  align-items: flex-start;
+  gap: var(--editor-gap);
+  min-width: 0;
+  min-height: 0;
+}
+
+.editor__rail {
+  flex: 0 0 auto;
+}
+
+/* The stage is as wide as the column allows, but never so tall that the filmstrip falls off the screen:
+   min(900px, column width, (body height - 236px) x 16/9), with the body about 100vh - 136px; the extra 66px keeps the filmstrip on screen while the Circle hint pill (two lines in a narrow column) is showing. */
+.editor__column {
+  display: flex;
+  flex: 1 1 480px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-16);
+  width: min(100%, 900px, calc((100vh - 372px) * 16 / 9));
+  max-width: min(100%, 900px, calc((100vh - 372px) * 16 / 9));
+  min-width: 0;
+  margin-inline: auto;
+}
+
+.editor__column > .ui-callout[data-variant='tip'] {
+  align-self: center;
+}
+
+.editor__chat {
+  display: flex;
+  flex: 0 1 400px;
+  flex-direction: column;
+  align-self: stretch;
+  min-width: 340px;
+  min-height: 0;
+}
+
+/* View-only: the tools that change the deck look unavailable (06 §7). */
+.editor__rail [data-locked] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

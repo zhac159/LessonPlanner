@@ -1,0 +1,46 @@
+.home-new {
+  flex: 3 1 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.home-new[data-dragging] {
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 0 0 4px var(--yellow);
+}
+
+.home-new__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-14);
+}
+
+.home-new__title {
+  margin: 0;
+  font: var(--type-card-title);
+  letter-spacing: var(--ls-title);
+}
+
+.home-new__intro {
+  max-width: 580px;
+  margin: 0;
+  font: var(--type-body-lg);
+  line-height: var(--lh-body);
+}
+
+.home-new__objectives {
+  max-height: 320px;
+}
+
+.home-new__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.home-new__spacer {
+  flex: 1 1 0;
+}

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Connect Claude and a picture maker — Slide Planner</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F1EEFF}
+a{color:#1B1530}a:hover{color:#4E4766}
+button,select{font:inherit;color:inherit;cursor:pointer}
+input{font:inherit;color:inherit}
+input::placeholder{color:#6B6485}
+</style>
+</helmet>
+<div style="min-height: 1290px; display: flex; flex-direction: column; background: #F1EEFF; color: #1B1530; font-family: 'Figtree', system-ui, sans-serif; font-size: 15px">
+  <div style="height: 40px; flex: none; display: flex; align-items: center; gap: 10px; padding-left: 14px; background: #FFFFFF; border-bottom: 2px solid #1B1530">
+    <span style="width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 7px; background: #FF6B3D">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"></path></svg>
+    </span>
+    <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 14px">Slide Planner</span>
+    <div style="flex: 1"></div>
+    <button type="button" aria-label="Minimise" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+    <button type="button" aria-label="Maximise" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+    <button type="button" aria-label="Close" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+  </div>
+
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 14px 24px">
+    <div style="flex: 1"></div>
+    <div aria-label="Setup progress: step 2 of 3" style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700">
+      <span style="display: flex; align-items: center; gap: 6px; padding: 4px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>
+        About you
+      </span>
+      <span style="width: 24px; height: 2px; background: #1B1530"></span>
+      <span style="padding: 4px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #FF6B3D">Connect Claude</span>
+      <span style="width: 24px; height: 2px; background: #B9B1D9"></span>
+      <span style="padding: 4px 12px; border: 2px solid #B9B1D9; border-radius: 999px; color: #4E4766">Your style (optional)</span>
+    </div>
+  </header>
+
+  <main style="flex: 1; display: flex; justify-content: center; padding: 16px 24px 48px">
+    <div style="width: 100%; max-width: 760px; display: flex; flex-direction: column; gap: 20px; padding: 32px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 24px; background: #FFFFFF; box-shadow: 6px 6px 0 #1B1530">
+      <div style="display: flex; align-items: flex-start; gap: 16px">
+        <span style="flex: none; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 16px; background: #FFE36E">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"></circle><path d="M11 12l9-9M17 6l3 3M15 8l2 2"></path></svg>
+        </span>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 34px; font-weight: 800; letter-spacing: -.01em">Connect Claude</h1>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #3A3352">Slide Planner uses Claude to read your old decks and write new lessons. Add a Claude API key once to switch it on. If someone set this up for you, they can add it in Settings instead.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; border: 2px solid #1B1530; border-radius: 16px; background: #E9E3FF">
+        <div style="font-weight: 800">Can I use my Claude Pro or Max subscription?</div>
+        <div style="font-size: 14px; line-height: 1.5">Not in other apps. Anthropic only allows subscription sign-in inside its own apps, so apps like this one connect with an API key. Usage is billed to whoever owns the key.</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px">
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 2px solid #1B1530; border-radius: 16px">
+          <span style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 50%; background: #FFD6C9; font-weight: 800; font-size: 13px">1</span>
+          <span style="font-weight: 700">Open the Claude Console</span>
+          <a href="https://platform.claude.com/" style="font-size: 14px; font-weight: 700">platform.claude.com ↗</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 2px solid #1B1530; border-radius: 16px">
+          <span style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 50%; background: #D7E8FF; font-weight: 800; font-size: 13px">2</span>
+          <span style="font-weight: 700">Create an API key</span>
+          <span style="font-size: 14px; color: #4E4766">Add credit and set a monthly limit there too</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px; border: 2px solid #1B1530; border-radius: 16px">
+          <span style="width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 50%; background: #DFF5D8; font-weight: 800; font-size: 13px">3</span>
+          <span style="font-weight: 700">Paste it below</span>
+          <span style="font-size: 14px; color: #4E4766">Then test the connection</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="apiKey" style="font-weight: 800">Claude API key</label>
+        <div style="display: flex; gap: 8px">
+          <input id="apiKey" type="password" value="sk-ant-api03-xxxxxxxxxxxxxxxxxxxx" autocomplete="off" aria-describedby="apiKeyHelp" style="flex: 1; min-width: 0; height: 52px; padding: 0 14px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 14px; background: #FFFFFF; font-size: 16px; letter-spacing: .08em">
+          <button type="button" aria-pressed="false" style="height: 52px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 14px; background: #FFFFFF; font-weight: 700">Show</button>
+        </div>
+        <span id="apiKeyHelp" style="font-size: 13px; color: #4E4766">Stored encrypted on this computer and never shown again. You can replace it any time in Settings.</span>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+        <button type="button" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF; font-weight: 700">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"></path><path d="M18 3v4h-4M6 21v-4h4"></path></svg>
+          Test connection
+        </button>
+        <span role="status" style="display: flex; align-items: center; gap: 8px; padding: 6px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; font-weight: 700; font-size: 14px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>
+          Connected
+        </span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="modelPick" style="font-weight: 800">Model</label>
+        <select id="modelPick" style="height: 48px; padding: 0 12px; border: 2px solid #1B1530; border-radius: 14px; background: #FFFFFF; font-weight: 600">
+          <option>Claude Opus 5.5 — best quality (recommended)</option>
+          <option>Claude Sonnet 5.5 — faster and cheaper</option>
+        </select>
+      </div>
+
+      <section aria-labelledby="imgTitle" style="display: flex; flex-direction: column; gap: 12px; padding: 18px; border: 2px solid #1B1530; border-radius: 18px; background: #FFF4D6">
+        <div style="display: flex; align-items: flex-start; gap: 14px">
+          <span style="flex: none; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 14px; background: #FFFFFF">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+          </span>
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+              <h2 id="imgTitle" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 800">Add a picture maker</h2>
+              <span style="padding: 2px 10px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-size: 12px; font-weight: 800">Optional</span>
+            </div>
+            <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3A3352">Google’s <strong>Nano Banana Pro</strong> makes new pictures in your style when you use “Make a new one like these” on the Assets page. Without it, Claude draws simple icons and diagrams instead.</p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <label for="imgKey" style="font-weight: 800">Google AI Studio API key</label>
+          <div style="display: flex; gap: 8px">
+            <input id="imgKey" type="password" value="AIzaxxxxxxxxxxxxxxxxxxxxxxxx" autocomplete="off" aria-describedby="imgKeyHelp" style="flex: 1; min-width: 0; height: 52px; padding: 0 14px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 14px; background: #FFFFFF; font-size: 16px; letter-spacing: .08em">
+            <button type="button" aria-pressed="false" style="height: 52px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 14px; background: #FFFFFF; font-weight: 700">Show</button>
+          </div>
+          <span id="imgKeyHelp" style="font-size: 13px; color: #4E4766">Get a key at <a href="https://aistudio.google.com/" style="font-weight: 700">aistudio.google.com ↗</a>. Google bills it per picture. Stored encrypted on this computer, like your Claude key.</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+          <button type="button" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF; font-weight: 700">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"></path><path d="M18 3v4h-4M6 21v-4h4"></path></svg>
+            Test picture maker
+          </button>
+          <span role="status" style="display: flex; align-items: center; gap: 8px; padding: 6px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; font-weight: 700; font-size: 14px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>
+            Connected
+          </span>
+          <a href="#" style="margin-left: auto; font-size: 14px; font-weight: 700">Skip — I’ll add it later</a>
+        </div>
+      </section>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 8px; border-top: 2px solid #E4DFF7">
+        <a href="#" style="font-weight: 700">Skip for now</a>
+        <div style="flex: 1"></div>
+        <a href="StyleAssets.dc.html" style="height: 52px; display: flex; align-items: center; gap: 10px; padding: 0 24px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 14px; background: #FF6B3D; box-shadow: 3px 3px 0 #1B1530; font-weight: 800; font-size: 16px; text-decoration: none">
+          Next: your style
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1290}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

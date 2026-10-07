@@ -1,0 +1,32 @@
+.tool-rail {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border: var(--border-ink);
+  border-radius: var(--radius-18);
+  background: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.tool-rail[data-orientation='horizontal'] {
+  flex-direction: row;
+}
+
+.tool-rail__divider {
+  flex: none;
+  align-self: stretch;
+  height: 0;
+  margin: 4px 6px;
+  border-top: 2px solid var(--divider);
+}
+
+.tool-rail[data-orientation='horizontal'] .tool-rail__divider {
+  align-self: stretch;
+  width: 0;
+  height: auto;
+  margin: 6px 4px;
+  border-top: 0;
+  border-left: 2px solid var(--divider);
+}

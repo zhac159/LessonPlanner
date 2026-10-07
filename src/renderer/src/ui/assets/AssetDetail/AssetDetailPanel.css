@@ -1,0 +1,24 @@
+.as-detail.ui-card {
+  display: grid;
+  gap: var(--space-12);
+  align-content: start;
+}
+.as-detail__preview {
+  height: 200px;
+  padding: var(--space-16);
+  border: var(--border-ink);
+  border-radius: var(--radius-14);
+}
+.as-detail__preview .as-thumb__img {
+  max-height: 168px;
+}
+.as-detail__source {
+  display: grid;
+  gap: var(--space-8);
+}
+.as-detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-10);
+}

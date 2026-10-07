@@ -1,0 +1,12 @@
+.as-region-bar {
+  position: absolute;
+  z-index: var(--z-popover);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border: var(--border-ink);
+  border-radius: var(--radius-12);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}

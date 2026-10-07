@@ -1,0 +1,92 @@
+.ns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ns__label {
+  flex: 1;
+  font: var(--type-label-strong);
+  color: var(--text);
+}
+
+/* The group carries the border and the field focus halo */
+.ns__group {
+  display: flex;
+  flex: none;
+  height: 48px;
+  overflow: hidden;
+  border: var(--border-ink);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: box-shadow var(--dur-fast) var(--ease);
+}
+.ns__group:focus-within {
+  box-shadow: var(--focus-field);
+}
+.ns__group.is-disabled {
+  border-color: var(--line-muted);
+  background: var(--ground);
+}
+
+.ns__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease);
+}
+.ns__btn:hover:not(:disabled) {
+  background: var(--surface-hover);
+}
+.ns__btn:active:not(:disabled) {
+  background: var(--surface-pressed);
+}
+.ns__btn:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-inset-offset);
+}
+.ns__btn:disabled {
+  color: var(--line-muted);
+  cursor: not-allowed;
+}
+.ns__btn:first-child {
+  border-right: var(--border-ink);
+}
+.ns__btn:last-child {
+  border-left: var(--border-ink);
+}
+.ns__group.is-disabled .ns__btn {
+  background: transparent;
+  border-color: var(--line-muted);
+}
+
+.ns__input {
+  width: 56px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: 800 17px/1 var(--font);
+  text-align: center;
+  outline: none;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.ns__input::-webkit-inner-spin-button,
+.ns__input::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+.ns__input:disabled {
+  color: var(--text-placeholder);
+  cursor: not-allowed;
+}

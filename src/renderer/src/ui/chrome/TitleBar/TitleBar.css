@@ -1,0 +1,82 @@
+.ui-titlebar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-titlebar);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: var(--titlebar-h);
+  border-bottom: var(--border-ink);
+  background: var(--bg-1);
+  color: var(--ink);
+  user-select: none;
+  /* Everything that is not a button drags the window. */
+  -webkit-app-region: drag;
+  transition:
+    background-color 600ms var(--ease),
+    border-color 600ms var(--ease);
+}
+
+.ui-titlebar[data-floating='true'] {
+  border-bottom-color: transparent;
+  background: transparent;
+}
+
+.ui-titlebar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding-left: var(--space-14);
+  transition: opacity 600ms var(--ease);
+}
+
+.ui-titlebar[data-floating='true'] .ui-titlebar__brand {
+  opacity: 0;
+}
+
+.ui-titlebar__name {
+  font: var(--type-wordmark);
+}
+
+.ui-titlebar__controls {
+  display: flex;
+  -webkit-app-region: no-drag;
+}
+
+/* 46px wide caption buttons: the one OS-convention exception to the 44px target rule. */
+.ui-titlebar__btn {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: default;
+  transition: background-color var(--dur-fast) var(--ease);
+}
+
+.ui-titlebar__btn:hover {
+  background: var(--surface-hover);
+}
+.ui-titlebar__btn:active {
+  background: var(--surface-pressed);
+}
+.ui-titlebar__btn:focus-visible {
+  outline-offset: var(--focus-ring-inset-offset);
+}
+
+.ui-titlebar__btn--close:hover {
+  background: var(--win-close);
+  color: var(--white);
+}
+.ui-titlebar__btn--close:active {
+  background: var(--win-close-pressed);
+  color: var(--white);
+}
+
+/* Window not focused. */
+.ui-titlebar[data-inactive] .ui-titlebar__name,
+.ui-titlebar[data-inactive] .ui-titlebar__btn {
+  color: var(--text-muted);
+}

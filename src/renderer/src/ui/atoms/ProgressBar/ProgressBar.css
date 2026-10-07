@@ -1,0 +1,40 @@
+.ui-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.ui-progress__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-12);
+  font-size: var(--fs-small);
+}
+
+.ui-progress__label {
+  font-weight: var(--fw-bold);
+}
+
+.ui-progress__estimate {
+  font-weight: var(--fw-semibold);
+  color: var(--text-muted);
+}
+
+.ui-progress__track {
+  height: 18px;
+  overflow: hidden;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+}
+
+.ui-progress__fill {
+  display: block;
+  height: 100%;
+  background: var(--orange);
+  transition: width var(--dur-slower) var(--ease);
+}
+
+.ui-progress__fill[data-edge='rule'] {
+  border-right: var(--border-ink);
+}

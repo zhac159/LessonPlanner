@@ -1,0 +1,61 @@
+.ui-pills {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ui-pills__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.ui-pills__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-12);
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  font: var(--type-label);
+}
+
+.ui-pills__pill[data-state='done'] {
+  background: var(--mint-soft);
+}
+.ui-pills__pill[data-state='current'] {
+  background: var(--orange);
+}
+.ui-pills__pill[data-state='upcoming'] {
+  border-color: var(--line-muted);
+  color: var(--text-muted);
+}
+
+button.ui-pills__pill {
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+button.ui-pills__pill:hover {
+  box-shadow: var(--shadow-xs);
+}
+button.ui-pills__pill:active {
+  transform: translate(var(--press), var(--press));
+  box-shadow: var(--shadow-none);
+}
+
+/* The 24x2 connector between two pills: ink after a done pill, muted before an upcoming one. */
+.ui-pills__link {
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+}
+.ui-pills__link[data-state='upcoming'] {
+  background: var(--line-muted);
+}

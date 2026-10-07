@@ -1,0 +1,243 @@
+/* Assets page layout (agents/ASSETS.md §3.1, A1 / A8 / A9). Component styles live in the kit (@ui/assets). */
+.as-page {
+  min-height: 100%;
+  background: var(--bg-0);
+}
+
+.as-page__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-32) var(--space-24) var(--space-56);
+}
+
+.as-page__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  min-width: 0;
+}
+
+.as-page .ui-page-header__titles {
+  flex: 1 1 360px;
+}
+
+.as-page .ui-page-header__actions {
+  flex: 0 1 auto;
+  flex-wrap: nowrap;
+}
+
+.as-page .as-page__search {
+  flex: 0 1 300px;
+  width: 300px;
+  min-width: 200px;
+}
+
+.as-page .as-tabs {
+  align-self: flex-start;
+}
+
+/* the banner: an orange round icon, a dark button */
+.as-banner {
+  align-items: center;
+  padding: var(--space-16) var(--space-20);
+  border-radius: var(--radius-20);
+  box-shadow: var(--shadow-sm);
+}
+.as-banner .ui-callout__title {
+  font-size: var(--fs-body-lg);
+  font-weight: 800;
+}
+.as-banner__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--orange);
+  color: var(--ink);
+}
+
+/* kind pills on the left, Select and From on the right */
+.as-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12) var(--space-16);
+}
+.as-toolbar__end {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+.as-toolbar__select[aria-pressed='true'] {
+  background: var(--butter);
+}
+
+/* the grid and the pane beside it */
+.as-library {
+  display: grid;
+  /* the pane is 380 px wide plus room for its 6 px hard shadow */
+  grid-template-columns: minmax(0, 1fr) 386px;
+  align-items: start;
+  gap: var(--space-24);
+}
+.as-library__cards {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-16);
+  min-width: 0;
+}
+.as-library__cards > .as-grid-wrap {
+  justify-self: stretch;
+}
+.as-library__pane {
+  position: sticky;
+  top: var(--space-16);
+  display: grid;
+  min-width: 0;
+  padding: 0 var(--space-6) var(--space-6) 0;
+}
+.as-library__pane:empty {
+  display: none;
+}
+
+/* four cards across at 1440 px even with a scrollbar; the shadow of a card must not be cut off by its cell */
+.as-library .as-grid[data-layout='cards'] {
+  grid-template-columns: repeat(auto-fill, minmax(164px, 1fr));
+}
+.as-library .as-grid__cell {
+  content-visibility: visible;
+}
+
+/* under 1100 px the pane goes below the grid */
+@media (max-width: 1100px) {
+  .as-library {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .as-library__pane {
+    position: static;
+  }
+}
+
+.as-skeletons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  gap: var(--space-16);
+}
+.as-skeletons--results {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.as-skeleton {
+  height: 214px;
+  border: var(--border-ink);
+  border-radius: var(--radius-16);
+  background: linear-gradient(100deg, var(--surface) 30%, var(--lilac) 50%, var(--surface) 70%);
+  background-size: 200% 100%;
+  animation: as-shimmer 1.4s linear infinite;
+}
+@keyframes as-shimmer {
+  to {
+    background-position-x: -200%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .as-skeleton {
+    animation: none;
+  }
+}
+
+.as-nomatch {
+  margin: var(--space-16) 0;
+  color: var(--text-muted);
+  font: var(--type-body);
+}
+
+.as-detail-wait {
+  padding: var(--space-16);
+}
+
+/* A2: header bar, then two columns on the lilac page */
+.as-review-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--bg-0);
+}
+.as-review-page__body {
+  display: grid;
+  grid-template-columns: 404px minmax(0, 1fr);
+  align-items: start;
+  gap: var(--space-24);
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-24) var(--space-24) var(--space-48);
+}
+.as-review-page__body--empty {
+  display: block;
+  max-width: 720px;
+}
+@media (max-width: 1100px) {
+  .as-review-page__body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.as-looked {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+.as-looked__title {
+  margin: 0;
+  font: var(--type-section-md);
+  letter-spacing: var(--ls-display);
+}
+.as-looked__batch {
+  display: grid;
+  gap: var(--space-8);
+}
+.as-looked__label {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--fs-micro);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.as-looked__files {
+  display: grid;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.as-looked__throw {
+  margin: 0;
+  font-size: var(--fs-small);
+}
+
+.as-found__body {
+  padding: var(--space-20) var(--space-24) var(--space-24);
+}
+.as-found .as-grid[data-layout='results'] {
+  grid-template-columns: repeat(auto-fill, minmax(196px, 1fr));
+}
+
+/* the "+5  5 more decks  3 found" row: the Button wraps its content in a label, so lay that out */
+.as-looked .as-filerow__more .ui-button__label {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--space-10);
+  min-width: 0;
+}
+.as-looked .as-filerow__more .as-filerow__name {
+  flex: 1;
+  text-align: left;
+}

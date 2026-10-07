@@ -1,0 +1,142 @@
+/* Create a style (design/screens/04-create-style.md §3). Tokens only. */
+.cs-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--ground);
+}
+.cs-screen--message {
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-24);
+}
+
+/* Sticky so "Save style" stays reachable (the page is ~1300px tall). */
+.cs-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.cs-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-24);
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--space-28) var(--space-24) var(--space-48);
+}
+
+/* ---- Your files */
+.cs-files {
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+  padding: var(--space-22);
+}
+.cs-files__title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-10);
+}
+.cs-files__title h2 {
+  margin: 0;
+  font: var(--type-section-sm);
+  letter-spacing: var(--ls-title);
+}
+.cs-files__count {
+  color: var(--text-muted);
+  font: var(--type-small);
+}
+.cs-files__drop {
+  width: 100%;
+}
+.cs-files .cs-files__drop--empty[data-variant='compact'] {
+  min-height: 120px;
+}
+.cs-files__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cs-files__failures {
+  margin: calc(var(--space-6) * -1) 0 0;
+  color: var(--danger-text);
+  font: var(--type-small);
+  font-weight: var(--fw-bold);
+}
+.cs-files__privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-small);
+}
+.cs-files__privacy svg {
+  flex: none;
+  margin-top: 2px;
+}
+.cs-link-button {
+  align-self: flex-start;
+  min-height: 44px;
+  padding: 0 var(--space-4);
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: var(--type-label-strong);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.cs-pause__actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-10);
+}
+.cs-pause__link {
+  color: var(--ink);
+  font: var(--type-label-strong);
+  text-decoration: underline;
+}
+
+/* ---- What I've learned so far */
+.cs-panel {
+  flex: 2 1 620px;
+  box-shadow: var(--shadow-lg);
+}
+.cs-panel__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  padding: var(--space-22);
+}
+.cs-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-16);
+}
+.cs-name__field {
+  flex: 1 1 280px;
+}
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-16);
+}
+.cs-correction {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.cs-correction:disabled {
+  opacity: 0.55;
+}

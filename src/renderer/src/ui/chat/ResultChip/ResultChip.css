@@ -1,0 +1,27 @@
+.ui-result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.ui-result__pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--status-done);
+  color: var(--ink);
+  font: 700 13px/1.3 var(--font);
+}
+button.ui-result__pill {
+  cursor: pointer;
+}
+button.ui-result__pill:hover {
+  box-shadow: var(--shadow-xs);
+}
+
+.ui-result[data-state='undone'] .ui-result__pill {
+  background: var(--white);
+}

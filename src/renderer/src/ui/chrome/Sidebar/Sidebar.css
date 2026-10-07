@@ -1,0 +1,124 @@
+.ui-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: var(--sidebar-w);
+  height: 100%;
+  min-height: 0;
+  padding: var(--space-16) var(--space-12);
+  overflow-y: auto;
+  border-right: var(--border-ink);
+  background: var(--bg-1);
+  color: var(--ink);
+}
+
+.ui-sidebar__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ui-sidebar__spacer {
+  flex: 1 1 0;
+}
+
+/* inactive = ghost, current = orange with ink border and a small shadow */
+.ui-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+  height: var(--control-md);
+  padding: 0 var(--space-12);
+  border: var(--border-w) solid transparent;
+  border-radius: var(--radius-12);
+  background: transparent;
+  color: var(--ink);
+  font: 600 15px/1.2 var(--font);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+
+.ui-sidebar__item svg {
+  flex: none;
+}
+
+.ui-sidebar__item:hover {
+  background: var(--surface-hover);
+}
+.ui-sidebar__item:active {
+  background: var(--surface-pressed);
+}
+
+.ui-sidebar__item[data-active='true'] {
+  border-color: var(--ink);
+  background: var(--orange);
+  box-shadow: var(--shadow-xs);
+  font-weight: var(--fw-bold);
+}
+.ui-sidebar__item[data-active='true']:active {
+  transform: translate(var(--press), var(--press));
+  box-shadow: var(--shadow-none);
+}
+
+.ui-sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  margin-top: var(--space-6);
+  padding: var(--space-10) var(--space-12);
+  border-top: var(--border-divider);
+}
+
+.ui-sidebar__who {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.ui-sidebar__name {
+  overflow: hidden;
+  font: 700 15px/1.3 var(--font);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ui-sidebar__status {
+  color: var(--text-muted);
+  font: 400 12px/1.3 var(--font);
+}
+
+/* Rail: 72px, icons only, centred. */
+.ui-sidebar[data-mode='rail'] {
+  align-items: center;
+  width: var(--sidebar-rail-w);
+  gap: var(--space-8);
+  padding: var(--space-14) 0;
+  /* Tooltips open to the right of the rail: they must not be clipped. */
+  overflow: visible;
+}
+.ui-sidebar[data-mode='rail'] .ui-sidebar__group {
+  align-items: center;
+  gap: var(--space-8);
+}
+.ui-sidebar[data-mode='rail'] .ui-sidebar__item {
+  justify-content: center;
+  width: var(--control-md);
+  padding: 0;
+}
+.ui-sidebar[data-mode='rail'] .ui-sidebar__profile {
+  margin: 0;
+  padding: var(--space-8) 0 0;
+  border-top: 0;
+}
+
+@media (forced-colors: active) {
+  .ui-sidebar__item[aria-current] {
+    outline: 3px solid Highlight;
+  }
+}

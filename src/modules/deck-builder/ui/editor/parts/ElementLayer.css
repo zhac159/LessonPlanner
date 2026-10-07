@@ -1,0 +1,52 @@
+/* Fills the stage's overlay box. Hit areas are transparent buttons over the slide's elements. */
+.element-layer {
+  position: absolute;
+  inset: 0;
+}
+.element-layer[data-tool='circle'],
+.element-layer[data-tool='draw'] {
+  pointer-events: none;
+}
+
+.element-hit {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: default;
+  touch-action: none;
+}
+.element-hit[data-passive] {
+  pointer-events: none;
+}
+.element-hit:hover {
+  outline: 2px solid var(--orange-tint-1);
+}
+.element-hit[aria-pressed='true'] {
+  outline: 2px solid var(--orange);
+}
+.element-hit:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+.element-hit[data-dragging] {
+  cursor: grabbing;
+  background: color-mix(in srgb, var(--orange) 12%, transparent);
+}
+
+.inline-text-editor {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2px 4px;
+  resize: none;
+  border: 2px solid var(--orange);
+  border-radius: var(--radius-6);
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font);
+  outline: none;
+  overflow: auto;
+}

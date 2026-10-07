@@ -1,0 +1,24 @@
+/* The wrapper adds no box: the panel or the sheet sits directly in the editor's right-hand column. */
+.editor-chat {
+  display: contents;
+}
+
+.editor-chat__panel--hidden {
+  display: none;
+}
+
+/* The plugin sheet takes over the panel's box (07 §3). */
+.editor-chat > .plugin-sheet {
+  width: var(--chat-w);
+  min-width: var(--chat-w-min);
+}
+
+/* The "+" menu opens above the Composer, so the Composer's wrapper is its positioning box. */
+.editor-chat__composer {
+  position: relative;
+}
+
+/* The asset picker (A4) is positioned by its card; this wrapper adds no box. */
+.editor-chat__picker {
+  display: contents;
+}

@@ -1,0 +1,154 @@
+/* Base styles for Slide Planner (direction B "Classroom"). Colours, sizes and motion come from
+   tokens.css only: never hard-code a colour in chrome UI. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-0);
+  color: var(--text);
+  font: var(--type-body);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+/* ---- Focus (design-system §8.1) ---- */
+
+/* Buttons, links, chips, tiles, cards, nav: a 3px ink ring with a 2px gap. */
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Fields draw their own yellow halo plus ink rim (box-shadow) instead of this ring. */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}
+
+/* ---- Scrollbars: slim, muted, never in the way ---- */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 3px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--line-muted);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Page primitives for simple modules (see agents/skills/add-module) ---- */
+
+.page {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--page-pad-top) var(--page-pad-x) var(--page-pad-bottom);
+}
+
+.page__header h1 {
+  margin: var(--space-4) 0 var(--space-8);
+  font: var(--type-page-title);
+  letter-spacing: var(--ls-display);
+}
+
+.page__header .lede {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--text-muted);
+  font: var(--type-subtitle);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-badge);
+  letter-spacing: var(--ls-badge);
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin: var(--space-36) 0 var(--space-14);
+  font: var(--type-section-sm);
+}
+
+.card {
+  padding: var(--space-18) var(--space-20);
+  border: var(--border-ink);
+  border-radius: var(--radius-18);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-14);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-10);
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  font: var(--type-micro);
+}

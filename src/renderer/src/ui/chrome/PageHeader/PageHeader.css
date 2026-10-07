@@ -1,0 +1,70 @@
+.ui-page-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-14);
+  color: var(--ink);
+}
+
+.ui-page-header__title {
+  margin: 0;
+}
+
+.ui-page-header__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+}
+
+/* greeting: no bar */
+.ui-page-header[data-variant='greeting'] {
+  align-items: flex-end;
+}
+.ui-page-header__titles {
+  display: flex;
+  flex: 1 1 320px;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.ui-page-header[data-variant='greeting'] .ui-page-header__title {
+  font: var(--type-page-title);
+  letter-spacing: var(--ls-display);
+}
+.ui-page-header__subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-subtitle);
+}
+
+/* bar: white, ink rule underneath */
+.ui-page-header[data-variant='bar'] {
+  min-height: calc(var(--page-header-h) + var(--border-w));
+  padding: var(--space-14) var(--page-pad-x);
+  border-bottom: var(--border-ink);
+  background: var(--bg-1);
+}
+.ui-page-header[data-variant='bar'] .ui-page-header__title {
+  font: var(--type-section-sm);
+}
+
+/* editor: transparent on the ground */
+.ui-page-header[data-variant='editor'] {
+  min-height: var(--page-header-h);
+  padding: var(--space-14) var(--editor-pad-x);
+}
+.ui-page-header__center {
+  flex: 1 1 200px;
+  min-width: 200px;
+  font: var(--type-lesson-title);
+  text-align: center;
+}
+
+/* steps: pills pushed right */
+.ui-page-header[data-variant='steps'] {
+  padding: var(--space-14) var(--page-pad-x);
+}
+
+.ui-page-header__spacer {
+  flex: 1 1 0;
+}

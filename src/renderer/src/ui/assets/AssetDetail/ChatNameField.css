@@ -1,0 +1,4 @@
+.as-name-field input {
+  font-family: var(--font-mono, ui-monospace, 'Cascadia Mono', Consolas, monospace);
+  font-weight: 700;
+}

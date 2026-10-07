@@ -1,0 +1,95 @@
+/* The slide show covers everything, title bar included. The colours are the show's own: black and white screens. */
+.present {
+  --show-black: #000; /* a projector black, deliberately not an app colour */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: var(--show-black);
+  color: var(--white);
+  cursor: default;
+}
+.present[data-screen='white'] {
+  background: var(--white);
+}
+.present[data-idle] {
+  cursor: none;
+}
+
+.present__slide {
+  width: min(100vw, calc(100vh * 16 / 9));
+}
+
+.present__end {
+  margin: 0;
+  font: var(--type-lead);
+  color: var(--white);
+}
+
+.present__digits {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  margin: 0;
+  font: var(--type-heading-ui);
+  color: var(--white);
+}
+
+.present__bar {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-6) var(--space-10);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--show-black) 70%, transparent);
+  border: 2px solid var(--white);
+  transition: opacity var(--dur-base) var(--ease);
+}
+.present[data-idle] .present__bar {
+  opacity: 0;
+  pointer-events: none;
+}
+.present__bar:focus-within {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.present__button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+.present__button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--white) 20%, transparent);
+}
+.present__button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.present__button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.present__count {
+  min-width: 64px;
+  text-align: center;
+  font: var(--type-label);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .present__bar {
+    transition: none;
+  }
+}

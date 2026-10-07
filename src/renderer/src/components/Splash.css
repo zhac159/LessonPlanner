@@ -1,0 +1,246 @@
+.splash {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--ground);
+  color: var(--ink);
+  user-select: none;
+}
+
+.splash[data-exiting='true'] {
+  pointer-events: none;
+  animation: splash-out var(--exit-ms) var(--ease) forwards;
+}
+
+@keyframes splash-out {
+  to {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+}
+
+/* ---- Background: three flat pastel tiles with ink outlines, drifting slowly ---- */
+.splash__shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.splash__shape {
+  position: absolute;
+  border: var(--border-ink);
+  box-shadow: var(--shadow-lg);
+  will-change: transform;
+}
+
+.splash__shape--1 {
+  top: 12%;
+  left: 9%;
+  width: clamp(90px, 12vw, 170px);
+  aspect-ratio: 1;
+  border-radius: var(--radius-24);
+  background: var(--yellow);
+  animation: drift-a 9s ease-in-out infinite alternate;
+}
+
+.splash__shape--2 {
+  right: 10%;
+  bottom: 16%;
+  width: clamp(110px, 15vw, 210px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--peach);
+  animation: drift-b 11s ease-in-out infinite alternate;
+}
+
+.splash__shape--3 {
+  top: 20%;
+  right: 18%;
+  width: clamp(60px, 8vw, 110px);
+  aspect-ratio: 1;
+  border-radius: var(--radius-18);
+  background: var(--sky);
+  transform: rotate(8deg);
+  animation: drift-c 8s ease-in-out infinite alternate;
+}
+
+@keyframes drift-a {
+  to {
+    transform: translate(2vmax, 3vmax) rotate(-6deg);
+  }
+}
+
+@keyframes drift-b {
+  to {
+    transform: translate(-3vmax, -2vmax);
+  }
+}
+
+@keyframes drift-c {
+  to {
+    transform: translate(-2vmax, 2vmax) rotate(-4deg);
+  }
+}
+
+/* ---- Foreground: "Welcome" then the name, letter by letter ---- */
+.splash__content {
+  position: relative;
+  text-align: center;
+}
+
+.splash__welcome {
+  margin: 0 0 var(--space-12);
+  padding-left: 0.5em; /* balances the trailing letter-spacing so the word is optically centred */
+  font: 800 16px/1 var(--font);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0;
+  animation: rise 700ms var(--ease) 200ms forwards;
+}
+
+.splash__name {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(72px, 14vw, 168px);
+  font-weight: var(--fw-heavy);
+  letter-spacing: var(--ls-display);
+  line-height: var(--lh-hero);
+}
+
+/* The bare greeting is a little smaller: it is the whole message. */
+.splash__name[data-greeting='true'] {
+  font-size: clamp(64px, 11vw, 140px);
+}
+
+.splash__letter {
+  display: inline-block;
+  color: var(--ink);
+  text-shadow: 0.04em 0.04em 0 var(--orange);
+  opacity: 0;
+  animation: letter-in 700ms var(--ease-spring) calc(550ms + var(--i) * 80ms) forwards;
+}
+
+@keyframes letter-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.3em) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.splash__rule {
+  display: block;
+  width: min(360px, 40vw);
+  height: 12px;
+  margin: var(--space-24) auto 0;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--yellow);
+  transform: scaleX(0);
+  animation: draw 800ms var(--ease) 1400ms forwards;
+}
+
+@keyframes draw {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.splash__status {
+  margin: var(--space-20) 0 0;
+  color: var(--text-muted);
+  font: var(--type-body);
+  opacity: 0;
+  animation: rise 600ms var(--ease) 1700ms forwards;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- Progress pill along the bottom ---- */
+.splash__progress {
+  position: absolute;
+  bottom: var(--space-36);
+  left: 50%;
+  width: min(320px, 50vw);
+  height: 18px;
+  overflow: hidden;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  transform: translateX(-50%);
+}
+
+.splash__progress > span {
+  display: block;
+  height: 100%;
+  background: var(--orange);
+  border-right: var(--border-ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: fill var(--splash-ms) linear forwards;
+}
+
+@keyframes fill {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash__shape {
+    animation: none;
+  }
+
+  .splash__welcome,
+  .splash__status {
+    animation: fade 300ms ease-out 100ms forwards;
+  }
+
+  .splash__letter {
+    animation: fade 300ms ease-out 200ms forwards;
+  }
+
+  .splash__rule {
+    transform: none;
+    animation: none;
+  }
+
+  .splash__progress > span {
+    animation: none;
+    transform: none;
+  }
+
+  .splash[data-exiting='true'] {
+    animation-name: fade-out;
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}

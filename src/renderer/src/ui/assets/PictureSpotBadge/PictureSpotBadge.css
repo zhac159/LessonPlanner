@@ -1,0 +1,27 @@
+.as-spotbadge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: 24px;
+  padding: 0 var(--space-6);
+  border: var(--border-dashed);
+  border-radius: var(--radius-6);
+  background: var(--white);
+  color: var(--ink);
+  font: 700 12px/1 var(--font);
+  cursor: pointer;
+}
+/* 44px hit area around the 24px badge. */
+.as-spotbadge::before {
+  content: '';
+  position: absolute;
+  inset: -10px -6px;
+}
+.as-spotbadge:hover {
+  background: var(--surface-hover);
+}
+.as-spotbadge:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}

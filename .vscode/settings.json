@@ -1,0 +1,19 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[markdown]": { "editor.formatOnSave": false },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "out": true,
+    "release": true,
+    ".artifacts": true,
+    "package-lock.json": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "out/**": true,
+    "release/**": true
+  }
+}

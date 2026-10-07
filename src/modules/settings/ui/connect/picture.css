@@ -1,0 +1,79 @@
+/* "Add a picture maker" section of Connect Claude (agents/ASSETS.md §3.7, A7). Tokens only. */
+.pms {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+  min-width: 0;
+  padding: var(--space-20);
+  border: var(--border-ink);
+  border-radius: var(--radius-16);
+  background: var(--butter);
+  color: var(--ink);
+}
+
+.pms__head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.pms__head-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.pms__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.pms__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: var(--fw-heavy);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.pms__lead {
+  margin: 0;
+  font: var(--type-small);
+  line-height: var(--lh-body);
+}
+
+.pms__notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.pms__test {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.pms__spacer {
+  flex: 1;
+}
+
+.pms__danger {
+  color: var(--danger-text);
+}
+
+/* Skipped (first run): one quiet line instead of the card. */
+.pms-skipped {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-small);
+}

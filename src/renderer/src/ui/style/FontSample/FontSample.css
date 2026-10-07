@@ -1,0 +1,38 @@
+.font-sample {
+  display: flex;
+  align-items: center;
+  gap: var(--space-14);
+  min-width: 0;
+  font: var(--type-small);
+}
+
+.font-sample__tile {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border: var(--border-ink);
+  border-radius: var(--radius-12);
+  background: var(--surface-sunken);
+  color: var(--ink);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.font-sample__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.font-sample__text strong {
+  font-weight: var(--fw-bold);
+}
+.font-sample__use {
+  color: var(--text-muted);
+}
+.font-sample__missing {
+  color: var(--danger-text);
+  font: var(--type-caption);
+}

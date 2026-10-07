@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home — Slide Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F1EEFF}
+a{color:#1B1530}a:hover{color:#4E4766}
+button,select{font:inherit;color:inherit;cursor:pointer}
+textarea,input{font:inherit;color:inherit}
+textarea::placeholder,input::placeholder{color:#6B6485}
+</style>
+</head>
+<body>
+<div style="min-height: 1320px; display: flex; flex-direction: column; background: #F1EEFF; color: #1B1530; font-family: 'Figtree', system-ui, sans-serif; font-size: 15px">
+
+  <div style="height: 40px; flex: none; display: flex; align-items: center; gap: 10px; padding-left: 14px; background: #FFFFFF; border-bottom: 2px solid #1B1530">
+    <span style="width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 7px; background: #FF6B3D">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"></path></svg>
+    </span>
+    <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 14px">Slide Planner</span>
+    <div style="flex: 1"></div>
+    <button type="button" aria-label="Minimise" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+    <button type="button" aria-label="Maximise" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+    <button type="button" aria-label="Close" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+  </div>
+  <div style="flex: 1; display: flex; min-height: 0">
+    <nav aria-label="Main" style="flex: 0 0 224px; display: flex; flex-direction: column; gap: 6px; padding: 16px 12px; box-sizing: border-box; background: #FFFFFF; border-right: 2px solid #1B1530">
+      <a href="Home.html" aria-current="page" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid #1B1530; background: #FF6B3D; box-shadow: 2px 2px 0 #1B1530; font-weight: 700; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg>Home</a>
+      <a href="StyleBuilder.html" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.7 0 2.5-1 2.5-2.2 0-1.4-1.2-1.8-1.2-3 0-1 .8-1.8 2-1.8H18a3 3 0 0 0 3-3A8 8 0 0 0 12 3z"></path><circle cx="7.5" cy="11" r="1.2"></circle><circle cx="10" cy="7" r="1.2"></circle><circle cx="15" cy="7.5" r="1.2"></circle></svg>Styles</a>
+      <a href="#" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"></path><path d="M17 14v6M14 17h6"></path></svg>Plugins</a>
+      <div style="flex: 1"></div>
+      <a href="ConnectClaude.html" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"></path><circle cx="15" cy="6" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>Settings</a>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-top: 2px solid #E4DFF7"><span style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 50%; background: #EAD9FF; font-weight: 800">A</span><span style="display: flex; flex-direction: column"><span style="font-weight: 700">Alice</span><span style="font-size: 12px; color: #4E4766">Claude connected</span></span></div>
+    </nav>
+  <div style="flex: 1; min-width: 0">
+
+  <main style="max-width: 1280px; margin: 0 auto; padding: 32px 24px 56px; display: flex; flex-direction: column; gap: 36px">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px">
+    <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 6px">
+      <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 44px; font-weight: 800; letter-spacing: -.02em; line-height: 1.05">Good morning, Alice!</h1>
+      <p style="margin: 0; font-size: 17px; color: #4E4766">What are we teaching today?</p>
+    </div>
+      <div style="flex: 0 1 360px; min-width: 200px; height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 14px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 999px; background: #F1EEFF">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+      <label for="homeSearch" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Search lessons and styles</label>
+      <input id="homeSearch" type="search" placeholder="Search lessons and styles" style="flex: 1; min-width: 0; border: 0; outline: none; background: transparent; font-size: 15px">
+    </div>
+      <a href="NewLesson.html" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 18px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 12px; background: #FF6B3D; box-shadow: 3px 3px 0 #1B1530; font-weight: 700; text-decoration: none">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+      New lesson
+    </a>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
+      <section aria-labelledby="newTitle" style="flex: 3 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px; padding: 28px; border: 2px solid #1B1530; border-radius: 24px; background: #FF6B3D; box-shadow: 6px 6px 0 #1B1530">
+        <div style="display: flex; align-items: center; gap: 12px">
+          <span style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 14px; background: #FFFFFF">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="1.5"></rect><path d="M8 21h8M12 17v4"></path></svg>
+          </span>
+          <h2 id="newTitle" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 30px; font-weight: 800; letter-spacing: -.01em">Make a new lesson</h2>
+        </div>
+        <p style="margin: 0; max-width: 580px; font-size: 16px; line-height: 1.5">Paste your learning objectives, or drop the document they’re in. I’ll build the slides in your style.</p>
+        <label for="loHome" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Learning objectives</label>
+        <textarea id="loHome" rows="4" placeholder="e.g. Year 8 Science — Photosynthesis&#10;LO1: Describe where photosynthesis happens in a plant&#10;LO2: Write the word equation…" style="width: 100%; box-sizing: border-box; padding: 14px 16px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; font-size: 15px; line-height: 1.5; resize: vertical"></textarea>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+          <button type="button" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 700">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5l-8.6 8.6a5 5 0 0 1-7.1-7.1l8.6-8.6a3.5 3.5 0 0 1 5 5l-8.6 8.6a2 2 0 0 1-2.8-2.8l7.9-7.9"></path></svg>
+            Upload LO document
+          </button>
+          <button type="button" aria-label="Style: Science KS3. Change style" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 2px solid #1B1530; border-radius: 999px; background: #D6F0EE; font-weight: 600">
+            <span style="width: 12px; height: 12px; border: 2px solid #1B1530; border-radius: 50%; background: #0E7C7B"></span>
+            Science KS3
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <button type="button" aria-label="Lesson length: 50 minutes. Change" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 600">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 2.5M9 2h6"></path></svg>
+            50 min
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <div style="flex: 1"></div>
+          <a href="Editor.html" style="height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 22px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 14px; background: #1B1530; color: #FFFFFF; font-weight: 700; font-size: 16px; text-decoration: none">
+            Create lesson
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+        </div>
+      </section>
+
+      <section aria-labelledby="stylesTitle" style="flex: 2 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 2px solid #1B1530; border-radius: 24px; background: #FFFFFF; box-shadow: 6px 6px 0 #1B1530">
+        <div style="display: flex; align-items: center; gap: 10px">
+          <h2 id="stylesTitle" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 24px; font-weight: 800">Your styles</h2>
+          <div style="flex: 1"></div>
+          <a href="#" style="font-size: 14px; font-weight: 700">Manage</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 2px solid #1B1530; border-radius: 16px; background: #D6F0EE">
+          <span style="display: flex; padding-left: 6px" aria-hidden="true">
+            <span style="width: 22px; height: 22px; margin-left: -6px; border: 2px solid #1B1530; border-radius: 50%; background: #0E7C7B"></span>
+            <span style="width: 22px; height: 22px; margin-left: -6px; border: 2px solid #1B1530; border-radius: 50%; background: #12263A"></span>
+            <span style="width: 22px; height: 22px; margin-left: -6px; border: 2px solid #1B1530; border-radius: 50%; background: #FFE36E"></span>
+            <span style="width: 22px; height: 22px; margin-left: -6px; border: 2px solid #1B1530; border-radius: 50%; background: #E3F2F1"></span>
+          </span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+            <span style="font-weight: 700; font-size: 16px">Science KS3</span>
+            <span style="font-size: 13px; color: #3A3352">Lexend · learned from 24 decks</span>
+          </span>
+          <span style="padding: 3px 10px; border-radius: 999px; background: #1B1530; color: #FFFFFF; font-size: 12px; font-weight: 700">Default</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF">
+          <span style="display: flex; padding-left: 6px" aria-hidden="true">
+            <span style="width: 22px; height: 22px; margin-left: -6px; border: 2px solid #1B1530; border-radius: 50%; background: #7A3E9D"></span>
+            <span style="width: 22px; height: 22px; margin-left: -6px; border: 2px solid #1B1530; border-radius: 50%; background: #F2B134"></span>
+            <span style="width: 22px; height: 22px; margin-left: -6px; border: 2px solid #1B1530; border-radius: 50%; background: #2E2A3A"></span>
+            <span style="width: 22px; height: 22px; margin-left: -6px; border: 2px solid #1B1530; border-radius: 50%; background: #F7F2E8"></span>
+          </span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+            <span style="font-weight: 700; font-size: 16px">Form time</span>
+            <span style="font-size: 13px; color: #4E4766">Nunito · learned from 6 decks</span>
+          </span>
+        </div>
+        <a href="StyleBuilder.html" style="flex: 1; min-height: 150px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 18px; box-sizing: border-box; border: 2px dashed #1B1530; border-radius: 16px; background: #FFF4D6; text-align: center; text-decoration: none">
+          <span style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 50%; background: #FF6B3D">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"></path></svg>
+          </span>
+          <span style="font-weight: 800; font-size: 17px">Create a new style</span>
+          <span style="font-size: 14px; color: #3A3352">Drop old PDFs or PowerPoints here, or <span style="text-decoration: underline; font-weight: 700">browse files</span></span>
+          <span style="font-size: 12px; color: #4E4766">.pdf and .pptx · up to 50 files</span>
+        </a>
+      </section>
+    </div>
+
+    <section aria-labelledby="pastTitle" style="display: flex; flex-direction: column; gap: 18px">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+        <h2 id="pastTitle" style="margin: 0 8px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800">Past lessons</h2>
+        <div role="group" aria-label="Filter by year group" style="display: flex; flex-wrap: wrap; gap: 8px">
+          <button type="button" aria-pressed="true" style="height: 40px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 999px; background: #1B1530; color: #FFFFFF; font-weight: 700">All</button>
+          <button type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 600">Year 7</button>
+          <button type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 600">Year 8</button>
+          <button type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 600">Year 9</button>
+          <button type="button" aria-pressed="false" style="height: 40px; padding: 0 16px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 600">Form time</button>
+        </div>
+        <div style="flex: 1"></div>
+        <label for="sortHome" style="font-size: 14px; font-weight: 600; color: #4E4766">Sort</label>
+        <select id="sortHome" style="height: 40px; padding: 0 12px; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF; font-weight: 600">
+          <option>Last edited</option>
+          <option>Title A–Z</option>
+          <option>Year group</option>
+        </select>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px">
+        
+          <a href="Editor.html" style="display: flex; flex-direction: column; overflow: hidden; border: 2px solid #1B1530; border-radius: 18px; background: #FFFFFF; box-shadow: 4px 4px 0 #1B1530; text-decoration: none">
+            <span style="display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #FFFFFF; border-bottom: 2px solid #1B1530; font-family: 'Lexend', sans-serif">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #0E7C7B"></span>
+              <span style="position: absolute; left: 20px; top: 14px; font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #0E7C7B">Year 8 Science</span>
+              <span style="position: absolute; left: 20px; top: 30px; right: 16px; font-size: 17px; font-weight: 700; line-height: 1.15; color: #12263A">Photosynthesis</span>
+              <span style="position: absolute; left: 20px; bottom: 40px; width: 52%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; bottom: 30px; width: 40%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; right: 16px; bottom: 10px; height: 12px; border-radius: 4px; background: #FFE36E"></span>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px">
+              <span style="font-weight: 700; font-size: 16px">Photosynthesis</span>
+              <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4E4766">
+                <span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; color: #1B1530; font-weight: 700; font-size: 12px">Year 8</span>
+                <span>8 slides</span>
+                <span style="flex: 1"></span>
+                <span>Today</span>
+              </span>
+            </span>
+          </a>
+        
+          <a href="Editor.html" style="display: flex; flex-direction: column; overflow: hidden; border: 2px solid #1B1530; border-radius: 18px; background: #FFFFFF; box-shadow: 4px 4px 0 #1B1530; text-decoration: none">
+            <span style="display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #FFFFFF; border-bottom: 2px solid #1B1530; font-family: 'Lexend', sans-serif">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #0E7C7B"></span>
+              <span style="position: absolute; left: 20px; top: 14px; font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #0E7C7B">Year 7 Science</span>
+              <span style="position: absolute; left: 20px; top: 30px; right: 16px; font-size: 17px; font-weight: 700; line-height: 1.15; color: #12263A">Cells and organelles</span>
+              <span style="position: absolute; left: 20px; bottom: 40px; width: 52%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; bottom: 30px; width: 40%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; right: 16px; bottom: 10px; height: 12px; border-radius: 4px; background: #FFE36E"></span>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px">
+              <span style="font-weight: 700; font-size: 16px">Cells and organelles</span>
+              <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4E4766">
+                <span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #D7E8FF; color: #1B1530; font-weight: 700; font-size: 12px">Year 7</span>
+                <span>10 slides</span>
+                <span style="flex: 1"></span>
+                <span>Yesterday</span>
+              </span>
+            </span>
+          </a>
+        
+          <a href="Editor.html" style="display: flex; flex-direction: column; overflow: hidden; border: 2px solid #1B1530; border-radius: 18px; background: #FFFFFF; box-shadow: 4px 4px 0 #1B1530; text-decoration: none">
+            <span style="display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #FFFFFF; border-bottom: 2px solid #1B1530; font-family: 'Lexend', sans-serif">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #0E7C7B"></span>
+              <span style="position: absolute; left: 20px; top: 14px; font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #0E7C7B">Year 7 Science</span>
+              <span style="position: absolute; left: 20px; top: 30px; right: 16px; font-size: 17px; font-weight: 700; line-height: 1.15; color: #12263A">The particle model</span>
+              <span style="position: absolute; left: 20px; bottom: 40px; width: 52%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; bottom: 30px; width: 40%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; right: 16px; bottom: 10px; height: 12px; border-radius: 4px; background: #FFE36E"></span>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px">
+              <span style="font-weight: 700; font-size: 16px">The particle model</span>
+              <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4E4766">
+                <span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #D7E8FF; color: #1B1530; font-weight: 700; font-size: 12px">Year 7</span>
+                <span>9 slides</span>
+                <span style="flex: 1"></span>
+                <span>3 days ago</span>
+              </span>
+            </span>
+          </a>
+        
+          <a href="Editor.html" style="display: flex; flex-direction: column; overflow: hidden; border: 2px solid #1B1530; border-radius: 18px; background: #FFFFFF; box-shadow: 4px 4px 0 #1B1530; text-decoration: none">
+            <span style="display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #FFFFFF; border-bottom: 2px solid #1B1530; font-family: 'Lexend', sans-serif">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #0E7C7B"></span>
+              <span style="position: absolute; left: 20px; top: 14px; font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #0E7C7B">Year 9 Science</span>
+              <span style="position: absolute; left: 20px; top: 30px; right: 16px; font-size: 17px; font-weight: 700; line-height: 1.15; color: #12263A">Forces and motion</span>
+              <span style="position: absolute; left: 20px; bottom: 40px; width: 52%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; bottom: 30px; width: 40%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; right: 16px; bottom: 10px; height: 12px; border-radius: 4px; background: #FFE36E"></span>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px">
+              <span style="font-weight: 700; font-size: 16px">Forces and motion</span>
+              <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4E4766">
+                <span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #FFD6C9; color: #1B1530; font-weight: 700; font-size: 12px">Year 9</span>
+                <span>12 slides</span>
+                <span style="flex: 1"></span>
+                <span>Last week</span>
+              </span>
+            </span>
+          </a>
+        
+          <a href="Editor.html" style="display: flex; flex-direction: column; overflow: hidden; border: 2px solid #1B1530; border-radius: 18px; background: #FFFFFF; box-shadow: 4px 4px 0 #1B1530; text-decoration: none">
+            <span style="display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #FFFFFF; border-bottom: 2px solid #1B1530; font-family: 'Lexend', sans-serif">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #0E7C7B"></span>
+              <span style="position: absolute; left: 20px; top: 14px; font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #0E7C7B">Year 8 Science</span>
+              <span style="position: absolute; left: 20px; top: 30px; right: 16px; font-size: 17px; font-weight: 700; line-height: 1.15; color: #12263A">The periodic table</span>
+              <span style="position: absolute; left: 20px; bottom: 40px; width: 52%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; bottom: 30px; width: 40%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; right: 16px; bottom: 10px; height: 12px; border-radius: 4px; background: #FFE36E"></span>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px">
+              <span style="font-weight: 700; font-size: 16px">The periodic table</span>
+              <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4E4766">
+                <span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; color: #1B1530; font-weight: 700; font-size: 12px">Year 8</span>
+                <span>11 slides</span>
+                <span style="flex: 1"></span>
+                <span>Last week</span>
+              </span>
+            </span>
+          </a>
+        
+          <a href="Editor.html" style="display: flex; flex-direction: column; overflow: hidden; border: 2px solid #1B1530; border-radius: 18px; background: #FFFFFF; box-shadow: 4px 4px 0 #1B1530; text-decoration: none">
+            <span style="display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #FFFFFF; border-bottom: 2px solid #1B1530; font-family: 'Lexend', sans-serif">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #7A3E9D"></span>
+              <span style="position: absolute; left: 20px; top: 14px; font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #7A3E9D">Form time</span>
+              <span style="position: absolute; left: 20px; top: 30px; right: 16px; font-size: 17px; font-weight: 700; line-height: 1.15; color: #12263A">Staying safe online</span>
+              <span style="position: absolute; left: 20px; bottom: 40px; width: 52%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; bottom: 30px; width: 40%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; right: 16px; bottom: 10px; height: 12px; border-radius: 4px; background: #F2B134"></span>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px">
+              <span style="font-weight: 700; font-size: 16px">Staying safe online</span>
+              <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4E4766">
+                <span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #EAD9FF; color: #1B1530; font-weight: 700; font-size: 12px">Form time</span>
+                <span>6 slides</span>
+                <span style="flex: 1"></span>
+                <span>2 weeks ago</span>
+              </span>
+            </span>
+          </a>
+        
+          <a href="Editor.html" style="display: flex; flex-direction: column; overflow: hidden; border: 2px solid #1B1530; border-radius: 18px; background: #FFFFFF; box-shadow: 4px 4px 0 #1B1530; text-decoration: none">
+            <span style="display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #FFFFFF; border-bottom: 2px solid #1B1530; font-family: 'Lexend', sans-serif">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #0E7C7B"></span>
+              <span style="position: absolute; left: 20px; top: 14px; font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #0E7C7B">Year 8 Science</span>
+              <span style="position: absolute; left: 20px; top: 30px; right: 16px; font-size: 17px; font-weight: 700; line-height: 1.15; color: #12263A">Acids and alkalis</span>
+              <span style="position: absolute; left: 20px; bottom: 40px; width: 52%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; bottom: 30px; width: 40%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; right: 16px; bottom: 10px; height: 12px; border-radius: 4px; background: #FFE36E"></span>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px">
+              <span style="font-weight: 700; font-size: 16px">Acids and alkalis</span>
+              <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4E4766">
+                <span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; color: #1B1530; font-weight: 700; font-size: 12px">Year 8</span>
+                <span>9 slides</span>
+                <span style="flex: 1"></span>
+                <span>3 weeks ago</span>
+              </span>
+            </span>
+          </a>
+        
+          <a href="Editor.html" style="display: flex; flex-direction: column; overflow: hidden; border: 2px solid #1B1530; border-radius: 18px; background: #FFFFFF; box-shadow: 4px 4px 0 #1B1530; text-decoration: none">
+            <span style="display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #FFFFFF; border-bottom: 2px solid #1B1530; font-family: 'Lexend', sans-serif">
+              <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #0E7C7B"></span>
+              <span style="position: absolute; left: 20px; top: 14px; font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #0E7C7B">Year 7 Science</span>
+              <span style="position: absolute; left: 20px; top: 30px; right: 16px; font-size: 17px; font-weight: 700; line-height: 1.15; color: #12263A">Energy stores</span>
+              <span style="position: absolute; left: 20px; bottom: 40px; width: 52%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; bottom: 30px; width: 40%; height: 5px; border-radius: 3px; background: #E3E7EA"></span>
+              <span style="position: absolute; left: 20px; right: 16px; bottom: 10px; height: 12px; border-radius: 4px; background: #FFE36E"></span>
+            </span>
+            <span style="display: flex; flex-direction: column; gap: 6px; padding: 12px 14px 14px">
+              <span style="font-weight: 700; font-size: 16px">Energy stores</span>
+              <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4E4766">
+                <span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #D7E8FF; color: #1B1530; font-weight: 700; font-size: 12px">Year 7</span>
+                <span>8 slides</span>
+                <span style="flex: 1"></span>
+                <span>Last month</span>
+              </span>
+            </span>
+          </a>
+        
+      </div>
+    </section>
+  </main>
+  </div>
+  </div>
+</div>
+</body>
+</html>

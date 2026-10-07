@@ -1,0 +1,25 @@
+.as-make-form {
+  display: grid;
+  gap: var(--space-10);
+}
+.as-make-form__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+}
+.as-make-form__versions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  min-width: 0;
+}
+.as-make-form__versions-label {
+  font: 800 14px/1.3 var(--font);
+}
+.as-make-form__note {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-caption);
+}

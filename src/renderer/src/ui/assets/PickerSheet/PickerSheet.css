@@ -1,0 +1,7 @@
+.as-picker-sheet__panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: var(--space-12);
+  min-width: 0;
+}

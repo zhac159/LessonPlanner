@@ -1,0 +1,70 @@
+.ui-composer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: 10px;
+  border: var(--border-ink);
+  border-radius: var(--radius-18);
+  background: var(--white);
+  color: var(--ink);
+  transition: box-shadow var(--dur-fast) var(--ease);
+}
+.ui-composer:focus-within {
+  box-shadow: var(--focus-field);
+}
+.ui-composer[data-disabled] {
+  border-color: var(--line-muted);
+  background: var(--ground);
+}
+
+.ui-composer__staged {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+.ui-composer__staged > .ui-attach {
+  flex: 1 1 100%;
+}
+
+.ui-composer__input {
+  display: block;
+  width: 100%;
+  max-height: 248px;
+  padding: 4px 6px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: var(--type-body);
+  overflow-y: auto;
+  resize: none;
+}
+.ui-composer__input::placeholder {
+  color: var(--text-placeholder);
+}
+.ui-composer__input:disabled {
+  cursor: not-allowed;
+}
+/* The container shows the focus halo instead of the global field outline. */
+.ui-composer__input:focus-visible {
+  outline: 0;
+}
+
+.ui-composer__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+.ui-composer__spacer {
+  flex: 1;
+}
+.ui-composer__generate {
+  font-weight: var(--fw-heavy);
+}
+
+.ui-composer__notice {
+  margin: 0;
+  padding: 0 var(--space-6);
+  color: var(--danger-text);
+  font: var(--type-small);
+}

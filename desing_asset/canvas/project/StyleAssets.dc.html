@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Create a style with assets — Slide Planner</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F1EEFF}
+a{color:#1B1530}a:hover{color:#4E4766}
+button{font:inherit;color:inherit;cursor:pointer}
+textarea,input{font:inherit;color:inherit}
+textarea::placeholder,input::placeholder{color:#6B6485}
+</style>
+</helmet>
+<div style="min-height: 1770px; display: flex; flex-direction: column; background: #F1EEFF; color: #1B1530; font-family: 'Figtree', system-ui, sans-serif; font-size: 15px">
+  <div style="height: 40px; flex: none; display: flex; align-items: center; gap: 10px; padding-left: 14px; background: #FFFFFF; border-bottom: 2px solid #1B1530">
+    <span style="width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 7px; background: #FF6B3D">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"></path></svg>
+    </span>
+    <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 14px">Slide Planner</span>
+    <div style="flex: 1"></div>
+    <button type="button" aria-label="Minimise" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+    <button type="button" aria-label="Maximise" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+    <button type="button" aria-label="Close" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+  </div>
+  <div style="flex: 1; display: flex; min-height: 0">
+    <nav aria-label="Main" style="flex: 0 0 224px; display: flex; flex-direction: column; gap: 6px; padding: 16px 12px; box-sizing: border-box; background: #FFFFFF; border-right: 2px solid #1B1530">
+      <a href="#" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg>Home</a>
+      <a href="StyleAssets.dc.html" aria-current="page" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid #1B1530; background: #FF6B3D; box-shadow: 2px 2px 0 #1B1530; font-weight: 700; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.7 0 2.5-1 2.5-2.2 0-1.4-1.2-1.8-1.2-3 0-1 .8-1.8 2-1.8H18a3 3 0 0 0 3-3A8 8 0 0 0 12 3z"></path><circle cx="7.5" cy="11" r="1.2"></circle><circle cx="10" cy="7" r="1.2"></circle><circle cx="15" cy="7.5" r="1.2"></circle></svg>Styles</a>
+      <a href="Main.dc.html" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="M21 15l-5-5L5 21"></path></svg>Assets</a>
+      <a href="#" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"></path><path d="M17 14v6M14 17h6"></path></svg>Plugins</a>
+      <div style="flex: 1"></div>
+      <a href="#" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"></path><circle cx="15" cy="6" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>Settings</a>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-top: 2px solid #E4DFF7"><span style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 50%; background: #EAD9FF; font-weight: 800">A</span><span style="display: flex; flex-direction: column"><span style="font-weight: 700">Alice</span><span style="font-size: 12px; color: #4E4766">Claude connected</span></span></div>
+    </nav>
+  <div style="flex: 1; min-width: 0">
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 14px 24px; background: #FFFFFF; border-bottom: 2px solid #1B1530">
+    <a href="#" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 16px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 600; text-decoration: none">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+      Home
+    </a>
+    <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800">Create a style</h1>
+    <div style="flex: 1"></div>
+    <span style="height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 14px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 999px; background: #FFF0B8; font-weight: 700; font-size: 14px">
+      <span style="display: flex; gap: 3px" aria-hidden="true">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #FF6B3D"></span>
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #FFB199"></span>
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #FFD9CC"></span>
+      </span>
+      Learning · 6 of 8 files
+    </span>
+    <a href="#" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 18px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 12px; background: #FF6B3D; box-shadow: 3px 3px 0 #1B1530; font-weight: 700; text-decoration: none">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>
+      Save style
+    </a>
+  </header>
+
+  <main style="max-width: 1320px; margin: 0 auto; padding: 28px 24px 48px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+    <section aria-labelledby="filesTitle" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding: 22px; border: 2px solid #1B1530; border-radius: 24px; background: #FFFFFF; box-shadow: 6px 6px 0 #1B1530">
+      <div style="display: flex; align-items: baseline; gap: 10px">
+        <h2 id="filesTitle" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800">Your files</h2>
+        <span style="font-size: 14px; color: #4E4766">8 files</span>
+      </div>
+
+      <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 14px; border: 2px dashed #1B1530; border-radius: 16px; background: #FFF4D6; text-align: left">
+        <span style="flex: none; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 50%; background: #FF6B3D">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"></path></svg>
+        </span>
+        <span style="display: flex; flex-direction: column">
+          <span style="font-weight: 700">Add more PDFs or PowerPoints</span>
+          <span style="font-size: 13px; color: #3A3352">Drop files here, or browse</span>
+        </span>
+      </button>
+
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700"><span>6 of 8 learned</span><span style="color: #4E4766; font-weight: 600">About a minute left</span></div>
+        <div style="height: 14px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; overflow: hidden">
+          <div style="width: 75%; height: 100%; background: #FF6B3D; border-right: 2px solid #1B1530"></div>
+        </div>
+      </div>
+
+      <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+        <sc-for list="{{files}}" as="f" hint-placeholder-count="8">
+          <li style="display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 10px; border: 2px solid #E4DFF7; border-radius: 14px">
+            <span style="flex: none; width: 44px; height: 36px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 8px; background: {{f.badgeBg}}; font-size: 11px; font-weight: 800; letter-spacing: .04em">{{f.kind}}</span>
+            <span style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+              <span style="font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{f.name}}</span>
+              <span style="font-size: 12px; color: #4E4766">{{f.size}}</span>
+            </span>
+            <span style="flex: none; padding: 3px 10px; border: 2px solid #1B1530; border-radius: 999px; background: {{f.statusBg}}; font-size: 12px; font-weight: 700">{{f.status}}</span>
+            <button type="button" aria-label="{{f.removeLabel}}" style="flex: none; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 10px; background: transparent; color: #4E4766">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+            </button>
+          </li>
+        </sc-for>
+      </ul>
+
+      <div style="padding: 12px 14px; border-radius: 14px; background: #E9E3FF; font-size: 14px; line-height: 1.5">
+        <strong>Tip:</strong> 10 or more decks gives the closest match. Mix recent favourites with a few older lessons.
+      </div>
+    </section>
+
+    <section aria-labelledby="learnTitle" style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column; border: 2px solid #1B1530; border-radius: 24px; background: #FFFFFF; box-shadow: 6px 6px 0 #1B1530">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 16px 22px; border-bottom: 2px solid #1B1530; border-radius: 22px 22px 0 0; background: #FFE36E">
+        <h2 id="learnTitle" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800">What I’ve learned so far</h2>
+        <div style="flex: 1"></div>
+        <span style="font-size: 14px; color: #3A3352">Updates as each file is read</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px; padding: 22px">
+        <div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px">
+          <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 6px">
+            <label for="styleName" style="font-weight: 700; font-size: 14px">Style name</label>
+            <input id="styleName" type="text" value="Science KS3" style="height: 48px; padding: 0 14px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF; font-size: 16px; font-weight: 600">
+          </div>
+          <label style="height: 48px; display: flex; align-items: center; gap: 10px; font-weight: 600; cursor: pointer">
+            <input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #1B1530">
+            Make this my default style
+          </label>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+
+          <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 2px solid #1B1530; border-radius: 16px">
+            <h3 style="margin: 0; font-size: 16px; font-weight: 800">Colours</h3>
+            <div style="display: flex; align-items: center; gap: 10px"><span style="flex: none; width: 32px; height: 32px; border: 2px solid #1B1530; border-radius: 8px; background: #0E7C7B"></span><span style="font-size: 14px"><strong>Teal</strong> · titles, accents, left band</span></div>
+            <div style="display: flex; align-items: center; gap: 10px"><span style="flex: none; width: 32px; height: 32px; border: 2px solid #1B1530; border-radius: 8px; background: #12263A"></span><span style="font-size: 14px"><strong>Navy</strong> · body text</span></div>
+            <div style="display: flex; align-items: center; gap: 10px"><span style="flex: none; width: 32px; height: 32px; border: 2px solid #1B1530; border-radius: 8px; background: #FFE36E"></span><span style="font-size: 14px"><strong>Yellow</strong> · mini-whiteboard boxes</span></div>
+            <div style="display: flex; align-items: center; gap: 10px"><span style="flex: none; width: 32px; height: 32px; border: 2px solid #1B1530; border-radius: 8px; background: #E3F2F1"></span><span style="font-size: 14px"><strong>Mint</strong> · key word chips</span></div>
+            <div style="display: flex; align-items: center; gap: 10px"><span style="flex: none; width: 32px; height: 32px; border: 2px solid #1B1530; border-radius: 8px; background: #FFFFFF"></span><span style="font-size: 14px"><strong>White</strong> · slide background</span></div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; padding: 16px; border: 2px solid #1B1530; border-radius: 16px">
+            <h3 style="margin: 0; font-size: 16px; font-weight: 800">Fonts</h3>
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span style="flex: none; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 12px; background: #F1EEFF; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 30px; color: #12263A">Aa</span>
+              <span style="display: flex; flex-direction: column; font-size: 14px"><strong>Lexend Bold</strong><span style="color: #4E4766">Titles · 40–44 pt</span></span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px">
+              <span style="flex: none; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 12px; background: #F1EEFF; font-family: 'Lexend', sans-serif; font-weight: 400; font-size: 30px; color: #12263A">Aa</span>
+              <span style="display: flex; flex-direction: column; font-size: 14px"><strong>Lexend Regular</strong><span style="color: #4E4766">Body text · 20–24 pt</span></span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 2px solid #1B1530; border-radius: 16px">
+            <h3 style="margin: 0; font-size: 16px; font-weight: 800">Layout habits</h3>
+            <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.4"><svg style="flex: none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>Two-colour titles: the last words in teal</div>
+            <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.4"><svg style="flex: none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>A teal band down the left edge</div>
+            <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.4"><svg style="flex: none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>Objectives as tick-boxes</div>
+            <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.4"><svg style="flex: none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>Text left, picture right on content slides</div>
+            <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.4"><svg style="flex: none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>A yellow question box at the bottom</div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 2px solid #1B1530; border-radius: 16px">
+            <h3 style="margin: 0; font-size: 16px; font-weight: 800">Slide types you use</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span style="padding: 4px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #D7E8FF; font-size: 13px; font-weight: 700">Title</span>
+              <span style="padding: 4px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #FFD6C9; font-size: 13px; font-weight: 700">Do Now</span>
+              <span style="padding: 4px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; font-size: 13px; font-weight: 700">Learning objectives</span>
+              <span style="padding: 4px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #FFF0B8; font-size: 13px; font-weight: 700">Key words</span>
+              <span style="padding: 4px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #EAD9FF; font-size: 13px; font-weight: 700">Mini-whiteboard question</span>
+              <span style="padding: 4px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #D7E8FF; font-size: 13px; font-weight: 700">Practical method</span>
+              <span style="padding: 4px 12px; border: 2px solid #1B1530; border-radius: 999px; background: #FFD6C9; font-size: 13px; font-weight: 700">Exit ticket</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 2px solid #1B1530; border-radius: 16px">
+            <h3 style="margin: 0; font-size: 16px; font-weight: 800">How you write</h3>
+            <div style="font-size: 14px; line-height: 1.4">• Short, direct questions to the class</div>
+            <div style="font-size: 14px; line-height: 1.4">• Objectives start with “Today I will…”</div>
+            <div style="font-size: 14px; line-height: 1.4">• Key words in bold, defined on their own slide</div>
+            <div style="font-size: 14px; line-height: 1.4">• British spelling, no full stops in bullets</div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 2px solid #1B1530; border-radius: 16px; background: #F1EEFF">
+            <h3 style="margin: 0; font-size: 16px; font-weight: 800">Test slide in this style</h3>
+            <div style="width: 100%; aspect-ratio: 16 / 9; container-type: inline-size; position: relative; overflow: hidden; background: #FFFFFF; border: 2px solid #1B1530; border-radius: 8px; font-family: 'Lexend', sans-serif; color: #12263A">
+              <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 1.6cqw; background: #0E7C7B"></div>
+              <div style="position: absolute; inset: 0; padding: 5cqw 5cqw 4cqw 7cqw; display: flex; flex-direction: column; gap: 2.4cqw">
+                <div style="font-size: 2.2cqw; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #0E7C7B">Lesson 1 · Cells</div>
+                <div style="font-size: 6cqw; line-height: 1.1; font-weight: 700">Key <span style="color: #0E7C7B">words</span></div>
+                <div style="display: flex; flex-wrap: wrap; gap: 1.6cqw">
+                  <span style="padding: 1cqw 2.2cqw; border-radius: 99px; background: #E3F2F1; color: #0B5E5D; font-size: 2.8cqw; font-weight: 600">nucleus</span>
+                  <span style="padding: 1cqw 2.2cqw; border-radius: 99px; background: #E3F2F1; color: #0B5E5D; font-size: 2.8cqw; font-weight: 600">cell membrane</span>
+                  <span style="padding: 1cqw 2.2cqw; border-radius: 99px; background: #E3F2F1; color: #0B5E5D; font-size: 2.8cqw; font-weight: 600">cytoplasm</span>
+                </div>
+                <div style="margin-top: auto; padding: 2.2cqw 2.8cqw; border-radius: 1.4cqw; background: #FFE36E; font-size: 2.8cqw"><strong>Mini-whiteboards:</strong> Which part controls the cell?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border: 2px solid #1B1530; border-radius: 16px">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 800">Picture habits</h3>
+          <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.6"><svg style="flex: none; margin-top: 2px" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>A picture on the right of most content slides, about a third of the slide</span></div>
+          <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.6"><svg style="flex: none; margin-top: 2px" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span><span style="padding: 1px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #D6F0EE; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 12px; font-weight: 700">school_logo</span> in the top-right corner of every title slide</span></div>
+          <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.6"><svg style="flex: none; margin-top: 2px" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span><span style="padding: 1px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #D6F0EE; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 12px; font-weight: 700">timer_icon</span> next to the title on Do Now slides</span></div>
+          <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.6"><svg style="flex: none; margin-top: 2px" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>Mostly real photos and simple line icons; labelled diagrams for processes</span></div>
+          <div style="display: flex; gap: 10px; font-size: 14px; line-height: 1.6"><svg style="flex: none; margin-top: 2px" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>No pictures on objectives-only or exit-ticket slides</span></div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 16px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+            <h3 style="margin: 0; font-size: 16px; font-weight: 800">Assets I found</h3>
+            <span style="padding: 2px 10px; border: 2px solid #1B1530; border-radius: 999px; background: #D6F0EE; font-size: 13px; font-weight: 700">12 found · 9 suggested</span>
+            <div style="flex: 1"></div>
+            <a href="Review.dc.html" style="height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 14px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 12px; background: #1B1530; color: #FFFFFF; font-weight: 700; font-size: 14px; text-decoration: none">Review assets</a>
+          </div>
+          <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3A3352">Logos, icons and pictures you reuse across your decks. Check them and they’ll be saved to Your assets, ready for any lesson.</p>
+          <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px"><span style="min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 6px; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF"><span style="height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #F7F5FF"><svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L54 14 V30 C54 44 44 54 32 58 C20 54 10 44 10 30 V14 Z" fill="#1F3A68" stroke="#1B1530" stroke-width="2"></path><path d="M19 31 L32 41 L45 31" fill="none" stroke="#E8B53A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path><circle cx="32" cy="22" r="5" fill="#E8B53A"></circle></svg></span><span style="font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">school_logo</span></span><span style="min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 6px; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF"><span style="height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #F7F5FF"><svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true"><rect x="2" y="22" width="60" height="20" rx="4" fill="#0E7C7B" stroke="#1B1530" stroke-width="1.5"></rect><text x="32" y="36" text-anchor="middle" font-family="Lexend, Figtree, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">DO NOW</text></svg></span><span style="font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">do_now_banner</span></span><span style="min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 6px; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF"><span style="height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #F7F5FF"><svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="36" rx="20" ry="22" fill="#A26B3F" stroke="#1B1530" stroke-width="2"></ellipse><ellipse cx="32" cy="43" rx="12" ry="12" fill="#E9C9A3"></ellipse><circle cx="24" cy="28" r="7" fill="#FFFFFF" stroke="#1B1530" stroke-width="2"></circle><circle cx="40" cy="28" r="7" fill="#FFFFFF" stroke="#1B1530" stroke-width="2"></circle><circle cx="24" cy="28" r="3" fill="#1B1530"></circle><circle cx="40" cy="28" r="3" fill="#1B1530"></circle><path d="M29 34l3 5 3-5z" fill="#FF8A3D"></path><path d="M15 16l6 7M49 16l-6 7" stroke="#1B1530" stroke-width="3" stroke-linecap="round"></path></svg></span><span style="font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">owl_mascot</span></span><span style="min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 6px; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF"><span style="height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #F7F5FF"><svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true"><path d="M24 8h16M27 8v16L14 50a4 4 0 0 0 4 6h28a4 4 0 0 0 4-6L37 24V8" fill="#FFFFFF" stroke="#0E7C7B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></path><path d="M19 42h26l5 9a2 2 0 0 1-2 3H16a2 2 0 0 1-2-3z" fill="#7FD1C9"></path></svg></span><span style="font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">beaker_icon</span></span><span style="min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 6px; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF"><span style="height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #F7F5FF"><svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="36" r="20" fill="#FFFFFF" stroke="#12263A" stroke-width="3"></circle><path d="M32 36 L32 16 A20 20 0 0 1 49 46 Z" fill="#FFE36E"></path><path d="M32 36V22M26 8h12M32 8v8" stroke="#12263A" stroke-width="3" stroke-linecap="round"></path></svg></span><span style="font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">timer_icon</span></span><span style="min-width: 0; display: flex; flex-direction: column; gap: 6px; padding: 6px; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF"><span style="height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #F7F5FF"><svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="10" width="48" height="44" rx="8" fill="#DFF5D8" stroke="#2E7D32" stroke-width="3"></rect><circle cx="37" cy="29" r="8" fill="#C9B6EC" stroke="#5E35B1" stroke-width="2"></circle><ellipse cx="20" cy="40" rx="6" ry="3" fill="#5DBB63"></ellipse><ellipse cx="42" cy="46" rx="6" ry="3" fill="#5DBB63"></ellipse><ellipse cx="19" cy="21" rx="5" ry="2.5" fill="#5DBB63"></ellipse></svg></span><span style="font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 11px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">plant_cell_diagram</span></span></div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border: 2px dashed #1B1530; border-radius: 16px">
+          <label for="styleFix" style="font-weight: 800; font-size: 16px">Anything I got wrong?</label>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px">
+            <input id="styleFix" type="text" placeholder="e.g. I never use yellow on title slides" style="flex: 1 1 280px; height: 48px; padding: 0 14px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 12px; background: #FFFFFF; font-size: 15px">
+            <button type="button" style="height: 48px; padding: 0 20px; border: 2px solid #1B1530; border-radius: 12px; background: #1B1530; color: #FFFFFF; font-weight: 700">Tell me</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1770}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const status = {
+      done: { label: 'Learned', bg: '#DFF5D8' },
+      reading: { label: 'Reading…', bg: '#FFF0B8' },
+      waiting: { label: 'Waiting', bg: '#EAD9FF' }
+    };
+    const rows = [
+      ['Y8 Photosynthesis.pptx', 'PPTX', '14 slides', 'done'],
+      ['Y7 Cells and organelles.pdf', 'PDF', '18 pages', 'done'],
+      ['Y9 Forces recap.pptx', 'PPTX', '11 slides', 'done'],
+      ['Y8 Periodic table.pdf', 'PDF', '22 pages', 'done'],
+      ['Y7 Particle model.pptx', 'PPTX', '12 slides', 'done'],
+      ['Y9 Respiration.pdf', 'PDF', '16 pages', 'done'],
+      ['Y8 Acids and alkalis.pptx', 'PPTX', '15 slides', 'reading'],
+      ['Y7 Energy stores.pdf', 'PDF', '13 pages', 'waiting']
+    ];
+    return {
+      files: rows.map((r) => ({
+        name: r[0], kind: r[1], size: r[2],
+        badgeBg: r[1] === 'PDF' ? '#FFD6C9' : '#D7E8FF',
+        status: status[r[3]].label, statusBg: status[r[3]].bg,
+        removeLabel: 'Remove ' + r[0]
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

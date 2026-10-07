@@ -1,0 +1,125 @@
+.tf-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tf-box {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: 8px;
+  padding-inline: 14px;
+  font-family: var(--font);
+}
+.tf-box--xl {
+  height: 52px;
+  border-radius: 14px;
+  font-size: 16px;
+}
+.tf-box--lg {
+  height: 48px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+.tf-box--md {
+  height: 44px;
+  border-radius: 999px;
+  font-size: 15px;
+}
+.tf-input {
+  font-weight: 400;
+}
+.tf-input--strong {
+  font-weight: 600;
+}
+.tf-input--masked:not(:placeholder-shown) {
+  letter-spacing: var(--ls-masked);
+}
+.tf-adorn {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+/* search: reads as transparent on the ground */
+.tf-box--search {
+  background: var(--surface-sunken);
+}
+.tf-box--search.is-disabled {
+  background: var(--ground);
+}
+.tf-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* password: Show / Hide sits outside the field, styled as a raised secondary button */
+.tf-reveal {
+  flex: none;
+  height: 52px;
+  padding: 0 18px;
+  border: var(--border-ink);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  font: 700 16px/1 var(--font);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+.tf-reveal:hover:not(:disabled) {
+  transform: translate(var(--lift), var(--lift));
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.tf-reveal:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-none);
+  transition-duration: var(--dur-press);
+}
+.tf-reveal:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+.tf-reveal:disabled {
+  border-color: var(--line-muted);
+  background: transparent;
+  color: var(--text-placeholder);
+  box-shadow: var(--shadow-none);
+  cursor: not-allowed;
+}
+
+/* title: "Untitled lesson" */
+.tf-shell--title {
+  width: 320px;
+  max-width: 100%;
+}
+.tf-box--title {
+  height: 40px;
+  padding-inline: 12px;
+  border: var(--border-placeholder);
+  border-radius: 10px;
+  background: transparent;
+  box-shadow: var(--shadow-none);
+  font: var(--type-lesson-title);
+}
+.tf-box--title:hover:not(.is-disabled) {
+  border: var(--border-dashed);
+}
+.tf-box--title:focus-within {
+  border: var(--border-ink);
+  box-shadow: var(--focus-field);
+}
+.tf-box--title .tf-input {
+  text-align: center;
+  font: inherit;
+}
+.tf-box--title .tf-input::placeholder {
+  font-weight: inherit;
+}
+.tf-box--title.is-disabled {
+  background: transparent;
+}

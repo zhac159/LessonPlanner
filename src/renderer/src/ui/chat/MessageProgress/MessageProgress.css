@@ -1,0 +1,49 @@
+.ui-msg-p {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  align-self: flex-start;
+  min-width: 220px;
+  max-width: 92%;
+  padding: 10px 12px;
+  border: 2px dashed var(--ink);
+  border-radius: var(--radius-14);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.ui-msg-p__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+}
+.ui-msg-p__label {
+  flex: 1;
+  min-width: 0;
+  font: 600 15px/1.4 var(--font);
+}
+
+.ui-msg-p__steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ui-msg-p__step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font: 600 13px/1.3 var(--font);
+}
+.ui-msg-p__step[data-state='upcoming'] {
+  color: var(--text-muted);
+}
+.ui-msg-p__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 22px;
+}

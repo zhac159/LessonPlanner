@@ -1,0 +1,21 @@
+.ui-text-link {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-weight: var(--fw-bold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.ui-text-link:hover {
+  color: var(--text-muted);
+}
+
+.ui-text-link:disabled {
+  color: var(--text-placeholder);
+  cursor: not-allowed;
+}

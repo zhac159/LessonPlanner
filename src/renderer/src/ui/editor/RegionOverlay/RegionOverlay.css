@@ -1,0 +1,66 @@
+.region-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.region-overlay[data-active] {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+.region-overlay:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-inset-offset);
+}
+
+.region-overlay__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.region-overlay__stroke {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  transition: stroke-width var(--dur-base) var(--ease);
+}
+
+.region-overlay__stroke[data-linked] {
+  stroke-width: 7px;
+}
+
+.region-overlay__dim {
+  fill: var(--ink);
+  fill-opacity: 0.35;
+  fill-rule: evenodd;
+}
+
+.region-overlay__cursor {
+  fill: var(--orange);
+  stroke: var(--ink);
+  stroke-width: 3px;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Pinned above the region's top-left corner: bottom edge 6px above it, never above the stage. */
+.region-overlay__label {
+  position: absolute;
+  left: var(--label-left);
+  top: max(var(--label-top), 40px);
+  max-width: min(70%, 320px);
+  transform: translateY(calc(-100% - 6px));
+  pointer-events: none;
+}
+
+.region-overlay__label .region-label:has(.region-label__remove) {
+  pointer-events: auto;
+}

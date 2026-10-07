@@ -1,0 +1,19 @@
+.as-title-input {
+  width: 100%;
+  min-height: var(--target-min);
+  padding: 0 var(--space-6);
+  border: 2px solid transparent;
+  border-radius: var(--radius-10);
+  background: transparent;
+  color: var(--ink);
+  font: var(--type-section-sm);
+  text-overflow: ellipsis;
+}
+.as-title-input:hover {
+  border-color: var(--divider);
+}
+.as-title-input:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: var(--focus-field);
+}

@@ -1,0 +1,16 @@
+.as-make-panel {
+  display: grid;
+  gap: var(--space-16);
+  padding: var(--space-16) var(--space-18) var(--space-18);
+}
+.as-make-panel__rule {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-top: var(--border-divider);
+}
+.as-make-panel__footnote {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-caption);
+}

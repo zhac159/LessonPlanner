@@ -1,0 +1,46 @@
+{
+  // F5 runs the first configuration: it builds the app, then starts it with the debugger attached.
+  // ELECTRON_RUN_AS_NODE is explicitly unset: if it leaks in from the environment, electron.exe
+  // behaves like plain Node and the app crashes on startup.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Planning App: build & run",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+      },
+      "args": ["."],
+      "env": { "ELECTRON_RUN_AS_NODE": null },
+      "outputCapture": "std",
+      "sourceMaps": true,
+      "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"],
+      "preLaunchTask": "Build app"
+    },
+    {
+      "name": "Planning App: dev (hot reload)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-vite",
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron-vite.cmd"
+      },
+      "runtimeArgs": ["dev", "--watch", "--sourcemap"],
+      "env": { "ELECTRON_RUN_AS_NODE": null },
+      "outputCapture": "std",
+      "preLaunchTask": "Install dependencies (if needed)"
+    },
+    {
+      "name": "Planning App: npm start (in a terminal)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm start",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Install dependencies (if needed)"
+    }
+  ]
+}

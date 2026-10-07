@@ -1,0 +1,235 @@
+/* Welcome step (design/screens/01-welcome.md §3). Tokens only, except the sample slide's own colours. */
+.welcome {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100%;
+  background: var(--ground);
+}
+
+.welcome__hero {
+  display: flex;
+  flex: 1 1 560px;
+  flex-direction: column;
+  gap: var(--space-28);
+  padding: var(--space-48) var(--space-56);
+  border-right: var(--border-ink);
+  background: var(--yellow);
+}
+
+.welcome__hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+  max-width: 560px;
+}
+
+.welcome__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: var(--fw-heavy);
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+.welcome__lead {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.welcome__side {
+  display: flex;
+  flex: 1 1 480px;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-48) var(--space-24);
+}
+
+/* If the card does not fit it aligns to the top and the page scrolls. */
+@media (max-height: 760px) {
+  .welcome__side {
+    align-items: flex-start;
+    padding-block: var(--space-24);
+  }
+}
+
+.welcome__card {
+  width: 100%;
+  max-width: 440px;
+}
+
+.welcome__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-18);
+}
+
+.welcome__intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.welcome__heading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: var(--fw-heavy);
+  letter-spacing: var(--ls-title);
+  line-height: 1.1;
+}
+
+.welcome__sub {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--fs-body);
+}
+
+.welcome__next {
+  width: 100%;
+}
+
+.welcome__privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.welcome__privacy svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+/* Narrow windows: the hero stacks above the card and the illustration goes. */
+@media (max-width: 1039px) {
+  .welcome__hero {
+    padding: 32px 40px;
+    border-right: 0;
+    border-bottom: var(--border-ink);
+  }
+  .welcome__title {
+    font-size: 44px;
+  }
+  .welcome-art {
+    display: none;
+  }
+}
+
+/* Short windows: no illustration, so the hero never scrolls. */
+@media (max-height: 739px) {
+  .welcome-art {
+    display: none;
+  }
+}
+
+/* The illustration */
+.welcome-art {
+  --sample-teal: #0e7c7b;
+  --sample-ink: #12263a;
+  --sample-line: #e3e7ea;
+  position: relative;
+  height: 230px;
+  max-width: 520px;
+  margin-top: auto;
+}
+
+.welcome-art__card {
+  position: absolute;
+  width: 300px;
+  aspect-ratio: 16 / 9;
+  border: var(--border-ink);
+  border-radius: var(--radius-10);
+  background: var(--white);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.welcome-art__card--back {
+  left: 40px;
+  top: 30px;
+  transform: rotate(-7deg);
+}
+
+.welcome-art__card--front {
+  left: 140px;
+  top: 14px;
+  transform: rotate(4deg);
+  overflow: hidden;
+  font-family: var(--font);
+}
+
+.welcome-art__bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: var(--sample-teal);
+}
+
+.welcome-art__kicker {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  color: var(--sample-teal);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.welcome-art__title {
+  position: absolute;
+  left: 20px;
+  right: 16px;
+  top: 32px;
+  color: var(--sample-ink);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.welcome-art__accent {
+  color: var(--sample-teal);
+}
+
+.welcome-art__line {
+  position: absolute;
+  left: 20px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--sample-line);
+}
+
+.welcome-art__line--long {
+  bottom: 44px;
+  width: 50%;
+}
+
+.welcome-art__line--short {
+  bottom: 34px;
+  width: 38%;
+}
+
+.welcome-art__highlight {
+  position: absolute;
+  left: 20px;
+  right: 16px;
+  bottom: 12px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--yellow);
+}
+
+.welcome-art__loop {
+  position: absolute;
+  left: 330px;
+  top: 70px;
+  width: 110px;
+  height: 90px;
+  overflow: visible;
+  color: var(--orange);
+}

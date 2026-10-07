@@ -1,0 +1,74 @@
+.ui-menu {
+  position: fixed;
+  z-index: var(--z-popover);
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  padding: var(--space-6);
+  border: var(--border-ink);
+  border-radius: var(--radius-14);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  animation: ui-menu-pop var(--dur-base) var(--ease-spring);
+  transform-origin: top left;
+}
+
+.ui-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  min-height: var(--target-min);
+  padding: 0 var(--space-12);
+  border: 0;
+  border-radius: var(--radius-10);
+  background: transparent;
+  color: var(--ink);
+  font: 600 15px/1.2 var(--font);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--dur-fast) var(--ease);
+}
+
+.ui-menu__icon {
+  display: inline-flex;
+  flex: none;
+}
+.ui-menu__icon svg {
+  width: var(--icon-md);
+  height: var(--icon-md);
+}
+
+.ui-menu__item:hover,
+.ui-menu__item:focus-visible {
+  background: var(--surface-hover);
+}
+
+/* The ring would be clipped by the menu edge: draw it inside the item. */
+.ui-menu__item:focus-visible {
+  outline-offset: -3px;
+}
+
+.ui-menu__item--danger {
+  color: var(--danger-text);
+}
+
+.ui-menu__item[aria-disabled='true'] {
+  color: var(--text-placeholder);
+  cursor: not-allowed;
+}
+.ui-menu__item[aria-disabled='true']:hover {
+  background: transparent;
+}
+
+@keyframes ui-menu-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-menu {
+    animation: none;
+  }
+}

@@ -1,0 +1,28 @@
+/* The chip reads "Your style: Science KS3" (06 §5); the prefix is drawn, the accessible name already says it. */
+.editor-style-chip .sc__text::before {
+  content: 'Your style: ';
+}
+.editor-style-chip .sc__text[title='Plain style']::before {
+  content: '';
+}
+
+.editor-header .ui-page-header__center {
+  min-width: 0;
+}
+.editor-header .tf-shell--title {
+  max-width: min(560px, 100%);
+  margin-inline: auto;
+}
+
+/* The mockup (06-editor.png) shows the title as plain text; the dashed field and the pencil appear on hover and focus. */
+.editor-header .tf-box--title:not(:hover):not(:focus-within) {
+  border-color: transparent;
+}
+.editor-header .tf-box--title:not(:hover):not(:focus-within) .tf-adorn {
+  visibility: hidden;
+}
+
+/* A long title in a narrow header ends in an ellipsis instead of being cut mid-letter. */
+.editor-header .tf-box--title .tf-input {
+  text-overflow: ellipsis;
+}

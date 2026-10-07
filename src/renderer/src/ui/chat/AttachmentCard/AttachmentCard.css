@@ -1,0 +1,65 @@
+.ui-attach {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  min-width: 0;
+  padding: 8px 10px;
+  border: var(--border-ink);
+  border-radius: var(--radius-12);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.ui-attach__tile {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-8);
+  background: var(--white);
+}
+.ui-attach__tile[data-kind='pdf'] {
+  background: var(--file-pdf);
+}
+.ui-attach__tile[data-kind='pptx'] {
+  background: var(--file-pptx);
+}
+.ui-attach__tile[data-kind='docx'] {
+  background: var(--file-docx);
+}
+.ui-attach__tile[data-kind='image'] {
+  background: var(--lilac);
+}
+.ui-attach__tile[data-kind='file'] {
+  background: var(--lilac);
+}
+
+.ui-attach__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+.ui-attach__name {
+  max-width: 100%;
+  overflow: hidden;
+  font: 700 14px/1.3 var(--font);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ui-attach__type {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  color: var(--text-muted);
+  font: 400 12px/1.3 var(--font);
+}
+
+.ui-attach__actions {
+  display: inline-flex;
+  flex: none;
+  gap: var(--space-6);
+}

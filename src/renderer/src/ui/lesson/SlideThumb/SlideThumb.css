@@ -1,0 +1,125 @@
+.slide-thumb {
+  display: flex;
+  flex: 0 0 132px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+  width: 132px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+}
+
+button.slide-thumb {
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease);
+}
+button.slide-thumb:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-10);
+}
+button.slide-thumb:active {
+  transform: translate(var(--press), var(--press));
+}
+
+.slide-thumb__preview {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: var(--border-ink);
+  border-radius: var(--radius-10);
+  background: var(--white);
+  transition: box-shadow var(--dur-fast) var(--ease);
+}
+
+button.slide-thumb:hover .slide-thumb__preview {
+  box-shadow: var(--shadow-xs);
+}
+button.slide-thumb[data-selected] .slide-thumb__preview {
+  box-shadow: var(--shadow-accent);
+}
+
+.slide-thumb__badge {
+  display: inline-grid;
+  place-items: center;
+  box-sizing: border-box;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 4px;
+  border: var(--border-ink);
+  border-radius: var(--radius-6);
+  background: var(--white);
+  font: 700 12px/1 var(--font);
+  transition: background-color var(--dur-fast) var(--ease);
+}
+button.slide-thumb[data-selected] .slide-thumb__badge {
+  background: var(--orange);
+}
+
+/* ---- variants ---------------------------------------------------------------------------- */
+
+/* card: fills the LessonCard, which supplies the border and radius. */
+.slide-thumb[data-variant='card'] {
+  flex: 1 1 auto;
+  width: 100%;
+}
+.slide-thumb[data-variant='card'] .slide-thumb__preview {
+  border: 0;
+  border-radius: 0;
+}
+
+.slide-thumb[data-variant='placeholder'] .slide-thumb__preview,
+.slide-thumb[data-variant='generating'] .slide-thumb__preview {
+  border: var(--border-placeholder);
+  background: transparent;
+}
+.slide-thumb[data-variant='generating'] .slide-thumb__preview {
+  animation: slide-thumb-pulse var(--dur-loop) var(--ease) infinite;
+}
+
+@keyframes slide-thumb-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ---- states ------------------------------------------------------------------------------ */
+
+.slide-thumb[data-dragging] {
+  opacity: 0.45;
+}
+
+.slide-thumb[data-reveal] {
+  animation: slide-thumb-reveal var(--dur-slow) var(--ease-spring) both;
+  animation-delay: calc(var(--reveal-index, 0) * var(--stagger));
+}
+
+@keyframes slide-thumb-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-thumb[data-variant='generating'] .slide-thumb__preview {
+    animation: none;
+  }
+  .slide-thumb[data-reveal] {
+    animation: none;
+  }
+}

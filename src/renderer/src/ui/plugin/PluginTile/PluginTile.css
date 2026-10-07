@@ -1,0 +1,102 @@
+.plugin-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+  min-height: 76px;
+  padding: 12px;
+  border: var(--border-ink);
+  border-radius: var(--radius-14);
+  background: var(--white);
+  color: var(--ink);
+  font: var(--type-label);
+  text-align: left;
+  cursor: pointer;
+}
+
+.plugin-tile[data-tone='peach'] {
+  background: var(--peach);
+}
+.plugin-tile[data-tone='sky'] {
+  background: var(--sky);
+}
+.plugin-tile[data-tone='mint'] {
+  background: var(--mint-soft);
+}
+.plugin-tile[data-tone='butter'] {
+  background: var(--butter-2);
+}
+.plugin-tile[data-tone='purple-soft'] {
+  background: var(--purple-soft);
+}
+.plugin-tile[data-tone='more'] {
+  border-style: dashed;
+  background: var(--white);
+}
+
+.plugin-tile__name {
+  font: 700 15px/1.2 var(--font);
+}
+
+.plugin-tile__desc {
+  color: var(--text-muted-2);
+  font: var(--type-caption);
+}
+
+.plugin-tile:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.plugin-tile[aria-disabled='true'] {
+  border-style: dashed;
+  border-color: var(--line-muted);
+  background: var(--white);
+  color: var(--text-placeholder);
+  cursor: not-allowed;
+}
+
+.plugin-tile[aria-disabled='true'] .plugin-tile__desc {
+  color: var(--text-placeholder);
+}
+
+/* The tooltip host must not shrink the tile inside the grid. */
+.ui-tooltip-host:has(> .plugin-tile) {
+  display: block;
+  min-width: 0;
+}
+
+/* The built-in "Add asset" tile: a wide row with a white icon box and the dark "New" pill. */
+.plugin-tile--asset {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-12);
+  min-height: 0;
+  box-shadow: var(--shadow-xs);
+}
+.plugin-tile__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: var(--border-ink);
+  border-radius: var(--radius-12);
+  background: var(--white);
+}
+.plugin-tile__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.plugin-tile__new {
+  flex: none;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--white);
+  font: 800 12px/1 var(--font);
+}

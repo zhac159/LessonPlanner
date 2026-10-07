@@ -1,0 +1,97 @@
+/* Takes over the ChatPanel box: same size, border, radius and shadow. */
+.plugin-sheet {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  border: var(--border-ink);
+  border-radius: var(--radius-22);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: var(--shadow-lg);
+  animation: plugin-sheet-in 200ms var(--ease);
+}
+
+@keyframes plugin-sheet-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plugin-sheet {
+    animation: none;
+  }
+}
+
+.plugin-sheet__title {
+  display: inline-block;
+}
+.plugin-sheet__title:focus {
+  outline: none;
+}
+.plugin-sheet__title:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.plugin-sheet__form {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 20px;
+  min-height: 0;
+  padding: 18px;
+  overflow-y: auto;
+}
+
+.plugin-sheet__field {
+  min-width: 0;
+}
+
+.plugin-sheet__error {
+  margin: 6px 0 0;
+  color: var(--danger-text);
+  font: var(--type-small);
+}
+
+.plugin-sheet__footer {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 18px 18px;
+  border-top: 2px solid var(--divider);
+}
+
+.plugin-sheet__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.plugin-sheet__spacer {
+  flex: 1;
+}
+
+.plugin-sheet__helper {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-caption);
+}
+
+.plugin-sheet__estimate {
+  margin: 0;
+  color: var(--text-muted);
+  font: 400 12px/1.3 var(--font);
+  text-align: right;
+}
+
+/* The primary "Make …" button: 800 16px, 3px offset shadow, 20px side padding (07 §3). */
+.plugin-sheet__actions .ui-button[data-variant='primary'] {
+  padding: 0 20px;
+  font: var(--type-button-lg);
+  box-shadow: var(--shadow-sm);
+}

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Early direction A — Studio</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F3F4F6}
+a{color:#2F4BDB}a:hover{color:#1F35A8}
+button{font:inherit;color:inherit;cursor:pointer}
+textarea{font:inherit;color:inherit}
+</style>
+</helmet>
+<div style="min-height: 900px; display: flex; flex-direction: column; background: #F3F4F6; color: #16181D; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 14px">
+
+  <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 10px 16px; background: #FFFFFF; border-bottom: 1px solid #E3E5EA">
+    <button type="button" aria-label="Back to library" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid #E3E5EA; border-radius: 10px; background: #FFFFFF">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+    </button>
+    <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+      <div style="font-weight: 600; font-size: 15px">Y8 Science — Photosynthesis</div>
+      <div style="font-size: 12px; color: #5F6672">Saved · 8 slides</div>
+    </div>
+    <div style="flex: 1"></div>
+    <button type="button" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 1px solid #E3E5EA; border-radius: 999px; background: #FFFFFF">
+      <span style="width: 10px; height: 10px; border-radius: 50%; background: #0E7C7B"></span>
+      <span>Your style: Science</span>
+    </button>
+    <button type="button" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border: 1px solid #E3E5EA; border-radius: 10px; background: #FFFFFF; font-weight: 500">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4l13 8-13 8z"></path></svg>
+      Present
+    </button>
+    <button type="button" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border: 0; border-radius: 10px; background: #2F4BDB; color: #FFFFFF; font-weight: 600">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg>
+      Export .pptx
+    </button>
+  </header>
+
+  <div style="flex: 1; display: flex; flex-wrap: wrap; align-items: stretch">
+
+    <nav aria-label="Slides" style="flex: 1 1 184px; display: flex; flex-direction: column; gap: 4px; padding: 16px 12px; background: #FFFFFF; border-right: 1px solid #E3E5EA">
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 4px 8px">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5F6672">Slides</span>
+        <button type="button" aria-label="Add slide" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: #F3F4F6">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        </button>
+      </div>
+      <sc-for list="{{slides}}" as="s" hint-placeholder-count="8">
+        <button type="button" aria-label="{{s.label}}" style="display: flex; gap: 8px; align-items: flex-start; width: 100%; padding: 6px; border: 0; border-radius: 8px; background: {{s.bg}}; text-align: left">
+          <span style="width: 16px; font-size: 12px; color: #5F6672; padding-top: 2px">{{s.n}}</span>
+          <span style="flex: 1; display: block; aspect-ratio: 16 / 9; position: relative; overflow: hidden; background: #FFFFFF; border: {{s.ring}}; border-radius: 4px">
+            <span style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #0E7C7B"></span>
+            <span style="position: absolute; left: 10px; top: 8px; right: 8px; font-family: 'Lexend', sans-serif; font-size: 8px; font-weight: 600; line-height: 1.2; color: #12263A">{{s.t}}</span>
+            <span style="position: absolute; left: 10px; bottom: 13px; width: 55%; height: 3px; border-radius: 2px; background: #E3E7EA"></span>
+            <span style="position: absolute; left: 10px; bottom: 7px; width: 38%; height: 3px; border-radius: 2px; background: #E3E7EA"></span>
+          </span>
+        </button>
+      </sc-for>
+    </nav>
+
+    <main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 20px 28px">
+      <div role="toolbar" aria-label="Canvas tools" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 4px; background: #FFFFFF; border: 1px solid #E3E5EA; border-radius: 12px; box-shadow: 0 1px 2px rgba(16,24,40,.05)">
+        <button type="button" aria-label="Select" style="width: 44px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: transparent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 7-6 2-2 6z"></path></svg>
+        </button>
+        <button type="button" aria-pressed="true" style="height: 40px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border: 0; border-radius: 8px; background: #E8ECFC; color: #1F35A8; font-weight: 600">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 4c5 0 8 2.7 8 6.5S16.5 17 12 17s-8-2.7-8-6.5C4 7 7 4 12 4z"></path><path d="M8 16c-1 2-1 3.5.5 5"></path></svg>
+          Circle to edit
+        </button>
+        <button type="button" aria-label="Draw" style="width: 44px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: transparent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"></path></svg>
+        </button>
+        <button type="button" aria-label="Text" style="width: 44px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: transparent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 6V4h14v2M12 4v16M9 20h6"></path></svg>
+        </button>
+        <button type="button" aria-label="Comment" style="width: 44px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: transparent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path></svg>
+        </button>
+        <span style="width: 1px; height: 24px; background: #E3E5EA; margin: 0 4px"></span>
+        <button type="button" aria-label="Undo" style="width: 44px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: transparent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14L4 9l5-5"></path><path d="M4 9h11a5 5 0 0 1 0 10h-3"></path></svg>
+        </button>
+        <button type="button" aria-label="Redo" style="width: 44px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 8px; background: transparent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14l5-5-5-5"></path><path d="M20 9H9a5 5 0 0 0 0 10h3"></path></svg>
+        </button>
+        <span style="padding: 0 10px; font-size: 13px; color: #5F6672">100%</span>
+      </div>
+
+      <div style="width: 100%; max-width: 880px; aspect-ratio: 16 / 9; container-type: inline-size; position: relative; overflow: hidden; background: #FFFFFF; border-radius: 6px; box-shadow: 0 1px 2px rgba(16,24,40,.06), 0 8px 24px rgba(16,24,40,.08); font-family: 'Lexend', sans-serif; color: #12263A">
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 1.4cqw; background: #0E7C7B"></div>
+        <div style="position: absolute; inset: 0; padding: 4.5cqw 5cqw 4cqw 6.5cqw; display: flex; flex-direction: column; gap: 2cqw">
+          <div style="font-size: 1.4cqw; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #0E7C7B">Lesson 3 · Photosynthesis</div>
+          <h2 style="margin: 0; font-size: 4.2cqw; line-height: 1.1; font-weight: 700">What do plants need to <span style="color: #0E7C7B">make food?</span></h2>
+          <div style="flex: 1; display: flex; gap: 4cqw; min-height: 0">
+            <div style="flex: 1.3; display: flex; flex-direction: column; gap: 1.6cqw">
+              <div style="font-size: 1.7cqw; font-weight: 700">Today I will…</div>
+              <div style="display: flex; gap: 1.2cqw; align-items: flex-start; font-size: 1.9cqw; line-height: 1.35"><span style="flex: none; width: 1.8cqw; height: 1.8cqw; margin-top: .3cqw; border: .25cqw solid #0E7C7B; border-radius: .3cqw"></span>Describe where photosynthesis happens in a plant</div>
+              <div style="display: flex; gap: 1.2cqw; align-items: flex-start; font-size: 1.9cqw; line-height: 1.35"><span style="flex: none; width: 1.8cqw; height: 1.8cqw; margin-top: .3cqw; border: .25cqw solid #0E7C7B; border-radius: .3cqw"></span>Write the word equation for photosynthesis</div>
+              <div style="display: flex; gap: 1.2cqw; align-items: flex-start; font-size: 1.9cqw; line-height: 1.35"><span style="flex: none; width: 1.8cqw; height: 1.8cqw; margin-top: .3cqw; border: .25cqw solid #0E7C7B; border-radius: .3cqw"></span>Explain why photosynthesis is endothermic</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 1cqw; margin-top: auto">
+                <span style="padding: .6cqw 1.4cqw; border-radius: 99px; background: #E3F2F1; color: #0B5E5D; font-size: 1.6cqw; font-weight: 600">chlorophyll</span>
+                <span style="padding: .6cqw 1.4cqw; border-radius: 99px; background: #E3F2F1; color: #0B5E5D; font-size: 1.6cqw; font-weight: 600">glucose</span>
+                <span style="padding: .6cqw 1.4cqw; border-radius: 99px; background: #E3F2F1; color: #0B5E5D; font-size: 1.6cqw; font-weight: 600">endothermic</span>
+              </div>
+            </div>
+            <div style="flex: 1; display: flex; align-items: center; justify-content: center; background: #E6EEEC; border-radius: 1cqw; color: #4A5A5F; font-size: 1.5cqw">Photo: leaf in sunlight</div>
+          </div>
+          <div style="padding: 1.6cqw 2cqw; border-radius: 1cqw; background: #FFE36E; font-size: 1.9cqw"><strong>Mini-whiteboards:</strong> What do you think a plant “eats”?</div>
+        </div>
+        <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none" style="position: absolute; left: 56%; top: 28%; width: 41%; height: 51%; overflow: visible"><path d="M52 4 C82 3 98 24 97 51 C96 80 74 97 47 96 C19 95 3 77 4 48 C5 21 25 5 58 7" fill="none" stroke="#2F4BDB" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg>
+        <div style="position: absolute; left: 55%; top: 25%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #2F4BDB; color: #FFFFFF; font-family: 'Instrument Sans', sans-serif; font-size: 13px; font-weight: 700; box-shadow: 0 0 0 3px #FFFFFF">1</div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; color: #5F6672; font-size: 13px">
+        <span>Circle anything on the slide, then tell the assistant what to change.</span>
+      </div>
+    </main>
+
+    <aside aria-label="Assistant" style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; background: #FFFFFF; border-left: 1px solid #E3E5EA">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 14px 16px; border-bottom: 1px solid #E3E5EA">
+        <div style="flex: 1">
+          <div style="font-weight: 600; font-size: 15px">Assistant</div>
+          <div style="font-size: 12px; color: #5F6672">Writing in your Science style</div>
+        </div>
+        <button type="button" aria-label="New chat" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 10px; background: transparent">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"></path><path d="M14 7l3 3"></path></svg>
+        </button>
+      </div>
+
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 18px; padding: 18px 16px; overflow: auto">
+        <div style="align-self: flex-end; max-width: 88%; display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; border-radius: 14px 14px 4px 14px; background: #EEF1FD">
+          <div style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: #FFFFFF; border: 1px solid #DCE2FA; border-radius: 10px">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F4BDB" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"></path><path d="M14 3v5h5"></path></svg>
+            <div>
+              <div style="font-weight: 600; font-size: 13px">Y8 Photosynthesis LOs.docx</div>
+              <div style="font-size: 12px; color: #5F6672">Word document</div>
+            </div>
+          </div>
+          <div>Can you build tomorrow’s lesson from these? 50 minutes, mixed-ability Year 8.</div>
+        </div>
+
+        <div style="display: flex; gap: 10px">
+          <div style="flex: none; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #2F4BDB; color: #FFFFFF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"></path></svg>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; line-height: 1.5">
+            <div>Done — 8 slides in your Science style. I followed your usual flow: Do Now, objectives as tick-boxes, key word chips and a yellow mini-whiteboard prompt on each content slide.</div>
+            <div style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid #E3E5EA; border-radius: 10px">
+              <div style="flex: 1">
+                <div style="font-weight: 600; font-size: 13px">8 slides added</div>
+                <div style="font-size: 12px; color: #5F6672">Slides 1–8 · Photosynthesis</div>
+              </div>
+              <button type="button" style="height: 36px; padding: 0 12px; border: 1px solid #E3E5EA; border-radius: 8px; background: #FFFFFF; font-weight: 500">Undo</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="align-self: flex-end; max-width: 88%; display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; border-radius: 14px 14px 4px 14px; background: #EEF1FD">
+          <span style="align-self: flex-start; display: flex; align-items: center; gap: 6px; padding: 3px 8px 3px 3px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2FA; font-size: 12px; font-weight: 600; color: #1F35A8">
+            <span style="width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #2F4BDB; color: #FFFFFF; font-size: 11px">1</span>
+            Region on slide 3
+          </span>
+          <div>Swap this photo for a labelled diagram of a leaf cross-section.</div>
+        </div>
+
+        <div style="display: flex; gap: 10px">
+          <div style="flex: none; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #2F4BDB; color: #FFFFFF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"></path></svg>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">
+            <div style="font-size: 14px">Redrawing slide 3…</div>
+            <div style="display: flex; align-items: center; gap: 8px; color: #5F6672"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>Read the circled area</div>
+            <div style="display: flex; align-items: center; gap: 8px; color: #16181D"><span style="width: 12px; height: 12px; margin: 2px; border: 2px solid #C9D1F6; border-top-color: #2F4BDB; border-radius: 50%"></span>Drawing leaf cross-section</div>
+            <div style="display: flex; align-items: center; gap: 8px; color: #5F6672"><span style="width: 12px; height: 12px; margin: 2px; border: 2px solid #D5D8DE; border-radius: 50%"></span>Matching your label style</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="position: relative; padding: 12px 16px 16px">
+        <div role="menu" aria-label="Plugins" style="position: absolute; left: 16px; bottom: calc(100% - 4px); width: 320px; max-width: calc(100% - 32px); display: flex; flex-direction: column; padding: 6px; background: #FFFFFF; border: 1px solid #E3E5EA; border-radius: 14px; box-shadow: 0 12px 32px rgba(16,24,40,.14), 0 2px 6px rgba(16,24,40,.06)">
+          <div style="padding: 8px 10px 6px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #5F6672">Add to this lesson</div>
+          <button type="button" role="menuitem" style="display: flex; gap: 12px; align-items: flex-start; padding: 10px; border: 0; border-radius: 10px; background: #F3F5FE; text-align: left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F4BDB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6h10M10 12h10M10 18h10"></path><path d="M3.5 6l1.5 1.5L7.5 5M3.5 12l1.5 1.5 2.5-2.5M3.5 18l1.5 1.5 2.5-2.5"></path></svg>
+            <span><span style="display: block; font-weight: 600">Quiz from slides</span><span style="display: block; font-size: 12px; color: #5F6672">Quick-check questions in your format</span></span>
+          </button>
+          <button type="button" role="menuitem" style="display: flex; gap: 12px; align-items: flex-start; padding: 10px; border: 0; border-radius: 10px; background: transparent; text-align: left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F4BDB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><path d="M16 4.5a3 3 0 0 1 0 6"></path><path d="M18 14c2 .8 3 3 3 6"></path></svg>
+            <span><span style="display: block; font-weight: 600">Differentiate</span><span style="display: block; font-size: 12px; color: #5F6672">Support and stretch versions of a slide</span></span>
+          </button>
+          <button type="button" role="menuitem" style="display: flex; gap: 12px; align-items: flex-start; padding: 10px; border: 0; border-radius: 10px; background: transparent; text-align: left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F4BDB" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>
+            <span><span style="display: block; font-weight: 600">Worksheet</span><span style="display: block; font-size: 12px; color: #5F6672">A printable sheet that matches the slides</span></span>
+          </button>
+          <button type="button" role="menuitem" style="display: flex; gap: 12px; align-items: flex-start; padding: 10px; border: 0; border-radius: 10px; background: transparent; text-align: left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F4BDB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 9h8M8 13h8M8 17h5"></path></svg>
+            <span><span style="display: block; font-weight: 600">Speaker notes</span><span style="display: block; font-size: 12px; color: #5F6672">Notes in your voice for every slide</span></span>
+          </button>
+          <button type="button" role="menuitem" style="display: flex; gap: 12px; align-items: flex-start; padding: 10px; border: 0; border-radius: 10px; background: transparent; text-align: left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2F4BDB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 2.5M9 2h6"></path></svg>
+            <span><span style="display: block; font-weight: 600">Starter &amp; plenary</span><span style="display: block; font-size: 12px; color: #5F6672">Timed activities to open and close</span></span>
+          </button>
+          <div style="height: 1px; margin: 6px 4px; background: #E3E5EA"></div>
+          <button type="button" role="menuitem" style="display: flex; gap: 12px; align-items: center; padding: 10px; border: 0; border-radius: 10px; background: transparent; text-align: left; color: #5F6672">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"></path></svg>
+            <span style="font-weight: 500">Manage plugins</span>
+          </button>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; padding: 10px; border: 1px solid #C9D1F6; border-radius: 14px; background: #FFFFFF; box-shadow: 0 0 0 3px #EEF1FD">
+          <span style="align-self: flex-start; display: flex; align-items: center; gap: 6px; padding: 3px 4px 3px 3px; border-radius: 999px; background: #EEF1FD; font-size: 12px; font-weight: 600; color: #1F35A8">
+            <span style="width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #2F4BDB; color: #FFFFFF; font-size: 11px">1</span>
+            Region on slide 3
+            <button type="button" aria-label="Remove region" style="width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #1F35A8">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+            </button>
+          </span>
+          <label for="msgA" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Message the assistant</label>
+          <textarea id="msgA" rows="2" placeholder="Ask for changes, or paste learning objectives…" style="width: 100%; box-sizing: border-box; border: 0; outline: none; resize: none; padding: 4px; background: transparent; font-size: 14px; line-height: 1.5"></textarea>
+          <div style="display: flex; align-items: center; gap: 6px">
+            <button type="button" aria-label="Plugins" aria-expanded="true" aria-haspopup="menu" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 10px; background: #2F4BDB; color: #FFFFFF">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </button>
+            <button type="button" aria-label="Attach a file" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 10px; background: transparent; color: #5F6672">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5l-8.6 8.6a5 5 0 0 1-7.1-7.1l8.6-8.6a3.5 3.5 0 0 1 5 5l-8.6 8.6a2 2 0 0 1-2.8-2.8l7.9-7.9"></path></svg>
+            </button>
+            <div style="flex: 1"></div>
+            <button type="button" aria-label="Send" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; border-radius: 10px; background: #16181D; color: #FFFFFF">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":940}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const titles = ['Title', 'Do Now', 'What do plants need?', 'Key words', 'The word equation', 'Practical: leaf starch test', 'Check for understanding', 'Plenary'];
+    const active = 3;
+    return {
+      slides: titles.map((t, i) => ({
+        n: i + 1,
+        t: t,
+        label: 'Slide ' + (i + 1) + ': ' + t,
+        bg: i + 1 === active ? '#EEF1FD' : 'transparent',
+        ring: i + 1 === active ? '2px solid #2F4BDB' : '1px solid #E3E5EA'
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

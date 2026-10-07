@@ -1,0 +1,67 @@
+appId: com.slideplanner.desktop
+productName: Slide Planner
+copyright: Slide Planner
+
+directories:
+  buildResources: resources
+  output: release
+
+# electron-vite bundles the app AND almost every dependency into out/. Only the packages listed under
+# "dependencies" in package.json stay outside the bundle and are packed from node_modules:
+#   @resvg/resvg-js  native .node file (SVG to PNG for the PowerPoint export)
+#   pdfjs-dist       loads its worker file (pdf.worker.mjs) by relative path (PDF import, picture extraction);
+#                    its JPEG decoder (legacy/image_decoders) is imported by name from the asset extraction
+# Everything below keeps those two small and drops what the app never reads.
+files:
+  - out/**/*
+  - package.json
+  - '!**/*.map'
+  - '!**/*.d.ts'
+  - '!**/*.d.mts'
+  # pdfjs-dist: the app uses legacy/build/pdf.mjs and pdf.worker.mjs (text and picture extraction, no rendering) and
+  # legacy/image_decoders/pdf.image_decoders.mjs (the JPEG decoder of decode.ts: without it every JPEG in a deck reads as
+  # "unreadable"; scripts/e2e/packaged.e2e.mjs proves it).
+  - '!node_modules/pdfjs-dist/{build,web,types,image_decoders,cmaps,iccs,standard_fonts,wasm}/**'
+  - '!node_modules/pdfjs-dist/legacy/web/**'
+  - '!node_modules/pdfjs-dist/legacy/image_decoders/*.min.mjs'
+  - '!node_modules/pdfjs-dist/webpack.mjs'
+  - '!node_modules/pdfjs-dist/legacy/build/*.min.mjs'
+  - '!node_modules/pdfjs-dist/legacy/build/pdf.sandbox.mjs'
+  # Optional canvas polyfill of pdfjs (23 MB native); only needed to render PDF pages, which we never do.
+  - '!node_modules/@napi-rs/**'
+
+asar: true
+# Files that must be real files on disk: the native module is unpacked automatically; pdfjs imports its
+# worker with a relative import(), which does not work inside the archive.
+asarUnpack:
+  - node_modules/pdfjs-dist/legacy/build/**
+  - node_modules/pdfjs-dist/legacy/image_decoders/**
+  - node_modules/@resvg/**
+
+# Only the languages the app can show; saves ~40 MB of Chromium locale files.
+electronLanguages:
+  - en-GB
+  - en-US
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: resources/icon.png
+
+nsis:
+  oneClick: false
+  # Per-user install: the default folder is %LOCALAPPDATA%\Programs\Slide Planner, which the user can write to.
+  # The app keeps all its data in <install folder>\data, so it must never default to C:\Program Files.
+  perMachine: false
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  artifactName: SlidePlanner-Setup-${version}.${ext}
+  deleteAppDataOnUninstall: false
+  # DATA SAFETY. All data lives in <install folder>\data. The stock uninstaller (and the old uninstaller that runs on
+  # every update) deletes the whole install folder, so this include replaces that step: update never touches
+  # data, uninstall keeps it unless she answers No. Verified by build/verify-installer.mjs.
+  include: build/installer.nsh

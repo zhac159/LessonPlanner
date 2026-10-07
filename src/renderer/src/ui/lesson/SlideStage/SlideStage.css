@@ -1,0 +1,58 @@
+.slide-stage {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: var(--border-ink);
+  border-radius: var(--radius-14);
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  container-type: inline-size;
+}
+
+.slide-stage[data-cursor='crosshair'] {
+  cursor: crosshair;
+}
+.slide-stage[data-cursor='text'] {
+  cursor: text;
+}
+
+.slide-stage__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.slide-stage__skeleton {
+  position: absolute;
+  inset: 0;
+  background: var(--ground);
+  animation: slide-stage-pulse var(--dur-loop) var(--ease) infinite;
+}
+
+@keyframes slide-stage-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* With an `empty` node the frame steps aside (the screen's EmptyState draws its own dashed box). */
+.slide-stage[data-bare] {
+  aspect-ratio: auto;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-stage__skeleton {
+    animation: none;
+  }
+}

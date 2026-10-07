@@ -1,0 +1,32 @@
+.stage-preview {
+  position: absolute;
+  z-index: 3;
+  box-sizing: border-box;
+  border: 2px dashed var(--orange);
+  pointer-events: none;
+}
+
+.stage-preview__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* The note keeps its own width, under the box; near a side edge it is pinned to that edge. */
+.stage-preview > .stage-preview__tag {
+  position: absolute;
+  top: calc(100% + var(--space-4));
+  left: 50%;
+  width: max-content;
+  max-width: none;
+  transform: translateX(-50%);
+}
+.stage-preview[data-anchor='start'] > .stage-preview__tag {
+  left: 0;
+  transform: none;
+}
+.stage-preview[data-anchor='end'] > .stage-preview__tag {
+  right: 0;
+  left: auto;
+  transform: none;
+}

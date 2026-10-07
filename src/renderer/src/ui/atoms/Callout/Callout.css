@@ -1,0 +1,73 @@
+.ui-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-10);
+  padding: var(--space-14) var(--space-16);
+  border: var(--border-ink);
+  border-radius: var(--radius-16);
+  background: var(--info);
+  color: var(--ink);
+  font: var(--type-small);
+}
+
+.ui-callout__icon {
+  display: inline-flex;
+  flex: none;
+  padding-top: 1px;
+}
+
+.ui-callout__body {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.ui-callout__title {
+  margin: 0;
+  font: var(--type-label-strong);
+}
+
+.ui-callout__text {
+  line-height: var(--lh-body);
+}
+
+.ui-callout__action {
+  flex: none;
+  align-self: center;
+}
+
+/* soft: no border */
+.ui-callout[data-variant='soft'] {
+  padding: var(--space-12) var(--space-14);
+  border-color: transparent;
+  border-radius: var(--radius-14);
+}
+
+/* tip: dashed hint pill */
+.ui-callout[data-variant='tip'] {
+  align-items: center;
+  padding: var(--space-8) var(--space-14);
+  border: var(--border-dashed);
+  border-radius: var(--radius-pill);
+  background: var(--butter);
+  font-weight: var(--fw-semibold);
+}
+.ui-callout[data-variant='tip'] .ui-callout__icon {
+  padding-top: 0;
+}
+
+/* action: asks for something */
+.ui-callout[data-variant='action'] {
+  align-items: center;
+  background: var(--butter);
+}
+
+.ui-callout[data-variant='warning'] {
+  background: var(--butter-2);
+}
+
+.ui-callout[data-variant='error'] {
+  background: var(--danger);
+}

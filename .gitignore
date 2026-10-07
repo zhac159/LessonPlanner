@@ -1,0 +1,19 @@
+node_modules/
+out/
+release/
+dist/
+.artifacts/
+*.log
+.DS_Store
+Thumbs.db
+data/
+keyt.txt
+googlekey.txt
+
+# The teacher's real example decks (school logo, licensed scheme material): never commit
+example/
+
+# Build/tool leftovers
+*.tsbuildinfo
+.playwright-mcp/
+.claude/settings.local.json

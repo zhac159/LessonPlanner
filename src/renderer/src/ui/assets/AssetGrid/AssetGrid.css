@@ -1,0 +1,52 @@
+.as-grid-wrap {
+  display: grid;
+  gap: var(--space-12);
+  min-width: 0;
+}
+.as-grid {
+  display: grid;
+  gap: var(--space-16);
+  /* room for the offset shadows of the cards */
+  padding: 0 var(--space-6) var(--space-6) 0;
+}
+.as-grid[data-layout='cards'] {
+  grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+}
+.as-grid[data-layout='tiles'] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-8);
+}
+.as-grid[data-layout='results'] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.as-grid__cell {
+  display: grid;
+  min-width: 0;
+  /* Far-away cells are not laid out or painted: the cheap half of windowing. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
+}
+.as-grid[data-layout='tiles'] .as-grid__cell {
+  contain-intrinsic-size: auto 88px;
+}
+.as-grid__cell > * {
+  min-width: 0;
+}
+.as-grid__more {
+  justify-self: center;
+  min-height: var(--target-min);
+  padding: 0 var(--space-20);
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--ink);
+  font: var(--type-button);
+  cursor: pointer;
+}
+.as-grid__more:hover {
+  background: var(--surface-hover);
+}
+.as-grid__more:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}

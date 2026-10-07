@@ -1,0 +1,10 @@
+.ui-avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border: var(--border-ink);
+  border-radius: 50%;
+  background: var(--purple-soft);
+  color: var(--ink);
+  font: 800 15px/1 var(--font);
+}

@@ -1,0 +1,87 @@
+.ui-icon-button {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--control-md);
+  height: var(--control-md);
+  padding: 0;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+
+.ui-icon-button[data-variant='square'] {
+  border-radius: var(--radius-12);
+}
+
+.ui-icon-button[data-variant='ghost'] {
+  width: 36px;
+  height: 36px;
+  border-color: transparent;
+  border-radius: var(--radius-10);
+  background: transparent;
+  color: var(--text-muted);
+}
+
+/* Ghost keeps a 44px hit area. */
+.ui-icon-button[data-variant='ghost']::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+}
+
+.ui-icon-button__icon {
+  display: inline-flex;
+}
+.ui-icon-button__icon svg {
+  width: var(--icon-lg);
+  height: var(--icon-lg);
+}
+.ui-icon-button[data-variant='ghost'] .ui-icon-button__icon svg {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+
+/* flat: round and square */
+.ui-icon-button:not([data-variant='ghost']):not(:disabled):hover {
+  box-shadow: var(--shadow-xs);
+}
+.ui-icon-button:not([data-variant='ghost']):not(:disabled):active {
+  transform: translate(var(--press), var(--press));
+  box-shadow: var(--shadow-none);
+  transition-duration: var(--dur-press);
+}
+
+/* ghost */
+.ui-icon-button[data-variant='ghost']:not(:disabled):hover {
+  background: var(--surface-hover);
+  color: var(--ink);
+}
+.ui-icon-button[data-variant='ghost']:not(:disabled):active {
+  background: var(--surface-pressed);
+}
+
+/* toggled / expanded */
+.ui-icon-button[aria-pressed='true'],
+.ui-icon-button[aria-expanded='true'] {
+  background: var(--orange);
+  color: var(--ink);
+}
+
+.ui-icon-button:disabled {
+  border-color: var(--line-muted);
+  background: transparent;
+  color: var(--text-placeholder);
+  cursor: not-allowed;
+}
+.ui-icon-button[data-variant='ghost']:disabled {
+  border-color: transparent;
+  color: var(--line-muted);
+}

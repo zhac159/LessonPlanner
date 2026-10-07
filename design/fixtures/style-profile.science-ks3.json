@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "id": "sty_science_ks3",
+  "name": "Science KS3",
+  "version": 3,
+  "isDefault": true,
+  "status": "ready",
+  "tokens": {
+    "colors": {
+      "background": { "hex": "#FFFFFF", "label": "White", "usage": "Slide background" },
+      "text": { "hex": "#12263A", "label": "Navy", "usage": "Body text and titles" },
+      "accent": { "hex": "#0E7C7B", "label": "Teal", "usage": "Last words of titles, kicker, left band, tick-boxes" },
+      "highlight": { "hex": "#FFE36E", "label": "Yellow", "usage": "Mini-whiteboard question boxes" },
+      "chipBg": { "hex": "#E3F2F1", "label": "Mint", "usage": "Key word chip background" },
+      "chipText": { "hex": "#0B5E5D", "label": "Dark teal", "usage": "Key word chip text" },
+      "placeholder": { "hex": "#E6EEEC", "label": "Pale sage", "usage": "Picture placeholders" },
+      "muted": { "hex": "#4A5A5F", "label": "Grey", "usage": "Captions" }
+    },
+    "fonts": {
+      "title": { "family": "Lexend", "weight": 700, "sizePt": 40, "sizeRangePt": [40, 44], "fallbackStack": "'Lexend', 'Segoe UI', sans-serif", "available": true },
+      "body": { "family": "Lexend", "weight": 400, "sizePt": 20, "sizeRangePt": [20, 24], "fallbackStack": "'Lexend', 'Segoe UI', sans-serif", "available": true }
+    }
+  },
+  "components": {
+    "kicker": { "description": "Small uppercase teal label above the title: 'Lesson 3 · Photosynthesis'", "font": "body", "sizePt": 13, "bold": true, "color": "token:accent", "uppercase": true, "letterSpacingEm": 0.12 },
+    "title": { "description": "Navy bold title; the last 1–3 words are teal", "font": "title", "sizePt": 40, "bold": true, "color": "token:text", "rules": ["twoToneTitle: last 1-3 words token:accent"] },
+    "heading": { "description": "Small bold heading inside a column, e.g. 'Today I will…'", "font": "body", "sizePt": 16, "bold": true, "color": "token:text" },
+    "body": { "description": "Body text", "font": "body", "sizePt": 18, "color": "token:text" },
+    "checklist": { "description": "Objectives as empty teal tick-boxes", "font": "body", "sizePt": 18, "color": "token:text", "rules": ["list: checkbox", "box colour token:accent"] },
+    "chip": { "description": "Rounded mint pill with dark teal bold text", "font": "body", "sizePt": 15, "bold": true, "color": "token:chipText", "fill": "token:chipBg", "radius": 999, "padding": [12, 27] },
+    "callout.mini-whiteboard": { "description": "Full-width yellow rounded box at the bottom; bold 'Mini-whiteboards:' label then a question", "font": "body", "sizePt": 18, "fill": "token:highlight", "color": "token:text", "radius": 19, "padding": [31, 38] },
+    "image.placeholder": { "description": "Pale sage rounded box with a centred grey caption", "fill": "token:placeholder", "color": "token:muted", "radius": 19 },
+    "decoration.leftBand": { "description": "Teal band down the left edge of every slide", "fill": "token:accent", "rules": ["shape rect x0 y0 w27 h1080, locked"] }
+  },
+  "layouts": [
+    {
+      "id": "title",
+      "name": "Title slide",
+      "usedFor": ["title"],
+      "regions": [
+        { "name": "kicker", "elementType": "text", "x": 125, "y": 380, "w": 1600, "h": 40, "styleRef": "kicker" },
+        { "name": "title", "elementType": "text", "x": 125, "y": 430, "w": 1600, "h": 220, "styleRef": "title" }
+      ],
+      "decorations": ["decoration.leftBand"]
+    },
+    {
+      "id": "content-text-left-image-right",
+      "name": "Text left, picture right, question box",
+      "usedFor": ["objectives", "content", "question"],
+      "regions": [
+        { "name": "kicker", "elementType": "text", "x": 125, "y": 86, "w": 1700, "h": 36, "styleRef": "kicker" },
+        { "name": "title", "elementType": "text", "x": 125, "y": 140, "w": 1700, "h": 110, "styleRef": "title" },
+        { "name": "heading", "elementType": "text", "x": 125, "y": 290, "w": 940, "h": 44, "styleRef": "heading", "optional": true },
+        { "name": "body", "elementType": "text", "x": 125, "y": 345, "w": 940, "h": 330, "styleRef": "body" },
+        { "name": "keywords", "elementType": "chips", "x": 125, "y": 740, "w": 940, "h": 60, "styleRef": "chip", "optional": true },
+        { "name": "image", "elementType": "image", "x": 1110, "y": 290, "w": 715, "h": 520, "styleRef": "image.placeholder" },
+        { "name": "callout", "elementType": "callout", "x": 125, "y": 860, "w": 1700, "h": 120, "styleRef": "callout.mini-whiteboard", "optional": true }
+      ],
+      "decorations": ["decoration.leftBand"]
+    },
+    {
+      "id": "key-words",
+      "name": "Key words",
+      "usedFor": ["key-words"],
+      "regions": [
+        { "name": "kicker", "elementType": "text", "x": 125, "y": 86, "w": 1700, "h": 36, "styleRef": "kicker" },
+        { "name": "title", "elementType": "text", "x": 125, "y": 140, "w": 1700, "h": 110, "styleRef": "title" },
+        { "name": "keywords", "elementType": "chips", "x": 125, "y": 300, "w": 1700, "h": 200, "styleRef": "chip" },
+        { "name": "callout", "elementType": "callout", "x": 125, "y": 860, "w": 1700, "h": 120, "styleRef": "callout.mini-whiteboard", "optional": true }
+      ],
+      "decorations": ["decoration.leftBand"]
+    }
+  ],
+  "slideTypes": [
+    { "kind": "title", "name": "Title", "frequency": "always", "description": "Kicker with lesson number and topic, two-tone title", "typicalPosition": "start" },
+    { "kind": "do-now", "name": "Do Now", "frequency": "always", "description": "3–5 retrieval questions on previous lessons, 5 minutes", "typicalPosition": "start" },
+    { "kind": "objectives", "name": "Learning objectives", "frequency": "always", "description": "'Today I will…' tick-boxes, key words, picture right", "typicalPosition": "start" },
+    { "kind": "key-words", "name": "Key words", "frequency": "often", "description": "Key words as chips, each defined on later slides" },
+    { "kind": "question", "name": "Mini-whiteboard question", "frequency": "often", "description": "Yellow box question for whole-class response", "typicalPosition": "repeated" },
+    { "kind": "practical", "name": "Practical method", "frequency": "sometimes", "description": "Numbered method steps with equipment list" },
+    { "kind": "exit-ticket", "name": "Exit ticket", "frequency": "often", "description": "Three short questions to answer before leaving", "typicalPosition": "end" }
+  ],
+  "lessonFlow": ["title", "do-now", "objectives", "key-words", "content", "question", "content", "practical", "check", "exit-ticket"],
+  "voice": {
+    "spelling": "en-GB",
+    "readingAge": "KS3: short, direct sentences",
+    "rules": [
+      "Objectives start with 'Today I will…'",
+      "Key words in bold, defined on their own slide",
+      "No full stops at the end of bullets",
+      "Questions address the class directly"
+    ],
+    "phrases": ["Mini-whiteboards:", "Today I will…", "Do Now", "Think, pair, share"],
+    "questionStyle": "Short direct questions, often with quotation marks for everyday words ('eats')"
+  },
+  "habits": [
+    "Two-colour titles: the last words in teal",
+    "A teal band down the left edge",
+    "Objectives as tick-boxes",
+    "Text left, picture right on content slides",
+    "A yellow question box at the bottom"
+  ],
+  "exemplars": [],
+  "sources": [
+    { "id": "src_01", "fileName": "Y8 Photosynthesis.pptx", "kind": "pptx", "pages": 14, "status": "learned", "addedAt": "2026-10-06T10:00:00Z" },
+    { "id": "src_02", "fileName": "Y7 Cells and organelles.pdf", "kind": "pdf", "pages": 18, "status": "learned", "addedAt": "2026-10-06T10:00:00Z" }
+  ],
+  "corrections": [
+    { "text": "I never use yellow on title slides", "at": "2026-10-06T10:20:00Z", "appliedInVersion": 3 }
+  ],
+  "confidence": { "colors": "high", "fonts": "high", "layouts": "medium", "voice": "medium", "slideTypes": "high" },
+  "createdAt": "2026-10-06T10:00:00Z",
+  "updatedAt": "2026-10-06T10:20:00Z"
+}

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Check found assets — Slide Planner</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Figtree:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F1EEFF}
+a{color:#1B1530}a:hover{color:#4E4766}
+button,select{font:inherit;color:inherit;cursor:pointer}
+textarea,input{font:inherit;color:inherit}
+</style>
+</helmet>
+<div style="min-height: 1310px; display: flex; flex-direction: column; background: #F1EEFF; color: #1B1530; font-family: 'Figtree', system-ui, sans-serif; font-size: 15px">
+
+  <div style="height: 40px; flex: none; display: flex; align-items: center; gap: 10px; padding-left: 14px; background: #FFFFFF; border-bottom: 2px solid #1B1530">
+    <span style="width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 7px; background: #FF6B3D">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"></path></svg>
+    </span>
+    <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 14px">Slide Planner</span>
+    <div style="flex: 1"></div>
+    <button type="button" aria-label="Minimise" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+    <button type="button" aria-label="Maximise" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="1"></rect></svg></button>
+    <button type="button" aria-label="Close" style="width: 46px; height: 38px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+  </div>
+
+  <div style="flex: 1; display: flex; min-height: 0">
+    <nav aria-label="Main" style="flex: 0 0 224px; display: flex; flex-direction: column; gap: 6px; padding: 16px 12px; box-sizing: border-box; background: #FFFFFF; border-right: 2px solid #1B1530">
+      <a href="#" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg>Home</a>
+      <a href="StyleAssets.dc.html" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.7 0 2.5-1 2.5-2.2 0-1.4-1.2-1.8-1.2-3 0-1 .8-1.8 2-1.8H18a3 3 0 0 0 3-3A8 8 0 0 0 12 3z"></path><circle cx="7.5" cy="11" r="1.2"></circle><circle cx="10" cy="7" r="1.2"></circle><circle cx="15" cy="7.5" r="1.2"></circle></svg>Styles</a>
+      <a href="Main.dc.html" aria-current="page" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid #1B1530; background: #FF6B3D; box-shadow: 2px 2px 0 #1B1530; font-weight: 700; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="M21 15l-5-5L5 21"></path></svg>Assets</a>
+      <a href="#" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"></path><path d="M17 14v6M14 17h6"></path></svg>Plugins</a>
+      <div style="flex: 1"></div>
+      <a href="#" style="height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 2px solid transparent; background: transparent; font-weight: 600; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"></path><circle cx="15" cy="6" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>Settings</a>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-top: 2px solid #E4DFF7"><span style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 50%; background: #EAD9FF; font-weight: 800">A</span><span style="display: flex; flex-direction: column"><span style="font-weight: 700">Alice</span><span style="font-size: 12px; color: #4E4766">Claude connected</span></span></div>
+    </nav>
+
+    <div style="flex: 1; min-width: 0">
+      <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 14px 24px; background: #FFFFFF; border-bottom: 2px solid #1B1530">
+        <a href="Main.dc.html" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 16px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 600; text-decoration: none">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+          Assets
+        </a>
+        <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800">Check what I found</h1>
+        <div style="flex: 1"></div>
+        <span style="height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 14px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 999px; background: #FFF0B8; font-weight: 700; font-size: 14px">
+          <span style="display: flex; gap: 3px" aria-hidden="true"><span style="width: 7px; height: 7px; border-radius: 50%; background: #FF6B3D"></span><span style="width: 7px; height: 7px; border-radius: 50%; background: #FFB199"></span><span style="width: 7px; height: 7px; border-radius: 50%; background: #FFD9CC"></span></span>
+          Still reading 1 file
+        </span>
+        <a href="Main.dc.html" style="height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 18px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 12px; background: #FF6B3D; box-shadow: 3px 3px 0 #1B1530; font-weight: 700; text-decoration: none">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>
+          Keep 9 assets
+        </a>
+      </header>
+
+      <main style="max-width: 1320px; margin: 0 auto; padding: 28px 24px 48px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+        <section aria-labelledby="whereTitle" style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding: 22px; border: 2px solid #1B1530; border-radius: 24px; background: #FFFFFF; box-shadow: 6px 6px 0 #1B1530">
+          <h2 id="whereTitle" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800">Where I looked</h2>
+
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #4E4766">While learning Science KS3</div>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+            <li style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 2px solid #E4DFF7; border-radius: 12px"><span style="flex: none; width: 44px; height: 30px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 8px; background: #D7E8FF; font-size: 11px; font-weight: 800">PPTX</span><span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600">Y8 Photosynthesis.pptx</span><span style="font-size: 13px; color: #4E4766">4 found</span></li>
+            <li style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 2px solid #E4DFF7; border-radius: 12px"><span style="flex: none; width: 44px; height: 30px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 8px; background: #FFD6C9; font-size: 11px; font-weight: 800">PDF</span><span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600">Y7 Cells and organelles.pdf</span><span style="font-size: 13px; color: #4E4766">3 found</span></li>
+            <li style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 2px solid #E4DFF7; border-radius: 12px"><span style="flex: none; width: 44px; height: 30px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 8px; background: #D7E8FF; font-size: 11px; font-weight: 800">PPTX</span><span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600">Y9 Forces recap.pptx</span><span style="font-size: 13px; color: #4E4766">2 found</span></li>
+            <li style="display: flex; align-items: center; gap: 10px; padding: 8px 10px; border: 2px solid #E4DFF7; border-radius: 12px"><span style="flex: none; width: 44px; height: 30px; display: flex; align-items: center; justify-content: center; border: 2px dashed #B9B1D9; border-radius: 8px; font-size: 11px; font-weight: 800; color: #4E4766">+5</span><span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600">5 more decks</span><span style="font-size: 13px; color: #4E4766">3 found</span></li>
+          </ul>
+
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #4E4766">Uploaded just now</div>
+          <div style="display: flex; flex-direction: column; gap: 8px; padding: 10px 12px; border: 2px solid #1B1530; border-radius: 12px; background: #FFF4D6">
+            <div style="display: flex; align-items: center; gap: 10px"><span style="flex: none; width: 44px; height: 30px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 8px; background: #FFD6C9; font-size: 11px; font-weight: 800">PDF</span><span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600">Y7 icon sheet.pdf</span></div>
+            <div style="height: 12px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; overflow: hidden"><div style="width: 66%; height: 100%; background: #FF6B3D; border-right: 2px solid #1B1530"></div></div>
+            <span style="font-size: 13px; color: #3A3352">Cutting out pictures · page 4 of 6</span>
+          </div>
+
+          <button type="button" style="display: flex; align-items: center; gap: 12px; padding: 14px; border: 2px dashed #1B1530; border-radius: 16px; background: #FFFFFF; text-align: left">
+            <span style="flex: none; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 2px solid #1B1530; border-radius: 50%; background: #FF6B3D">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B1530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"></path></svg>
+            </span>
+            <span style="display: flex; flex-direction: column">
+              <span style="font-weight: 700">Add images, a PDF or a PowerPoint</span>
+              <span style="font-size: 13px; color: #3A3352">I’ll cut out each picture and name it</span>
+            </span>
+          </button>
+
+          <div style="padding: 12px 14px; border-radius: 14px; background: #E9E3FF; font-size: 14px; line-height: 1.5">
+            I leave out photos that might show pupils, blurry pictures and repeats. Tick them if you want them anyway.
+          </div>
+        </section>
+
+        <section aria-labelledby="foundTitle" style="flex: 2 1 600px; min-width: 0; display: flex; flex-direction: column; border: 2px solid #1B1530; border-radius: 24px; background: #FFFFFF; box-shadow: 6px 6px 0 #1B1530">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 16px 22px; border-bottom: 2px solid #1B1530; border-radius: 22px 22px 0 0; background: #FFE36E">
+            <h2 id="foundTitle" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 800">Found 12 · keeping 9</h2>
+            <div style="flex: 1"></div>
+            <div role="group" aria-label="Show" style="display: flex; gap: 6px">
+              <button type="button" aria-pressed="true" style="height: 40px; padding: 0 14px; border: 2px solid #1B1530; border-radius: 999px; background: #1B1530; color: #FFFFFF; font-weight: 700">All</button>
+              <button type="button" aria-pressed="false" style="height: 40px; padding: 0 14px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 600">Keeping</button>
+              <button type="button" aria-pressed="false" style="height: 40px; padding: 0 14px; border: 2px solid #1B1530; border-radius: 999px; background: #FFFFFF; font-weight: 600">Left out</button>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; padding: 22px">
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L54 14 V30 C54 44 44 54 32 58 C20 54 10 44 10 30 V14 Z" fill="#1F3A68" stroke="#1B1530" stroke-width="2"></path><path d="M19 31 L32 41 L45 31" fill="none" stroke="#E8B53A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path><circle cx="32" cy="22" r="5" fill="#E8B53A"></circle></svg></span>
+              <label for="r1" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r1" type="text" value="school_logo" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; color: #4E4766"><span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #D7E8FF; color: #1B1530; font-weight: 700">Logo</span><span>In 24 decks</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="90" height="64" viewBox="0 0 64 48" aria-hidden="true"><rect x="2" y="14" width="60" height="20" rx="4" fill="#0E7C7B" stroke="#1B1530" stroke-width="1.5"></rect><text x="32" y="28" text-anchor="middle" font-family="Lexend, Figtree, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">DO NOW</text></svg></span>
+              <label for="r2" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r2" type="text" value="do_now_banner" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; color: #4E4766"><span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #FFF0B8; color: #1B1530; font-weight: 700">Banner</span><span>In 18 decks</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="36" rx="20" ry="22" fill="#A26B3F" stroke="#1B1530" stroke-width="2"></ellipse><ellipse cx="32" cy="43" rx="12" ry="12" fill="#E9C9A3"></ellipse><circle cx="24" cy="28" r="7" fill="#FFFFFF" stroke="#1B1530" stroke-width="2"></circle><circle cx="40" cy="28" r="7" fill="#FFFFFF" stroke="#1B1530" stroke-width="2"></circle><circle cx="24" cy="28" r="3" fill="#1B1530"></circle><circle cx="40" cy="28" r="3" fill="#1B1530"></circle><path d="M29 34l3 5 3-5z" fill="#FF8A3D"></path><path d="M15 16l6 7M49 16l-6 7" stroke="#1B1530" stroke-width="3" stroke-linecap="round"></path></svg></span>
+              <label for="r3" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r3" type="text" value="owl_mascot" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; color: #4E4766"><span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #EAD9FF; color: #1B1530; font-weight: 700">Character</span><span>In 9 decks</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><path d="M24 8h16M27 8v16L14 50a4 4 0 0 0 4 6h28a4 4 0 0 0 4-6L37 24V8" fill="#FFFFFF" stroke="#0E7C7B" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></path><path d="M19 42h26l5 9a2 2 0 0 1-2 3H16a2 2 0 0 1-2-3z" fill="#7FD1C9"></path></svg></span>
+              <label for="r4" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r4" type="text" value="beaker_icon" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; color: #4E4766"><span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; color: #1B1530; font-weight: 700">Icon</span><span>In 11 decks</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><path d="M18 56h30M24 50h18M36 50c8-2 12-8 12-16M22 12l10-4 8 20-10 4zM28 30l-4 12" fill="none" stroke="#12263A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              <label for="r5" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r5" type="text" value="microscope_icon" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; color: #4E4766"><span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; color: #1B1530; font-weight: 700">Icon</span><span>In 6 decks</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="36" r="20" fill="#FFFFFF" stroke="#12263A" stroke-width="3"></circle><path d="M32 36 L32 16 A20 20 0 0 1 49 46 Z" fill="#FFE36E"></path><path d="M32 36V22M26 8h12M32 8v8" stroke="#12263A" stroke-width="3" stroke-linecap="round"></path></svg></span>
+              <label for="r6" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r6" type="text" value="timer_icon" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; color: #4E4766"><span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; color: #1B1530; font-weight: 700">Icon</span><span>In 12 decks</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="10" width="48" height="44" rx="8" fill="#DFF5D8" stroke="#2E7D32" stroke-width="3"></rect><circle cx="37" cy="29" r="8" fill="#C9B6EC" stroke="#5E35B1" stroke-width="2"></circle><ellipse cx="20" cy="40" rx="6" ry="3" fill="#5DBB63"></ellipse><ellipse cx="42" cy="46" rx="6" ry="3" fill="#5DBB63"></ellipse><ellipse cx="19" cy="21" rx="5" ry="2.5" fill="#5DBB63"></ellipse></svg></span>
+              <label for="r7" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r7" type="text" value="plant_cell_diagram" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; color: #4E4766"><span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #FFD6C9; color: #1B1530; font-weight: 700">Diagram</span><span>In 3 decks</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 52C12 26 30 12 54 10c0 26-16 42-42 42z" fill="#5DBB63" stroke="#1B1530" stroke-width="2"></path><path d="M14 50L42 22" stroke="#2E7D32" stroke-width="3" stroke-linecap="round"></path></svg></span>
+              <label for="r8" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r8" type="text" value="leaf_icon" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; color: #4E4766"><span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; color: #1B1530; font-weight: 700">Icon</span><span>In 7 decks</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px solid #1B1530; border-radius: 16px; background: #FFFFFF; box-shadow: 3px 3px 0 #1B1530">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="12" width="48" height="34" rx="3" fill="#FFFFFF" stroke="#1B1530" stroke-width="3"></rect><path d="M16 24h22M16 32h14" stroke="#0E7C7B" stroke-width="3" stroke-linecap="round"></path><path d="M24 54l8-8 8 8" stroke="#1B1530" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              <label for="r9" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r9" type="text" value="mini_whiteboard_icon" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #1B1530; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 12px; color: #4E4766"><span style="padding: 2px 8px; border: 2px solid #1B1530; border-radius: 999px; background: #DFF5D8; color: #1B1530; font-weight: 700">Icon</span><span>In 16 decks</span></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px dashed #6B6485; border-radius: 16px; background: #FFFFFF">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="80" height="64" viewBox="0 0 64 52" aria-hidden="true"><rect x="2" y="2" width="60" height="48" rx="4" fill="#F3D9C8" stroke="#1B1530" stroke-width="1.5"></rect><circle cx="18" cy="22" r="6" fill="#B08968"></circle><path d="M6 50c1-10 6-15 12-15s11 5 12 15z" fill="#7A5C47"></path><circle cx="44" cy="20" r="6" fill="#8D6E63"></circle><path d="M32 50c1-10 6-15 12-15s11 5 12 15z" fill="#5D4037"></path></svg></span>
+              <label for="r10" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r10" type="text" value="class_photo" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #6B6485; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600; color: #4E4766">
+              <span style="align-self: flex-start; padding: 3px 10px; border: 2px solid #1B1530; border-radius: 999px; background: #FFD6C9; font-size: 12px; font-weight: 700">May show pupils · left out</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px dashed #6B6485; border-radius: 16px; background: #FFFFFF">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L54 14 V30 C54 44 44 54 32 58 C20 54 10 44 10 30 V14 Z" fill="#3A4F7A" stroke="#1B1530" stroke-width="2"></path><path d="M19 31 L32 41 L45 31" fill="none" stroke="#C9A55A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></path></svg></span>
+              <label for="r11" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r11" type="text" value="school_logo_old" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #6B6485; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600; color: #4E4766">
+              <span style="align-self: flex-start; padding: 3px 10px; border: 2px solid #1B1530; border-radius: 999px; background: #EAD9FF; font-size: 12px; font-weight: 700">Older version of school_logo</span>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 12px; border: 2px dashed #6B6485; border-radius: 16px; background: #FFFFFF">
+              <label style="display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; cursor: pointer"><input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: #1B1530">Keep</label>
+              <span style="height: 96px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #F7F5FF"><svg width="80" height="64" viewBox="0 0 64 52" aria-hidden="true" style="opacity: .55"><rect x="2" y="2" width="60" height="48" rx="4" fill="#CFE3F7" stroke="#1B1530" stroke-width="1.5"></rect><circle cx="18" cy="16" r="5" fill="#FFE36E"></circle><path d="M2 46l16-16 10 10 8-8 26 20H2z" fill="#5DBB63"></path></svg></span>
+              <label for="r12" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Name</label>
+              <input id="r12" type="text" value="hills_photo" style="height: 40px; padding: 0 10px; box-sizing: border-box; border: 2px solid #6B6485; border-radius: 10px; font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 13px; font-weight: 600; color: #4E4766">
+              <span style="align-self: flex-start; padding: 3px 10px; border: 2px solid #1B1530; border-radius: 999px; background: #FFF0B8; font-size: 12px; font-weight: 700">Blurry · left out</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1310}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

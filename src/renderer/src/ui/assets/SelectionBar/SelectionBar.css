@@ -1,0 +1,42 @@
+.as-selbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12) var(--space-16);
+  padding: var(--space-14) var(--space-20);
+  border-radius: var(--radius-20);
+  background: var(--ink);
+  color: var(--text-on-dark);
+}
+.as-selbar__text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-4) var(--space-12);
+  margin: 0;
+  min-width: 0;
+}
+.as-selbar__count {
+  font: 800 15px/1.3 var(--font);
+}
+.as-selbar__hint {
+  font: 400 14px/1.3 var(--font);
+}
+.as-selbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+}
+/* "Clear" is an outline pill on the dark bar. */
+.as-selbar .as-selbar__clear {
+  border-color: var(--white);
+  background: transparent;
+  color: var(--white);
+}
+.as-selbar .as-selbar__clear:hover {
+  background: color-mix(in srgb, var(--white) 14%, transparent);
+}
+.as-selbar .ui-button:focus-visible {
+  outline-color: var(--focus-ring-on-dark);
+}

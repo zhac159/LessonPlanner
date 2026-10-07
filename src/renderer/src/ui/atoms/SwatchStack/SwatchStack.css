@@ -1,0 +1,28 @@
+.ui-swatch-dot {
+  display: inline-block;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border: var(--border-ink);
+  border-radius: 50%;
+}
+
+.ui-swatches {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  padding-left: var(--space-6);
+}
+
+.ui-swatches__dot {
+  width: 26px;
+  height: 26px;
+  margin-left: -6px;
+  border: var(--border-ink);
+  border-radius: 50%;
+}
+
+.ui-swatches__more {
+  margin-left: var(--space-4);
+  font: var(--type-micro);
+}

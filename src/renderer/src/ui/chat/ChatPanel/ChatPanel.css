@@ -1,0 +1,65 @@
+.ui-chat {
+  display: flex;
+  flex-direction: column;
+  width: var(--chat-w);
+  min-width: var(--chat-w-min);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  border: var(--border-ink);
+  border-radius: var(--radius-22);
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  color: var(--ink);
+}
+
+.ui-chat__badge {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: var(--border-ink);
+  border-radius: 50%;
+  background: var(--white);
+}
+.ui-chat__pills {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+.ui-chat__body {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+.ui-chat__list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-16);
+  min-height: 0;
+  padding: var(--space-18);
+  overflow-y: auto;
+}
+.ui-chat__jump {
+  position: absolute;
+  right: 0;
+  bottom: var(--space-12);
+  left: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.ui-chat__jump > * {
+  pointer-events: auto;
+  box-shadow: var(--shadow-xs);
+}
+
+.ui-chat__footer {
+  position: relative;
+  padding: 14px 18px 18px;
+}

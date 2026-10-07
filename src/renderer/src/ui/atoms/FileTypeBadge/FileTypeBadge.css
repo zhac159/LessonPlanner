@@ -1,0 +1,24 @@
+.ui-file-badge {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 40px;
+  border: var(--border-ink);
+  border-radius: var(--radius-8);
+  background: var(--white);
+  color: var(--ink);
+  font: var(--type-badge);
+  letter-spacing: var(--ls-badge);
+  text-transform: uppercase;
+}
+
+.ui-file-badge[data-kind='pdf'] {
+  background: var(--file-pdf);
+}
+.ui-file-badge[data-kind='pptx'] {
+  background: var(--file-pptx);
+}
+.ui-file-badge[data-kind='docx'] {
+  background: var(--file-docx);
+}

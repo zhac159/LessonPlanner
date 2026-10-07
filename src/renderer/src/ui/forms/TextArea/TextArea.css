@@ -1,0 +1,15 @@
+.ta {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  font: 400 15px/1.5 var(--font);
+  resize: vertical;
+}
+.ta::placeholder {
+  color: var(--text-placeholder);
+}
+.ta--auto {
+  resize: none;
+  overflow-y: hidden;
+}

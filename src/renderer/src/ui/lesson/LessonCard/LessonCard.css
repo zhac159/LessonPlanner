@@ -1,0 +1,115 @@
+.lesson-card {
+  position: relative;
+  min-width: 0;
+  border: var(--border-ink);
+  border-radius: var(--radius-18);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+}
+.lesson-card:hover {
+  transform: translateY(var(--lift-card));
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.lesson-card:has(.lesson-card__open:active) {
+  transform: translate(var(--press), var(--press));
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.lesson-card[data-selected] {
+  box-shadow: var(--shadow-accent);
+}
+
+.lesson-card__open {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: calc(var(--radius-18) - 2px);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+/* The ring follows the card's radius. */
+.lesson-card__open:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: calc(var(--focus-ring-offset) + 2px);
+  border-radius: var(--radius-18);
+}
+
+.lesson-card__thumb {
+  display: block;
+  overflow: hidden;
+  border-bottom: var(--border-ink);
+  border-radius: calc(var(--radius-18) - 2px) calc(var(--radius-18) - 2px) 0 0;
+  background: var(--surface-sunken);
+}
+
+/* Fills the 16:9 area whichever thumbnail it is. */
+.lesson-card .lesson-card__thumb > * {
+  display: block;
+  width: 100%;
+}
+.lesson-card__image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.lesson-card__empty {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  color: var(--text-muted);
+}
+.lesson-card__thumb .slide-thumb[data-variant='generating'] {
+  box-sizing: border-box;
+  padding: var(--space-12);
+}
+
+.lesson-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: 12px 14px 14px;
+}
+.lesson-card__title {
+  overflow-wrap: anywhere;
+  font: 700 16px/1.25 var(--font);
+}
+.lesson-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--text-muted);
+  font: 400 13px/1.3 var(--font);
+}
+.lesson-card__spacer {
+  flex: 1;
+}
+
+/* The ⋯ trigger floats over the thumbnail's corner. */
+.lesson-card__menu {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: var(--border-ink);
+  background: var(--white);
+  color: var(--ink);
+}
+.lesson-card__menu:hover {
+  background: var(--surface-hover);
+}
+.lesson-card__menu:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-card:hover {
+    transform: none;
+  }
+}

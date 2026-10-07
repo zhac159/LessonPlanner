@@ -1,0 +1,338 @@
+/* =========================================================================
+   Slide Planner · design tokens · Direction B "Classroom" · v1 (light only)
+
+   DESIGN SOURCE OF TRUTH. The app's src/renderer/src/styles/tokens.css must
+   mirror this file: same names, same values. Change the value here first,
+   then copy it across. Usage rules live in design/design-system.md.
+
+   Legacy names from the provisional dark theme (--bg-0, --surface, --border,
+   --text, --text-dim, --accent, --radius, --font, ...) are kept and remapped
+   so existing CSS re-skins by swapping values.
+
+   App chrome only. Never use these tokens inside the teacher's slides: slide
+   content takes its fonts and colours from her Style Profile.
+   ========================================================================= */
+
+:root {
+  color-scheme: light;
+
+  /* ---------------------------------------------------------------------
+     1. Raw palette
+     --------------------------------------------------------------------- */
+  --ink: #1b1530; /* text, every outline, every hard shadow */
+  --white: #ffffff;
+  --ground: #f1eeff; /* page background (lilac-grey) */
+  --orange: #ff6b3d; /* primary + "active" fill; always ink text on it */
+  --orange-tint-1: #ffb199; /* progress dot 2 (decorative only) */
+  --orange-tint-2: #ffd9cc; /* progress dot 3 (decorative only) */
+  --yellow: #ffe36e; /* the planning buddy; highlights; field focus halo */
+  --butter: #fff4d6; /* invitations: dropzones, current step, chosen card */
+  --lilac: #e9e3ff; /* the teacher's voice (user bubble), info, hover */
+  --purple-soft: #ead9ff; /* category */
+  --peach: #ffd6c9; /* category; error fill */
+  --sky: #d7e8ff; /* category */
+  --mint-soft: #dff5d8; /* category; success fill */
+  --butter-2: #fff0b8; /* category; "working" fill */
+  --teal-soft: #d6f0ee; /* category; the active/default style */
+  --divider: #e4dff7; /* soft 2px dividers, inactive list rows */
+  --line-muted: #b9b1d9; /* disabled borders, "not yet" steps, placeholders */
+  --text-muted: #4e4766; /* secondary text (8.69:1 on white) */
+  --text-muted-2: #3a3352; /* secondary text on pastels/yellow (9.27:1 on yellow) */
+  --text-placeholder: #6b6485; /* placeholder + disabled text; white/ground ONLY */
+  --danger-text: #b42318; /* error message text (6.57:1 on white) */
+  --win-close: #e81123; /* Windows close-button hover (white icon 4.63:1) */
+  --win-close-pressed: #c50f1f;
+
+  /* ---------------------------------------------------------------------
+     2. Semantic colours (legacy names kept)
+     --------------------------------------------------------------------- */
+  --bg-0: var(--ground); /* page background */
+  --bg-1: var(--white); /* chrome: title bar, sidebar */
+  --bg-2: var(--lilac); /* tinted surface: user bubble, info callout */
+  --surface: var(--white); /* cards, panels, fields */
+  --surface-hover: var(--lilac); /* ghost/transparent controls on hover */
+  --surface-pressed: var(--divider); /* ghost/transparent controls while pressed */
+  --surface-sunken: var(--ground); /* FontSample tile, test-slide card, search field */
+  --surface-invite: var(--butter); /* dropzones, current SetupStep, checked RadioCard */
+  --surface-assistant: var(--yellow); /* planning-buddy header band */
+
+  --border: var(--ink); /* the 2px ink outline */
+  --border-strong: var(--ink); /* legacy alias: same as --border */
+  --border-soft: var(--divider);
+  --border-muted: var(--line-muted);
+
+  --text: var(--ink);
+  --text-dim: var(--text-muted); /* legacy alias */
+  --text-faint: var(--text-placeholder); /* legacy alias */
+  --text-on-dark: var(--white); /* on ink fills only */
+  --text-on-accent: var(--ink); /* on orange: ALWAYS ink, never white (2.83:1) */
+
+  --accent: var(--orange);
+  --accent-2: var(--yellow); /* fill only, never a text colour */
+  --accent-3: var(--lilac); /* fill only */
+
+  /* Status = fills. Text and icons on them are always --ink. */
+  --success: var(--mint-soft);
+  --warning: var(--butter-2);
+  --danger: var(--peach);
+  --info: var(--lilac);
+
+  /* Category palette (pastel tiles, chips, badges, pills) */
+  --cat-sky: var(--sky);
+  --cat-mint: var(--mint-soft);
+  --cat-peach: var(--peach);
+  --cat-purple: var(--purple-soft);
+  --cat-butter: var(--butter-2);
+  --cat-teal: var(--teal-soft);
+  --cat-lilac: var(--lilac);
+
+  --year-7: var(--sky);
+  --year-8: var(--mint-soft);
+  --year-9: var(--peach);
+  --year-10: var(--butter-2); /* proposed: not in mockups */
+  --year-11: var(--teal-soft); /* proposed */
+  --year-sixth-form: var(--lilac); /* proposed: Years 12-13 */
+  --year-form: var(--purple-soft); /* form time / tutor group */
+
+  --file-pdf: var(--peach);
+  --file-pptx: var(--sky);
+  --file-docx: var(--mint-soft); /* proposed: mockup attachment used sky */
+
+  --status-done: var(--mint-soft); /* Learned, Connected, "8 slides added" */
+  --status-working: var(--butter-2); /* Reading..., Learning... */
+  --status-waiting: var(--purple-soft); /* Waiting */
+  --status-error: var(--peach); /* proposed */
+
+  --tone-quiz: var(--peach);
+  --tone-differentiate: var(--sky);
+  --tone-worksheet: var(--mint-soft);
+  --tone-speaker-notes: var(--butter-2);
+  --tone-starter-plenary: var(--purple-soft);
+  --tone-style: var(--teal-soft); /* style chips + default StyleCard */
+
+  /* ---------------------------------------------------------------------
+     3. Typography (bundle with @fontsource-variable/*, no Google link)
+     --------------------------------------------------------------------- */
+  --font: 'Figtree Variable', 'Figtree', 'Segoe UI Variable Text', 'Segoe UI', system-ui,
+    sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque',
+    'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-heavy: 800;
+
+  /* Sizes */
+  --fs-hero: 56px;
+  --fs-page-title: 44px;
+  --fs-dialog-title: 32px;
+  --fs-card-title: 30px;
+  --fs-section-lg: 28px;
+  --fs-section-md: 24px;
+  --fs-section-sm: 22px;
+  --fs-chat-title: 20px;
+  --fs-panel-title: 18px;
+  --fs-lead: 18px;
+  --fs-subtitle: 17px;
+  --fs-body-lg: 16px;
+  --fs-body: 15px; /* app base size */
+  --fs-small: 14px;
+  --fs-caption: 13px;
+  --fs-micro: 12px;
+  --fs-badge: 11px;
+
+  /* Line heights */
+  --lh-hero: 1.02;
+  --lh-display: 1.05;
+  --lh-title: 1.15;
+  --lh-heading: 1.25;
+  --lh-ui: 1.2; /* single-line controls */
+  --lh-snug: 1.4;
+  --lh-body: 1.5;
+
+  /* Letter spacing */
+  --ls-display: -0.02em; /* 44-56px */
+  --ls-title: -0.01em; /* 30-34px */
+  --ls-badge: 0.04em; /* 11px uppercase badges */
+  --ls-masked: 0.08em; /* masked API key */
+
+  /* Composite type (use as  font: var(--type-...)  + letter-spacing) */
+  --type-hero: 800 56px/1.02 var(--font-display);
+  --type-page-title: 800 44px/1.05 var(--font-display);
+  --type-dialog-title: 800 32px/1.1 var(--font-display);
+  --type-card-title: 800 30px/1.1 var(--font-display);
+  --type-section-lg: 800 28px/1.15 var(--font-display);
+  --type-section-md: 800 24px/1.15 var(--font-display);
+  --type-section-sm: 800 22px/1.2 var(--font-display);
+  --type-chat-title: 800 20px/1.25 var(--font-display);
+  --type-panel-title: 800 18px/1.25 var(--font-display);
+  --type-lesson-title: 700 18px/1.25 var(--font-display);
+  --type-menu-title: 800 16px/1.25 var(--font-display);
+  --type-wordmark: 800 14px/1 var(--font-display);
+  --type-lead: 400 18px/1.5 var(--font);
+  --type-subtitle: 400 17px/1.4 var(--font);
+  --type-body-lg: 400 16px/1.5 var(--font);
+  --type-body: 400 15px/1.5 var(--font);
+  --type-heading-ui: 800 16px/1.3 var(--font);
+  --type-label: 700 14px/1.3 var(--font);
+  --type-label-strong: 800 15px/1.3 var(--font);
+  --type-button: 700 15px/1.2 var(--font);
+  --type-button-lg: 800 16px/1.2 var(--font);
+  --type-small: 400 14px/1.5 var(--font);
+  --type-caption: 400 13px/1.4 var(--font);
+  --type-micro: 700 12px/1.3 var(--font);
+  --type-badge: 800 11px/1 var(--font);
+
+  /* ---------------------------------------------------------------------
+     4. Spacing (px-named; 4px core, 2px half-steps for component internals)
+     --------------------------------------------------------------------- */
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-20: 20px;
+  --space-22: 22px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-36: 36px;
+  --space-48: 48px;
+  --space-56: 56px;
+
+  /* ---------------------------------------------------------------------
+     5. Radii
+     --------------------------------------------------------------------- */
+  --radius-6: 6px; /* filmstrip number badge, app mark, checkbox */
+  --radius-8: 8px; /* FileTypeBadge, swatches, attachment icon tile, tooltip */
+  --radius-10: 10px; /* SlideThumb, title field, ghost icon button, list options */
+  --radius-12: 12px; /* md buttons, 48px fields, nav items, ToolButton, stepper */
+  --radius-14: 14px; /* lg/xl buttons, 52px fields, tiles, rows, stage, RadioCard */
+  --radius-16: 16px; /* inner cards, dropzones, callouts, StyleCard, hero textarea */
+  --radius-18: 18px; /* LessonCard, ToolRail, Composer, chat bubble */
+  --radius-20: 20px; /* PluginMenu, empty-state icon tile */
+  --radius-22: 22px; /* ChatPanel, PluginSheet */
+  --radius-24: 24px; /* page cards */
+  --radius-pill: 999px;
+  /* Legacy aliases */
+  --radius-sm: var(--radius-8);
+  --radius: var(--radius-14);
+  --radius-lg: var(--radius-20);
+
+  /* ---------------------------------------------------------------------
+     6. Borders
+     --------------------------------------------------------------------- */
+  --border-w: 2px;
+  --border-ink: 2px solid var(--ink); /* every control, card and panel */
+  --border-dashed: 2px dashed var(--ink); /* dropzones, empty states, "add" tiles */
+  --border-placeholder: 2px dashed var(--line-muted); /* skeleton slots (decorative) */
+  --border-divider: 2px solid var(--divider); /* soft dividers, inactive rows */
+  --border-disabled: 2px solid var(--line-muted);
+
+  /* ---------------------------------------------------------------------
+     7. Shadows (hard offset, never blurred, always down-right)
+     --------------------------------------------------------------------- */
+  --shadow-none: 0 0 0 0 transparent; /* use instead of "none" so it animates */
+  --shadow-xs: 2px 2px 0 var(--ink); /* active nav item; hover on flat controls */
+  --shadow-sm: 3px 3px 0 var(--ink); /* primary buttons; checked RadioCard */
+  --shadow-md: 4px 4px 0 var(--ink); /* LessonCard, ToolRail, icon tiles */
+  --shadow-lg: 6px 6px 0 var(--ink); /* page cards, panels, stage, menus */
+  /* Active SlideThumb: orange slab with an ink rim (the rim keeps it >= 3:1) */
+  --shadow-accent: 4px 4px 0 0 var(--orange), 4px 4px 0 2px var(--ink);
+
+  /* ---------------------------------------------------------------------
+     8. Focus
+     --------------------------------------------------------------------- */
+  --focus-ring-color: var(--ink);
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
+  --focus-ring: 3px solid var(--ink); /* outline on :focus-visible */
+  --focus-ring-on-dark: var(--yellow); /* if a focusable sits on an ink fill */
+  --focus-ring-inset-offset: -5px; /* inside clipped containers */
+  /* Fields and the Composer: yellow halo + ink rim, as box-shadow */
+  --focus-field: 0 0 0 4px var(--yellow), 0 0 0 6px var(--ink);
+  --field-error: 0 0 0 4px var(--peach);
+  --focus-field-error: 0 0 0 4px var(--peach), 0 0 0 6px var(--ink);
+
+  /* ---------------------------------------------------------------------
+     9. Motion
+     --------------------------------------------------------------------- */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1); /* standard: enter, move, resize */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1); /* exits */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* small overshoot: pops, snaps */
+  --dur-press: 80ms; /* press in */
+  --dur-fast: 120ms; /* hover, press out, colour changes, exits */
+  --dur-base: 180ms; /* menus, popovers, crossfades */
+  --dur-slow: 260ms; /* sheets, thumbnail reveal */
+  --dur-slower: 400ms; /* progress bar fill */
+  --dur-loop: 1200ms; /* progress dots cycle */
+  --stagger: 90ms; /* between items in a reveal */
+  --lift: -1px; /* hover translate for shadowed controls */
+  --lift-card: -2px; /* hover translate for shadowed cards */
+  --press: 2px; /* pressed translate */
+
+  /* ---------------------------------------------------------------------
+     10. Layout and sizing
+     --------------------------------------------------------------------- */
+  --titlebar-h: 40px; /* total, incl. 2px bottom border (border-box) */
+  --sidebar-w: 224px; /* expanded */
+  --sidebar-rail-w: 72px; /* focus mode (new lesson, editor) */
+  --page-header-h: 72px; /* 14 + 44 + 14 */
+  --content-max: 1280px; /* Home */
+  --content-max-wide: 1320px; /* Create a style */
+  --page-pad-x: 24px;
+  --page-pad-top: 32px;
+  --page-pad-bottom: 56px;
+  --editor-pad-x: 20px;
+  --editor-gap: 20px;
+  --chat-w: 400px;
+  --chat-w-min: 360px;
+  --stage-max-w: 900px;
+  --stage-min-w: 520px;
+  --thumb-w: 132px;
+  --onboarding-card-w: 440px; /* Welcome */
+  --onboarding-wide-w: 760px; /* Connect Claude */
+
+  --target-min: 44px; /* minimum hit area */
+  --control-sm: 32px; /* ResultChip actions (hit area still 44) */
+  --chip-h: 40px; /* ToggleChip, RadioPill, small SelectChip (hit area 44) */
+  --control-md: 44px;
+  --control-lg: 48px;
+  --control-xl: 52px;
+  --tool-btn: 48px;
+
+  /* Icons (lucide-react: pass as size / strokeWidth) */
+  --icon-xs: 14px;
+  --icon-sm: 16px;
+  --icon-md: 18px;
+  --icon-lg: 20px;
+  --icon-xl: 22px;
+  --icon-stroke: 2;
+  --icon-stroke-bold: 2.4; /* arrows, chevrons, plus, minus at 14-20px */
+  --icon-stroke-dense: 1.8; /* icons in dense 12-13px rows */
+
+  /* Stacking */
+  --z-titlebar: 100;
+  --z-popover: 200;
+  --z-tooltip: 300;
+  --z-toast: 400;
+}
+
+/* Reduced motion: keep colour/opacity feedback, drop movement. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-base: 1ms;
+    --dur-slow: 1ms;
+    --dur-slower: 1ms;
+    --stagger: 0ms;
+    --lift: 0px;
+    --lift-card: 0px;
+    --ease-spring: var(--ease);
+  }
+}

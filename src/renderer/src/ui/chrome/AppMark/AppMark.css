@@ -1,0 +1,9 @@
+.ui-app-mark {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border: var(--border-ink);
+  border-radius: var(--radius-6);
+  background: var(--orange);
+  color: var(--ink);
+}

@@ -1,0 +1,16 @@
+.as-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-10);
+  min-width: 0;
+}
+/* Narrow sheets: one row that scrolls sideways; the last pill may be cut off on purpose. */
+.as-filters[data-scroll] {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: var(--space-4);
+  scrollbar-width: none;
+}
+.as-filters[data-scroll] > * {
+  flex: none;
+}

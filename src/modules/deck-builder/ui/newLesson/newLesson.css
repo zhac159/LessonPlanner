@@ -1,0 +1,111 @@
+/* New lesson (05): an empty editor. The page never scrolls; the transcript does. */
+.nl {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  color: var(--ink);
+}
+
+.nl__body {
+  display: flex;
+  flex: 1;
+  gap: var(--editor-gap);
+  min-height: 0;
+  padding: var(--space-4) var(--editor-pad-x) var(--space-20);
+}
+
+/* The title field sits in the middle of the header's free space (05-new-lesson.png). */
+.nl .ui-page-header__center .tf-shell--title {
+  margin-inline: auto;
+}
+/* The image shows no pencil: it appears on hover and focus. */
+.nl .tf-box--title:not(:hover):not(:focus-within) .tf-adorn {
+  visibility: hidden;
+}
+
+/* The stage and the filmstrip share one width: the 900px cap, the column, or what fits the height. */
+.nl__main {
+  display: flex;
+  flex: 1 1 560px;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  container-type: size;
+}
+.nl-stage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: min(100cqw, var(--stage-max-w), calc((100cqh - 110px) * 16 / 9));
+}
+
+.nl__body > .nl-chat {
+  flex: 0 1 var(--chat-w);
+  width: auto;
+  min-width: 340px;
+}
+
+/* "Your style: Science KS3": the prefix is drawn, the chip's accessible name already says it. */
+.nl-style-chip .sc__text::before {
+  content: 'Your style: ';
+}
+
+/* Lesson set-up */
+.nl-setup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+.nl-setup__label {
+  margin: 0;
+  font: var(--type-label);
+  font-weight: 700;
+}
+.nl-setup__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+/* The Composer asks for attention while the lesson is empty: a yellow ring around it. */
+.nl-composer {
+  position: relative;
+}
+.nl-composer__box {
+  box-shadow: 0 0 0 4px var(--yellow);
+}
+.nl-composer__box:focus-within {
+  box-shadow: var(--focus-field);
+}
+.nl-composer__hint {
+  margin: var(--space-10) 0 0;
+  color: var(--text-muted);
+  font: var(--type-caption);
+}
+
+/* Start from a past lesson */
+.nl-past {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+}
+.nl-past__note {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-body);
+}
+.nl-past__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The four dashed filmstrip slots are decoration: clip them at narrow widths instead of scrolling. */
+.nl-stage .filmstrip {
+  overflow: hidden;
+}

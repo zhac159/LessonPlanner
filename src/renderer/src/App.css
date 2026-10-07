@@ -1,0 +1,34 @@
+.app {
+  position: relative;
+  height: 100%;
+  /* clip, not hidden: hidden boxes can still be scrolled by scrollIntoView and focus(). */
+  overflow: clip;
+}
+
+/* The shell sits under the title bar. While the splash plays it is mounted (so modules load)
+   but invisible; it fades in as the splash fades out.
+   `data-chrome` (set by App) picks the layout: sidebar (default, 224px), rail (72px) or none. */
+.shell {
+  position: absolute;
+  inset: var(--titlebar-h) 0 0 0;
+  display: grid;
+  grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  overflow: clip;
+  opacity: 1;
+  transition:
+    grid-template-columns var(--dur-slow) var(--ease),
+    opacity 600ms var(--ease);
+}
+
+.shell[data-chrome='rail'] {
+  grid-template-columns: var(--sidebar-rail-w) minmax(0, 1fr);
+}
+
+.shell[data-chrome='none'] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.app[data-phase='splash'] .shell {
+  opacity: 0;
+}

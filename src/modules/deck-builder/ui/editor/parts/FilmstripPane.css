@@ -1,0 +1,52 @@
+.editor-film {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Part of a multi-selection but not on the stage: orange shadow, white badge (06 §8.1). */
+.editor-film button.slide-thumb[data-mark-multi] .slide-thumb__preview {
+  box-shadow: var(--shadow-accent);
+}
+
+/* A ResultChip is hovered: outline the slides it touched (06 §8.6). */
+.editor-film button.slide-thumb[data-mark-highlight] .slide-thumb__preview {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* Slides the AI just added flash orange for a second (06 §7). */
+.editor-film button.slide-thumb[data-mark-flash] .slide-thumb__preview {
+  animation: editor-film-flash 1s var(--ease) 1;
+}
+@keyframes editor-film-flash {
+  0%,
+  60% {
+    box-shadow: var(--shadow-accent);
+    outline: 3px solid var(--orange);
+    outline-offset: 2px;
+  }
+  100% {
+    outline-color: transparent;
+  }
+}
+
+/* A circled region waits on this slide: a small orange dot (06 §8.4). */
+.editor-film button.slide-thumb[data-mark-region] .slide-thumb__preview::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 12px;
+  height: 12px;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--orange);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editor-film button.slide-thumb[data-mark-flash] .slide-thumb__preview {
+    animation: none;
+    outline: 3px solid var(--orange);
+    outline-offset: 2px;
+  }
+}

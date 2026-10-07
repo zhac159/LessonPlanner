@@ -1,0 +1,65 @@
+/*
+ * The offscreen render page. Its only job is to show one slide (or a crop of it) at an exact pixel size
+ * for the main process to photograph. No app chrome: the region loops use the app's orange and ink.
+ */
+
+html,
+body {
+  margin: 0;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.render-stage {
+  position: relative;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.render-stage__slide {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+}
+
+.render-regions {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.render-regions__loop {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The RegionLabel of the editor: white pill, 2px ink, orange number disc. */
+.render-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 34px;
+  padding: 4px 10px 4px 4px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  font:
+    800 13px/1 'Figtree Variable',
+    sans-serif;
+}
+
+.render-label__n {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--orange);
+}

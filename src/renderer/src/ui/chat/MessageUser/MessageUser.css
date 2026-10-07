@@ -1,0 +1,41 @@
+.ui-msg-u {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  align-self: flex-end;
+  max-width: 88%;
+  padding: 12px 14px;
+  border: var(--border-ink);
+  border-radius: 18px 18px 4px 18px;
+  background: var(--lilac);
+  color: var(--ink);
+  font: var(--type-body);
+}
+.ui-msg-u[data-compact] {
+  gap: var(--space-8);
+}
+
+.ui-msg-u__text {
+  margin: 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  user-select: text;
+}
+.ui-msg-u__note {
+  margin: 0;
+  color: var(--text-muted-2);
+  font: 400 12px/1.4 var(--font);
+}
+
+.ui-msg-u__failed {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* An asset chip sits on the text baseline inside the bubble. */
+.ui-msg-u__text .as-chip {
+  vertical-align: baseline;
+  margin-inline: 2px;
+}

@@ -1,0 +1,12 @@
+node_modules
+out
+release
+dist
+.artifacts
+.claude
+package-lock.json
+*.md
+design
+data
+keyt.txt
+googlekey.txt

@@ -1,0 +1,12 @@
+.choice {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.choice__legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font: var(--type-label-strong);
+  color: var(--text);
+}

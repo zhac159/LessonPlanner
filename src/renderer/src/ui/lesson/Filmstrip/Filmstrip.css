@@ -1,0 +1,106 @@
+.filmstrip {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  /* Room for focus rings and hard shadows that would otherwise be clipped by the scroller. */
+  padding: 6px 8px 12px 6px;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.filmstrip__list {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.filmstrip[data-layout='vertical'] {
+  width: auto;
+  height: 100%;
+  overflow-x: visible;
+  overflow-y: auto;
+}
+.filmstrip[data-layout='vertical'] .filmstrip__list {
+  flex-direction: column;
+}
+
+.filmstrip__item {
+  position: relative;
+  flex: none;
+}
+
+/* Drop indicator: an accent bar on the side the dragged slide would land. */
+.filmstrip__item[data-drop]::after {
+  content: '';
+  position: absolute;
+  background: var(--orange);
+  border: var(--border-ink);
+  border-radius: var(--radius-6);
+  pointer-events: none;
+}
+.filmstrip[data-layout='horizontal'] .filmstrip__item[data-drop]::after {
+  top: 0;
+  bottom: 0;
+  width: 6px;
+}
+.filmstrip[data-layout='horizontal'] .filmstrip__item[data-drop='before']::after {
+  left: -9px;
+}
+.filmstrip[data-layout='horizontal'] .filmstrip__item[data-drop='after']::after {
+  right: -9px;
+}
+.filmstrip[data-layout='vertical'] .filmstrip__item[data-drop]::after {
+  left: 0;
+  right: 0;
+  height: 6px;
+}
+.filmstrip[data-layout='vertical'] .filmstrip__item[data-drop='before']::after {
+  top: -9px;
+}
+.filmstrip[data-layout='vertical'] .filmstrip__item[data-drop='after']::after {
+  bottom: -9px;
+}
+
+/* "Add slide": 76 wide, as tall as a preview (132 wide, 16:9). */
+.filmstrip__add {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 76px;
+  height: 74px;
+  padding: 0;
+  border: 2px dashed var(--ink);
+  border-radius: var(--radius-10);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+.filmstrip[data-layout='vertical'] .filmstrip__add {
+  width: 132px;
+}
+.filmstrip__add:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-xs);
+}
+.filmstrip__add:active {
+  transform: translate(var(--press), var(--press));
+  box-shadow: none;
+}
+.filmstrip__add:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* The dashed spot count sits beside the slide number badge (24 px high, 24 px wide + gap). */
+.filmstrip__item > .filmstrip__spots {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+}

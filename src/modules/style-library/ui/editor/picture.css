@@ -1,0 +1,69 @@
+/* "Picture habits" and "Assets I found" (agents/ASSETS.md §3.6). Tokens only. */
+.cs-picture {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  min-width: 0;
+}
+.cs-picture__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+}
+.cs-picture__title {
+  margin: 0;
+  font: var(--type-heading-ui);
+}
+.cs-picture__action {
+  margin-left: auto;
+}
+.cs-picture__lead,
+.cs-picture__caption,
+.cs-picture__empty {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-small);
+}
+.cs-picture__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cs-picture__line {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-10);
+  font: var(--type-small);
+}
+.cs-picture__line svg {
+  flex: none;
+  margin-top: 3px;
+}
+.cs-picture__skeleton {
+  height: 22px;
+  border-radius: var(--radius-8);
+  background: var(--divider);
+}
+.cs-picture__skeleton:nth-child(2) {
+  width: 80%;
+}
+.cs-picture__skeleton:nth-child(3) {
+  width: 62%;
+}
+.cs-picture__tiles {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 1100px) {
+  .cs-picture__tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

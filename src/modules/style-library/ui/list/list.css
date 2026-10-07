@@ -1,0 +1,46 @@
+/* The interim Styles page (04 §2): a full-width "Your styles" card. */
+.styles-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--ground);
+}
+.styles-page__body {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--space-28) var(--space-24) var(--space-48);
+}
+.styles-page__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-22);
+}
+.styles-page__title {
+  margin: 0;
+  font: var(--type-section-sm);
+  letter-spacing: var(--ls-title);
+}
+.styles-page__note {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-small);
+}
+.styles-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.styles-page__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+.styles-page__style {
+  flex: 1 1 auto;
+  min-width: 0;
+}

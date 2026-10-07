@@ -1,0 +1,21 @@
+.as-licence {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 1px 8px;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--cat-lilac);
+  color: var(--ink);
+  font: 800 11px/1.4 var(--font);
+  white-space: nowrap;
+}
+.as-licence[data-tone='green'] {
+  background: var(--cat-mint);
+}
+.as-licence[data-tone='blue'] {
+  background: var(--cat-sky);
+}
+.as-licence[data-tone='amber'] {
+  background: var(--cat-butter);
+}

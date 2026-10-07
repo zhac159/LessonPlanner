@@ -1,0 +1,53 @@
+.style-file-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  min-height: 60px;
+  padding: var(--space-8) var(--space-8) var(--space-8) var(--space-12);
+  border: var(--border-w) solid var(--divider);
+  border-radius: var(--radius-14);
+  background: var(--white);
+  color: var(--ink);
+  list-style: none;
+}
+
+.style-file-row__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+.style-file-row__name {
+  overflow: hidden;
+  font: var(--type-label);
+  font-weight: var(--fw-bold);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.style-file-row__detail {
+  color: var(--text-muted);
+  font: var(--type-caption);
+}
+.style-file-row__failure {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-6);
+}
+.style-file-row__detail.is-error {
+  color: var(--danger-text);
+}
+
+.style-file-row__warning {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--target-min);
+  height: var(--target-min);
+  color: var(--ink);
+}
+.style-file-row__warning:focus-visible {
+  border-radius: var(--radius-8);
+  outline: var(--focus-ring);
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+}

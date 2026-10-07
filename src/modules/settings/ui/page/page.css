@@ -1,0 +1,62 @@
+/* Settings page (the design leaves it open: the Connect card in a 760px column, 02 §3). */
+.settings {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--ground);
+}
+
+.settings__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--page-pad-top, 24px) var(--space-24) var(--space-48);
+}
+
+.settings__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.settings__card-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-heavy);
+  letter-spacing: var(--ls-title);
+  outline: none;
+}
+
+.settings__saved {
+  min-height: 1.2em;
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-small);
+}
+
+.settings__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: var(--border-divider);
+}
+
+.settings__footer-spacer {
+  flex: 1;
+}
+
+.settings__usage {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-small);
+}
+
+.settings__danger {
+  color: var(--danger-text);
+}

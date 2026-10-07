@@ -1,0 +1,74 @@
+.tc-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* off = "flat": outline only, hard shadow appears on hover */
+.tc {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  border: var(--border-ink);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: 600 15px/1 var(--font);
+  box-shadow: var(--shadow-none);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+/* 44px hit area */
+.tc::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+}
+.tc:hover:not(:disabled) {
+  box-shadow: var(--shadow-xs);
+}
+.tc:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-none);
+  transition-duration: var(--dur-press);
+}
+.tc:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* on = "ink-fill" */
+.tc[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--text-on-dark);
+  font-weight: 700;
+  box-shadow: var(--shadow-none);
+}
+.tc[aria-pressed='true']:hover:not(:disabled) {
+  background: var(--text-muted-2);
+  box-shadow: var(--shadow-none);
+}
+.tc[aria-pressed='true']:active:not(:disabled) {
+  transform: translate(1px, 1px);
+}
+
+.tc:disabled {
+  border-color: var(--line-muted);
+  background: transparent;
+  color: var(--text-placeholder);
+  box-shadow: var(--shadow-none);
+  cursor: not-allowed;
+}
+
+@media (forced-colors: active) {
+  .tc[aria-pressed='true'] {
+    outline: 3px solid Highlight;
+  }
+}

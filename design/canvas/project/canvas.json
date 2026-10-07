@@ -1,0 +1,158 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-06T09:00:00Z"
+  },
+  "title": "Teacher Slide Planner",
+  "launch": {
+    "view": "canvas",
+    "page": "app"
+  },
+  "pages": [
+    {
+      "id": "app",
+      "name": "App — Classroom"
+    },
+    {
+      "id": "explore",
+      "name": "Early directions"
+    }
+  ],
+  "boards": {
+    "Welcome.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 940,
+      "title": "01 · Welcome (first run)",
+      "expand": "fill",
+      "page": "app",
+      "is_interactive": true
+    },
+    "ConnectClaude.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 980,
+      "title": "02 · Connect Claude (first run + Settings)",
+      "expand": "fill",
+      "page": "app",
+      "is_interactive": true
+    },
+    "Main.dc.html": {
+      "x": 0,
+      "y": 1380,
+      "w": 1440,
+      "h": 1320,
+      "title": "03 · Home",
+      "expand": "fill",
+      "page": "app",
+      "is_interactive": true
+    },
+    "StyleBuilder.dc.html": {
+      "x": 1520,
+      "y": 1380,
+      "w": 1440,
+      "h": 1300,
+      "title": "04 · Create a style",
+      "expand": "fill",
+      "page": "app",
+      "is_interactive": true
+    },
+    "NewLesson.dc.html": {
+      "x": 0,
+      "y": 3100,
+      "w": 1440,
+      "h": 940,
+      "title": "05 · New lesson (empty editor)",
+      "expand": "fill",
+      "page": "app",
+      "is_interactive": true
+    },
+    "Editor.dc.html": {
+      "x": 1520,
+      "y": 3100,
+      "w": 1440,
+      "h": 940,
+      "title": "06 · Editor — chat, circle-to-edit, + menu",
+      "expand": "fill",
+      "page": "app",
+      "is_interactive": true
+    },
+    "PluginSheet.dc.html": {
+      "x": 3040,
+      "y": 3100,
+      "w": 1440,
+      "h": 1080,
+      "title": "07 · Plugin options sheet (Quiz)",
+      "expand": "fill",
+      "page": "app",
+      "is_interactive": true
+    },
+    "Studio.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 940,
+      "title": "A · Studio (not chosen)",
+      "expand": "fill",
+      "page": "explore"
+    },
+    "Focus.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 900,
+      "title": "C · Focus (not chosen)",
+      "expand": "fill",
+      "page": "explore"
+    }
+  },
+  "order": [
+    "Welcome.dc.html",
+    "ConnectClaude.dc.html",
+    "Main.dc.html",
+    "StyleBuilder.dc.html",
+    "NewLesson.dc.html",
+    "Editor.dc.html",
+    "PluginSheet.dc.html",
+    "Studio.dc.html",
+    "Focus.dc.html"
+  ],
+  "notes": {
+    "row1": {
+      "x": 0,
+      "y": -300,
+      "text": "1 · First run: welcome & connect Claude",
+      "kind": "title1",
+      "maxW": 2960,
+      "page": "app"
+    },
+    "row2": {
+      "x": 0,
+      "y": 1080,
+      "text": "2 · Home & styles",
+      "kind": "title1",
+      "maxW": 2960,
+      "page": "app"
+    },
+    "row3": {
+      "x": 0,
+      "y": 2800,
+      "text": "3 · Making & refining a lesson",
+      "kind": "title1",
+      "maxW": 4480,
+      "page": "app"
+    },
+    "explore1": {
+      "x": 0,
+      "y": -300,
+      "text": "Early directions — B (Classroom) was chosen",
+      "kind": "title1",
+      "maxW": 2960,
+      "page": "explore"
+    }
+  },
+  "designSystems": []
+}

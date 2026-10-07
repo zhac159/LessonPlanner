@@ -1,0 +1,167 @@
+/* Connect Claude form and card (design/screens/02-connect-claude.md §3). Tokens only. */
+.console-link {
+  color: var(--ink);
+  font-weight: var(--fw-bold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.akf {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+  min-width: 0;
+}
+
+.akf__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.akf__label {
+  font: var(--type-label-strong);
+}
+
+.akf__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.akf__saved {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+  height: 52px;
+  padding-inline: 14px;
+  border: var(--border-ink);
+  border-radius: var(--radius-14);
+  background: var(--white);
+  font: var(--type-body-lg);
+  font-weight: var(--fw-semibold);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.akf__helper {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-small);
+  line-height: var(--lh-body);
+}
+
+.akf__helper:empty {
+  display: none;
+}
+
+.akf__keep {
+  align-self: flex-start;
+  font-size: var(--fs-small);
+}
+
+.akf__test {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+/* The card around the first-run Connect step */
+.connect {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--ground);
+}
+
+.connect__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: var(--space-14) var(--space-24);
+}
+
+.connect__spacer {
+  flex: 1;
+}
+
+.connect__main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--space-16) var(--space-24) var(--space-48);
+}
+
+.connect__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  width: 100%;
+  max-width: 760px;
+}
+
+.connect__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.connect__title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.connect__title-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.connect__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: var(--fw-heavy);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.connect__lead {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
+}
+
+.connect__how {
+  display: block;
+}
+
+.connect__footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+  margin: 0 calc(-1 * var(--space-32)) calc(-1 * var(--space-32));
+  padding: var(--space-16) var(--space-32) var(--space-32);
+  border-top: var(--border-divider);
+  border-radius: 0 0 var(--radius-24) var(--radius-24);
+  background: var(--white);
+}
+
+.connect__footer-spacer {
+  flex: 1;
+}
+
+/* The sticky footer must never cover the control that just took focus (short windows scroll). */
+.connect__body :is(input, select, button, a) {
+  scroll-margin-bottom: 120px;
+}

@@ -1,0 +1,63 @@
+.as-basedon {
+  display: grid;
+  gap: var(--space-8);
+}
+.as-basedon__label {
+  margin: 0;
+  font: 800 13px/1.3 var(--font);
+}
+.as-basedon__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  margin: 0;
+  padding: var(--space-8) var(--space-12) 0 0;
+  list-style: none;
+}
+.as-basedon__item {
+  position: relative;
+}
+.as-basedon__thumb {
+  width: 68px;
+  height: 56px;
+  padding: var(--space-4);
+  border: var(--border-ink);
+  border-radius: var(--radius-12);
+  background: var(--surface-sunken);
+}
+.as-basedon__thumb .as-thumb__img {
+  max-height: 44px;
+}
+.as-basedon__x {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: var(--border-ink);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+}
+/* 44px hit area around the 28px button. */
+.as-basedon__x::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+}
+.as-basedon__x:hover {
+  background: var(--surface-hover);
+}
+.as-basedon__x:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 1px;
+}
+.as-basedon__empty {
+  margin: 0;
+  color: var(--text-muted);
+  font: var(--type-small);
+}

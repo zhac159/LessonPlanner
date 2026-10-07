@@ -1,0 +1,125 @@
+/* Shared by every forms-kit component. Tokens only. */
+
+.fk-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Label + control + message */
+.fk-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.fk-shell__row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.fk-shell__row--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+.fk-label {
+  font: var(--type-label);
+  color: var(--text);
+}
+.fk-label--strong {
+  font: var(--type-label-strong);
+}
+.fk-label--inline {
+  font: 600 14px/1.3 var(--font);
+  color: var(--text-muted);
+}
+.fk-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  font: 400 13px/1.4 var(--font);
+  color: var(--text-muted);
+}
+.fk-message--error {
+  font-weight: 700;
+  color: var(--danger-text);
+}
+.fk-message--error svg {
+  flex: none;
+  margin-top: 1px;
+}
+
+/* The "field" recipe: 2px ink, white; yellow halo + ink rim on focus */
+.fk-field {
+  border: var(--border-ink);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-none);
+  transition:
+    box-shadow var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+.fk-field:focus,
+.fk-field:focus-within {
+  box-shadow: var(--focus-field);
+}
+.fk-field.is-invalid {
+  box-shadow: var(--field-error);
+}
+.fk-field.is-invalid:focus,
+.fk-field.is-invalid:focus-within {
+  box-shadow: var(--focus-field-error);
+}
+.fk-field.is-disabled,
+.fk-field:disabled {
+  border: var(--border-disabled);
+  background: var(--ground);
+  color: var(--text-placeholder);
+  box-shadow: var(--shadow-none);
+  cursor: not-allowed;
+}
+
+/* Bare input/textarea inside a .fk-field box */
+.fk-input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+.fk-input::placeholder {
+  color: var(--text-placeholder);
+  font-weight: 400;
+}
+.fk-input:disabled {
+  cursor: not-allowed;
+}
+
+.fk-spin {
+  flex: none;
+  animation: fk-spin 1s linear infinite;
+}
+@keyframes fk-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fk-spin {
+    animation: none;
+  }
+}

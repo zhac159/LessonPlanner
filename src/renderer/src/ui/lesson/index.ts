@@ -1,0 +1,11 @@
+/** Lesson composites: lesson and style cards, slide thumbnails, the filmstrip and the stage. Import from '@ui/lesson'. */
+export { LessonCard, type LessonCardProps } from './LessonCard/LessonCard'
+export { StyleCard, type StyleCardProps } from './StyleCard/StyleCard'
+export { SlideThumb, THUMB_WIDTH, type SlideThumbProps } from './SlideThumb/SlideThumb'
+export { Filmstrip, type FilmstripProps } from './Filmstrip/Filmstrip'
+export type { AfterId } from './Filmstrip/reorder'
+export { SlideStage, type SlideStageProps, type StageBox } from './SlideStage/SlideStage'
+export { clientToSlide } from './SlideStage/slideUnits'
+export { formatRelativeDate } from './formatRelativeDate'
+export { slideLabel } from './slideLabel'
+export { yearColor } from './yearColor'

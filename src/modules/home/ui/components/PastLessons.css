@@ -1,0 +1,121 @@
+.home-past {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-18);
+}
+
+.home-past__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.home-past__title {
+  margin: 0 var(--space-8) 0 0;
+  font: var(--type-section-lg);
+  letter-spacing: var(--ls-title);
+}
+
+.home-past__spacer {
+  flex: 1 1 0;
+}
+
+.home-past__sort {
+  --fk-radius: var(--radius-12);
+}
+
+.home-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-20);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-grid__item {
+  min-width: 0;
+}
+
+.home-grid__more {
+  display: flex;
+  justify-content: center;
+}
+
+.home-damaged {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  height: 100%;
+  padding: var(--space-16);
+  border: var(--border-ink);
+  border-radius: var(--radius-18);
+  background: var(--danger);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+}
+
+.home-damaged__title {
+  margin: 0;
+  overflow: hidden;
+  font: 700 16px/1.3 var(--font);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-damaged__text {
+  margin: 0;
+  font: var(--type-small);
+}
+
+.home-damaged__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-top: auto;
+}
+
+.home-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-bottom: var(--space-14);
+  overflow: hidden;
+  border: var(--border-ink);
+  border-radius: var(--radius-18);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.home-skeleton__cover {
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-bottom: var(--border-ink);
+  background: var(--divider);
+  animation: home-pulse 1.4s ease-in-out infinite;
+}
+
+.home-skeleton__bar {
+  display: block;
+  height: 12px;
+  margin: 0 var(--space-14);
+  border-radius: var(--radius-8);
+  background: var(--divider);
+}
+
+.home-skeleton__bar--short {
+  width: 45%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-skeleton__cover {
+    animation: none;
+  }
+}

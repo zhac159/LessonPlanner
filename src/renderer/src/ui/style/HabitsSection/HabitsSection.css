@@ -1,0 +1,10 @@
+.habit {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-10);
+  font: var(--type-small);
+}
+.habit svg {
+  flex: none;
+  margin-top: 3px;
+}

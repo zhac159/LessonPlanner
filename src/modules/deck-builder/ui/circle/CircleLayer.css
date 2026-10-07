@@ -1,0 +1,12 @@
+/* Fills the stage's overlay box; only the overlay inside reacts to the pointer (and only while the tool is on). */
+.circle-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* The "Add asset here" bar (A10) reacts to the pointer; its right edge sits at `left`. */
+.circle-layer__bar {
+  pointer-events: auto;
+  transform: translateX(-100%);
+}

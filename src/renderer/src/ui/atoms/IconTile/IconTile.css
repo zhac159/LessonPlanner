@@ -1,0 +1,39 @@
+.ui-icon-tile {
+  --tile: 52px;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--tile);
+  height: var(--tile);
+  border: var(--border-ink);
+  border-radius: var(--radius-14);
+  background: var(--white);
+  color: var(--ink);
+}
+
+.ui-icon-tile[data-size='44'] {
+  --tile: 44px;
+  border-radius: var(--radius-12);
+}
+.ui-icon-tile[data-size='60'] {
+  --tile: 60px;
+  border-radius: var(--radius-16);
+}
+.ui-icon-tile[data-size='76'] {
+  --tile: 76px;
+  border-radius: var(--radius-20);
+  box-shadow: var(--shadow-md);
+}
+
+.ui-icon-tile[data-tone='yellow'] {
+  background: var(--yellow);
+}
+.ui-icon-tile[data-tone='orange'] {
+  background: var(--orange);
+}
+.ui-icon-tile[data-tone='peach'] {
+  background: var(--peach);
+}
+.ui-icon-tile[data-tone='butter'] {
+  background: var(--butter);
+}

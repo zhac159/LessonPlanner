@@ -1,0 +1,76 @@
+.lesson-error {
+  display: grid;
+  flex: 1 1 auto;
+  place-items: center;
+  padding: var(--space-24);
+}
+
+/* Nothing is drawn for the first 300 ms: a quick open should not flash a skeleton (06 §7). */
+.editor-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 100%;
+  opacity: 0;
+  animation: editor-skeleton-in 1ms linear 300ms forwards;
+}
+@keyframes editor-skeleton-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.editor-skeleton__stage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: var(--border-placeholder);
+  border-radius: var(--radius-14);
+  background: var(--divider);
+  animation: editor-skeleton-pulse var(--dur-loop) var(--ease) infinite;
+}
+.editor-skeleton__strip {
+  display: flex;
+  gap: var(--space-12);
+}
+.editor-skeleton__thumb {
+  flex: none;
+  width: 132px;
+  aspect-ratio: 16 / 9;
+  border: var(--border-placeholder);
+  border-radius: var(--radius-10);
+  animation: editor-skeleton-pulse var(--dur-loop) var(--ease) infinite;
+}
+.editor-skeleton--chat {
+  padding: var(--space-18);
+}
+.editor-skeleton__bubble {
+  height: 72px;
+  border-radius: var(--radius-18);
+  background: var(--divider);
+}
+.editor-skeleton__bubble[data-short] {
+  width: 60%;
+  height: 44px;
+  align-self: flex-end;
+}
+
+@keyframes editor-skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.editor-stopped {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editor-skeleton__stage,
+  .editor-skeleton__thumb {
+    animation: none;
+  }
+}

@@ -1,0 +1,68 @@
+/* Shared pieces of the assets kit: thumbnail box, kind pill, roving grid, screen-reader text. */
+.as-thumb {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--surface-sunken);
+}
+.as-thumb__img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.as-thumb__empty {
+  color: var(--text-placeholder);
+}
+
+.as-kind {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--cat-lilac);
+  color: var(--ink);
+  font: 800 11px/1.2 var(--font);
+  white-space: nowrap;
+}
+.as-kind[data-kind='logo'] {
+  background: var(--cat-sky);
+}
+.as-kind[data-kind='icon'] {
+  background: var(--cat-mint);
+}
+.as-kind[data-kind='picture'],
+.as-kind[data-kind='photo'] {
+  background: var(--cat-peach);
+}
+.as-kind[data-kind='diagram'] {
+  background: var(--cat-teal);
+}
+.as-kind[data-kind='banner'] {
+  background: var(--cat-butter);
+}
+.as-kind[data-kind='character'] {
+  background: var(--cat-purple);
+}
+
+.as-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The mono name used on pills, tiles and fields: the chat name is always set in the mono face. */
+.as-mono {
+  font-family: var(--font-mono, ui-monospace, 'Cascadia Mono', Consolas, monospace);
+  font-weight: 700;
+}

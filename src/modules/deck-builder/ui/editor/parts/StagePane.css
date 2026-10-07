@@ -1,0 +1,9 @@
+.stage-pane {
+  width: 100%;
+  min-width: 0;
+  border-radius: var(--radius-14);
+}
+.stage-pane:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}

@@ -1,0 +1,13 @@
+.as-keep {
+  display: grid;
+  gap: var(--space-12);
+}
+.as-keep__name input {
+  font-family: var(--font-mono, ui-monospace, 'Cascadia Mono', Consolas, monospace);
+  font-weight: 700;
+}
+.as-keep__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-10);
+}

@@ -1,0 +1,44 @@
+.ui-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: 3px 10px;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--pill-bg, var(--white));
+  color: var(--ink);
+  font: 700 12px/1.3 var(--font);
+  white-space: nowrap;
+}
+
+.ui-pill[data-size='xs'] {
+  padding: 2px 8px;
+}
+.ui-pill[data-size='md'] {
+  padding: 4px 12px;
+  font-size: 13px;
+}
+.ui-pill[data-size='lg'] {
+  height: 40px;
+  padding: 0 14px;
+  gap: var(--space-8);
+  font-size: 14px;
+}
+
+.ui-pill[data-tone='done'] {
+  background: var(--status-done);
+}
+.ui-pill[data-tone='working'] {
+  background: var(--status-working);
+}
+.ui-pill[data-tone='waiting'] {
+  background: var(--status-waiting);
+}
+.ui-pill[data-tone='error'] {
+  background: var(--status-error);
+}
+.ui-pill[data-tone='inverse'] {
+  border-color: transparent;
+  background: var(--ink);
+  color: var(--white);
+}

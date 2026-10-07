@@ -1,0 +1,50 @@
+.ui-card {
+  --radius-card: var(--radius-24);
+  --card-pad: var(--space-24);
+  min-width: 0;
+  padding: var(--card-pad);
+  border: var(--border-ink);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.ui-card[data-variant='panel'] {
+  --radius-card: var(--radius-22);
+  --card-pad: 0px;
+}
+.ui-card[data-variant='raised'] {
+  --radius-card: var(--radius-18);
+}
+.ui-card[data-variant='selected'] {
+  --radius-card: var(--radius-14);
+  --card-pad: 12px 14px;
+}
+.ui-card[data-variant='inner'] {
+  --radius-card: var(--radius-16);
+  --card-pad: var(--space-16);
+}
+
+.ui-card[data-flush] {
+  overflow: hidden;
+}
+
+.ui-card[data-shadow='sm'] {
+  box-shadow: var(--shadow-sm);
+}
+.ui-card[data-shadow='md'] {
+  box-shadow: var(--shadow-md);
+}
+.ui-card[data-shadow='lg'] {
+  box-shadow: var(--shadow-lg);
+}
+
+.ui-card[data-tone='accent'] {
+  background: var(--orange);
+}
+.ui-card[data-tone='sunken'] {
+  background: var(--surface-sunken);
+}
+.ui-card[data-tone='style'] {
+  background: var(--tone-style);
+}

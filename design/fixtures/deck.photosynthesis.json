@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "les_photosynthesis",
+  "title": "Y8 Science — Photosynthesis",
+  "meta": {
+    "subject": "Science",
+    "yearGroup": "Year 8",
+    "durationMin": 50,
+    "ability": "Mixed ability",
+    "targetSlideCount": 8,
+    "objectives": [
+      "Describe where photosynthesis happens in a plant",
+      "Write the word equation for photosynthesis",
+      "Explain why photosynthesis is endothermic"
+    ],
+    "context": "Set 3. Lots of them mix up respiration and photosynthesis."
+  },
+  "styleId": "sty_science_ks3",
+  "styleVersion": 3,
+  "size": { "width": 1920, "height": 1080 },
+  "slides": [
+    {
+      "id": "s1",
+      "kind": "title",
+      "layoutId": "title",
+      "source": { "by": "ai" },
+      "notes": "Welcome them in. Bags away, planners out. Lesson 3 of 6 on plants.",
+      "elements": [
+        { "id": "s1-band", "type": "shape", "shape": "rect", "x": 0, "y": 0, "w": 27, "h": 1080, "locked": true, "styleRef": "decoration.leftBand", "fill": { "color": "token:accent" } },
+        { "id": "s1-kicker", "type": "text", "role": "kicker", "styleRef": "kicker", "x": 125, "y": 380, "w": 1600, "h": 40, "paragraphs": [{ "runs": [{ "text": "Lesson 3 · Year 8 Science" }] }] },
+        { "id": "s1-title", "type": "text", "role": "title", "styleRef": "title", "x": 125, "y": 430, "w": 1600, "h": 220, "fontSizePt": 60, "paragraphs": [{ "runs": [{ "text": "How do plants " }, { "text": "make food?", "color": "token:accent" }] }] }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "do-now",
+      "layoutId": "content-text-left-image-right",
+      "source": { "by": "ai" },
+      "notes": "5 minutes, silent. Q3 surfaces the respiration mix-up; take two answers before revealing.",
+      "elements": [
+        { "id": "s2-band", "type": "shape", "shape": "rect", "x": 0, "y": 0, "w": 27, "h": 1080, "locked": true, "styleRef": "decoration.leftBand", "fill": { "color": "token:accent" } },
+        { "id": "s2-kicker", "type": "text", "role": "kicker", "styleRef": "kicker", "x": 125, "y": 86, "w": 1700, "h": 36, "paragraphs": [{ "runs": [{ "text": "Do Now · 5 minutes" }] }] },
+        { "id": "s2-title", "type": "text", "role": "title", "styleRef": "title", "x": 125, "y": 140, "w": 1700, "h": 110, "paragraphs": [{ "runs": [{ "text": "Answer in your " }, { "text": "books", "color": "token:accent" }] }] },
+        { "id": "s2-qs", "type": "text", "role": "body", "styleRef": "body", "x": 125, "y": 290, "w": 1700, "h": 520, "paragraphs": [
+          { "list": "number", "runs": [{ "text": "Name the green substance in leaves" }] },
+          { "list": "number", "runs": [{ "text": "What gas do we breathe out?" }] },
+          { "list": "number", "runs": [{ "text": "Is respiration the same as breathing? Why?" }] }
+        ] }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "objectives",
+      "layoutId": "content-text-left-image-right",
+      "source": { "by": "ai" },
+      "notes": "Read the objectives together. Ask for a thumbs up on which they already know something about.",
+      "elements": [
+        { "id": "s3-band", "type": "shape", "shape": "rect", "x": 0, "y": 0, "w": 27, "h": 1080, "locked": true, "styleRef": "decoration.leftBand", "fill": { "color": "token:accent" } },
+        { "id": "s3-kicker", "name": "kicker", "type": "text", "role": "kicker", "styleRef": "kicker", "x": 125, "y": 86, "w": 1700, "h": 36, "paragraphs": [{ "runs": [{ "text": "Lesson 3 · Photosynthesis" }] }] },
+        { "id": "s3-title", "name": "title", "type": "text", "role": "title", "styleRef": "title", "x": 125, "y": 140, "w": 1700, "h": 110, "paragraphs": [{ "runs": [{ "text": "What do plants need to " }, { "text": "make food?", "color": "token:accent" }] }] },
+        { "id": "s3-heading", "name": "objectives heading", "type": "text", "role": "heading", "styleRef": "heading", "x": 125, "y": 290, "w": 940, "h": 44, "paragraphs": [{ "runs": [{ "text": "Today I will…", "bold": true }] }] },
+        { "id": "s3-los", "name": "objectives list", "type": "text", "role": "body", "styleRef": "checklist", "x": 125, "y": 345, "w": 940, "h": 330, "paragraphs": [
+          { "list": "checkbox", "runs": [{ "text": "Describe where photosynthesis happens in a plant" }] },
+          { "list": "checkbox", "runs": [{ "text": "Write the word equation for photosynthesis" }] },
+          { "list": "checkbox", "runs": [{ "text": "Explain why photosynthesis is endothermic" }] }
+        ] },
+        { "id": "s3-keywords", "name": "key words", "type": "chips", "styleRef": "chip", "x": 125, "y": 740, "w": 940, "h": 60, "items": ["chlorophyll", "glucose", "endothermic"] },
+        { "id": "s3-photo", "name": "photo", "type": "image", "styleRef": "image.placeholder", "x": 1110, "y": 290, "w": 715, "h": 520, "fit": "cover", "alt": "A leaf in sunlight", "placeholder": { "description": "Photo: leaf in sunlight" } },
+        { "id": "s3-mwb", "name": "mini-whiteboard question", "type": "callout", "variant": "mini-whiteboard", "styleRef": "callout.mini-whiteboard", "x": 125, "y": 860, "w": 1700, "h": 120, "label": "Mini-whiteboards:", "paragraphs": [{ "runs": [{ "text": "What do you think a plant “eats”?" }] }] }
+      ]
+    }
+  ],
+  "createdAt": "2026-10-06T11:00:00Z",
+  "updatedAt": "2026-10-06T11:05:00Z"
+}

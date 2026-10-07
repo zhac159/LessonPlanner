@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "slide-planner-app": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--cdp-endpoint",
+        "http://127.0.0.1:9222"
+      ]
+    },
+    "playwright": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--browser",
+        "msedge",
+        "--isolated",
+        "--viewport-size",
+        "1440x900"
+      ]
+    }
+  }
+}

@@ -1,0 +1,183 @@
+/* Recipes from design-system §7.0. --s is the resting shadow offset. */
+.ui-button {
+  --h: 44px;
+  --px: var(--space-16);
+  --gap: var(--space-8);
+  --icon: var(--icon-sm);
+  --radius-btn: var(--radius-12);
+  --s: 0px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+  height: var(--h);
+  padding: 0 var(--px);
+  border: var(--border-ink);
+  border-radius: var(--radius-btn);
+  background: var(--white);
+  color: var(--ink);
+  font: var(--type-button);
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--s) var(--s) 0 var(--ink);
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+
+.ui-button[data-size='sm'] {
+  --h: 32px;
+  --px: var(--space-12);
+  --gap: var(--space-6);
+  --icon: var(--icon-xs);
+  font: 700 13px/1.2 var(--font);
+}
+.ui-button[data-size='lg'] {
+  --h: 48px;
+  --px: var(--space-20);
+  --icon: var(--icon-md);
+  --radius-btn: var(--radius-14);
+  font: 700 16px/1.2 var(--font);
+}
+.ui-button[data-size='xl'] {
+  --h: 52px;
+  --px: var(--space-24);
+  --gap: var(--space-10);
+  --icon: var(--icon-md);
+  --radius-btn: var(--radius-14);
+  font: var(--type-button-lg);
+}
+.ui-button[data-shape='pill'] {
+  --radius-btn: var(--radius-pill);
+}
+
+/* Keep a 44px hit area on the 32px size. */
+.ui-button[data-size='sm']::before {
+  content: '';
+  position: absolute;
+  inset: -6px -4px;
+}
+
+.ui-button__icon {
+  display: inline-flex;
+  flex: none;
+}
+.ui-button__icon svg,
+.ui-button__spinner {
+  width: var(--icon);
+  height: var(--icon);
+  flex: none;
+}
+.ui-button__spinner {
+  animation: ui-button-spin 1s linear infinite;
+}
+@keyframes ui-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* primary: raised */
+.ui-button[data-variant='primary'] {
+  --s: 3px;
+  background: var(--orange);
+}
+.ui-button[data-variant='primary'][data-size='lg'],
+.ui-button[data-variant='primary'][data-size='xl'] {
+  font-weight: var(--fw-heavy);
+}
+
+/* dark: ink-fill */
+.ui-button[data-variant='dark'] {
+  background: var(--ink);
+  color: var(--white);
+}
+
+/* ghost */
+.ui-button[data-variant='ghost'] {
+  border-color: transparent;
+  background: transparent;
+}
+
+/* hover / pressed (not while disabled, aria-disabled or loading) */
+.ui-button:not(:disabled):not([aria-disabled='true']):not([aria-busy='true']):hover {
+  transform: translate(var(--lift), var(--lift));
+}
+.ui-button[data-variant='primary']:not(:disabled):not([aria-disabled='true']):not(
+    [aria-busy='true']
+  ):hover {
+  box-shadow: calc(var(--s) + 1px) calc(var(--s) + 1px) 0 var(--ink);
+}
+.ui-button[data-variant='primary']:not(:disabled):not([aria-disabled='true']):not(
+    [aria-busy='true']
+  ):active {
+  transform: translate(var(--press), var(--press));
+  box-shadow: max(var(--s) - 2px, 0px) max(var(--s) - 2px, 0px) 0 var(--ink);
+  transition-duration: var(--dur-press);
+}
+
+.ui-button[data-variant='secondary']:not(:disabled):not([aria-disabled='true']):not(
+    [aria-busy='true']
+  ):hover {
+  transform: none;
+  box-shadow: var(--shadow-xs);
+}
+.ui-button[data-variant='secondary']:not(:disabled):not([aria-disabled='true']):not(
+    [aria-busy='true']
+  ):active {
+  transform: translate(var(--press), var(--press));
+  box-shadow: var(--shadow-none);
+  transition-duration: var(--dur-press);
+}
+
+.ui-button[data-variant='dark']:not(:disabled):not([aria-disabled='true']):not(
+    [aria-busy='true']
+  ):hover {
+  transform: none;
+  background: var(--text-muted-2);
+}
+.ui-button[data-variant='dark']:not(:disabled):not([aria-disabled='true']):not(
+    [aria-busy='true']
+  ):active {
+  transform: translate(1px, 1px);
+  transition-duration: var(--dur-press);
+}
+
+.ui-button[data-variant='ghost']:not(:disabled):not([aria-disabled='true']):not(
+    [aria-busy='true']
+  ):hover {
+  transform: none;
+  background: var(--surface-hover);
+}
+.ui-button[data-variant='ghost']:not(:disabled):not([aria-disabled='true']):not(
+    [aria-busy='true']
+  ):active {
+  background: var(--surface-pressed);
+}
+
+/* disabled */
+.ui-button:disabled,
+.ui-button[aria-disabled='true'] {
+  border-color: var(--line-muted);
+  background: transparent;
+  color: var(--text-placeholder);
+  box-shadow: var(--shadow-none);
+  cursor: not-allowed;
+}
+.ui-button[data-variant='ghost']:disabled,
+.ui-button[data-variant='ghost'][aria-disabled='true'] {
+  border-color: transparent;
+  color: var(--line-muted);
+}
+
+.ui-button[aria-busy='true'] {
+  cursor: progress;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-button__spinner {
+    animation: none;
+  }
+}

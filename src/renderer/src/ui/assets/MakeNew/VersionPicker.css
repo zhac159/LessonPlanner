@@ -1,0 +1,111 @@
+.as-versions {
+  display: grid;
+  gap: var(--space-8);
+}
+.as-versions__label {
+  margin: 0;
+  font: 800 14px/1.3 var(--font);
+}
+.as-versions__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-12);
+  padding: 0 var(--space-6) var(--space-6) 0;
+}
+.as-version {
+  position: relative;
+  min-width: 0;
+}
+.as-version__pick {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 112px;
+  padding: var(--space-8);
+  border: var(--border-ink);
+  border-radius: var(--radius-16);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: box-shadow var(--dur-fast) var(--ease);
+}
+.as-version__pick:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+.as-version__pick[aria-checked='true'] {
+  background: var(--butter);
+  box-shadow: var(--shadow-accent);
+}
+.as-version__pick[aria-disabled='true'] {
+  cursor: default;
+}
+.as-version[data-state='failed'] .as-version__pick {
+  border-style: dashed;
+  background: var(--surface-sunken);
+  box-shadow: none;
+}
+.as-version__n {
+  position: absolute;
+  top: var(--space-6);
+  left: var(--space-8);
+  font: 800 11px/1 var(--font);
+  color: var(--text-muted);
+}
+.as-version__thumb {
+  width: 100%;
+  height: 96px;
+  background: transparent;
+}
+.as-version__thumb .as-thumb__img {
+  max-height: 96px;
+}
+.as-version__wait,
+.as-version__failed {
+  color: var(--text-muted);
+  font: 700 12px/1.3 var(--font);
+  text-align: center;
+}
+.as-version[data-state='waiting'] .as-version__pick {
+  background: linear-gradient(
+    100deg,
+    var(--surface-sunken) 30%,
+    var(--white) 50%,
+    var(--surface-sunken) 70%
+  );
+  background-size: 200% 100%;
+  animation: as-shimmer 1.4s linear infinite;
+}
+.as-version__retry {
+  position: absolute;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  min-height: 28px;
+  padding: 0 var(--space-8);
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--ink);
+  font: 700 11px/1 var(--font);
+  cursor: pointer;
+}
+.as-version__retry:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 1px;
+}
+@keyframes as-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .as-version[data-state='waiting'] .as-version__pick {
+    animation: none;
+  }
+}

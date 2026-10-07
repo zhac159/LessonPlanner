@@ -1,0 +1,143 @@
+.ui-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  width: 100%;
+  min-height: 150px;
+  padding: var(--space-18);
+  border: var(--border-dashed);
+  border-radius: var(--radius-16);
+  background: var(--surface-invite);
+  color: var(--ink);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+
+.ui-dropzone__icon {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+}
+
+.ui-dropzone__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.ui-dropzone__title {
+  font: 800 17px/1.3 var(--font);
+}
+.ui-dropzone__description {
+  color: var(--text-muted-2);
+  font: var(--type-small);
+}
+.ui-dropzone__meta {
+  color: var(--text-muted);
+  font: 400 12px/1.4 var(--font);
+}
+.ui-dropzone__link {
+  font-weight: var(--fw-bold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* The orange disc behind the arrow (large 52, compact 44). */
+.ui-dropzone[data-variant='large'] .ui-dropzone__icon,
+.ui-dropzone[data-variant='compact'] .ui-dropzone__icon {
+  width: 52px;
+  height: 52px;
+  border: var(--border-ink);
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.ui-dropzone[data-variant='compact'] {
+  flex-direction: row;
+  justify-content: flex-start;
+  min-height: 0;
+  gap: var(--space-12);
+  padding: var(--space-14);
+  text-align: left;
+}
+.ui-dropzone[data-variant='compact'] .ui-dropzone__icon {
+  width: 44px;
+  height: 44px;
+}
+.ui-dropzone[data-variant='compact'] .ui-dropzone__title {
+  font: 700 15px/1.3 var(--font);
+}
+.ui-dropzone[data-variant='compact'] .ui-dropzone__description {
+  font-size: var(--fs-caption);
+}
+
+.ui-dropzone[data-variant='chat'] {
+  min-height: 0;
+  gap: var(--space-6);
+  padding: 22px var(--space-16);
+}
+.ui-dropzone[data-variant='chat'] .ui-dropzone__title {
+  font: 800 15px/1.3 var(--font);
+}
+.ui-dropzone[data-variant='chat'] .ui-dropzone__description {
+  font-size: var(--fs-caption);
+}
+
+.ui-dropzone:not(:disabled):hover {
+  box-shadow: var(--shadow-xs);
+}
+.ui-dropzone:not(:disabled):active {
+  transform: translate(var(--press), var(--press));
+  box-shadow: var(--shadow-none);
+}
+
+.ui-dropzone[data-drag='valid'] {
+  border-style: solid;
+  background: var(--yellow);
+  box-shadow: var(--shadow-md);
+}
+.ui-dropzone[data-drag='invalid'] {
+  border-style: solid;
+  background: var(--peach);
+}
+
+.ui-dropzone:disabled {
+  border-color: var(--line-muted);
+  background: var(--ground);
+  color: var(--text-placeholder);
+  cursor: not-allowed;
+}
+.ui-dropzone:disabled .ui-dropzone__description,
+.ui-dropzone:disabled .ui-dropzone__meta {
+  color: var(--text-placeholder);
+}
+.ui-dropzone:disabled .ui-dropzone__icon {
+  border-color: var(--line-muted);
+  background: transparent;
+}
+
+.ui-dropzone[aria-busy='true'] {
+  cursor: progress;
+}
+.ui-dropzone__spinner {
+  animation: ui-dropzone-spin 1s linear infinite;
+}
+@keyframes ui-dropzone-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-dropzone__spinner {
+    animation: none;
+  }
+}

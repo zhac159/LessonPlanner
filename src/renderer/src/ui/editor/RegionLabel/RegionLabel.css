@@ -1,0 +1,64 @@
+.region-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 4px 10px 4px 4px;
+  border: var(--border-ink);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--ink);
+  font: 700 13px/1.2 var(--font);
+  white-space: nowrap;
+  transition: box-shadow var(--dur-fast) var(--ease);
+}
+
+.region-label__n {
+  font-size: 13px;
+}
+
+.region-label__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.region-label:hover,
+.region-label[data-linked],
+.region-label:focus-within {
+  box-shadow: var(--shadow-xs);
+}
+
+/* The remove button takes no room until the label is hovered or focused (it stays focusable). */
+.region-label__remove {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 0;
+  height: 20px;
+  margin-right: -10px;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.region-label:hover .region-label__remove,
+.region-label:focus-within .region-label__remove {
+  width: 20px;
+  margin-right: -4px;
+  opacity: 1;
+}
+
+.region-label__remove:hover {
+  background: var(--surface-hover);
+}
+
+.region-label__remove:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 1px;
+}

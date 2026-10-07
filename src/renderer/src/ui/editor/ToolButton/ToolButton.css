@@ -1,0 +1,41 @@
+.tool-button {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: var(--radius-12);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+
+.tool-button:not([aria-disabled='true']):hover {
+  background: var(--surface-hover);
+}
+
+.tool-button:not([aria-disabled='true']):active {
+  transform: translate(1px, 1px);
+  background: var(--surface-pressed);
+  transition-duration: var(--dur-press);
+}
+
+.tool-button[aria-pressed='true'] {
+  border-color: var(--ink);
+  background: var(--orange);
+  color: var(--text-on-accent);
+}
+
+.tool-button:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.tool-button[aria-disabled='true'] {
+  color: var(--line-muted);
+  cursor: not-allowed;
+}

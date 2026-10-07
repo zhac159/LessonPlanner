@@ -1,0 +1,58 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install dependencies (if needed)",
+      "type": "shell",
+      "command": "node scripts/ensure-deps.mjs",
+      "presentation": { "reveal": "always", "panel": "shared", "clear": false },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build app",
+      "type": "shell",
+      "command": "npm run build:debug",
+      "dependsOn": ["Install dependencies (if needed)"],
+      "presentation": { "reveal": "always", "panel": "shared", "clear": true },
+      "problemMatcher": [],
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "label": "Typecheck",
+      "type": "shell",
+      "command": "npm run typecheck",
+      "problemMatcher": []
+    },
+    {
+      "label": "Unit tests",
+      "type": "shell",
+      "command": "npm test",
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Smoke test (launches the built app)",
+      "type": "shell",
+      "command": "npm run smoke",
+      "problemMatcher": []
+    },
+    {
+      "label": "Package Windows installer (.exe)",
+      "type": "shell",
+      "command": "npm run package",
+      "problemMatcher": []
+    },
+    {
+      "label": "Package unpacked app (.exe in release/win-unpacked)",
+      "type": "shell",
+      "command": "npm run package:dir",
+      "problemMatcher": []
+    },
+    {
+      "label": "Sync agent skills to .claude/skills",
+      "type": "shell",
+      "command": "npm run skills:sync",
+      "problemMatcher": []
+    }
+  ]
+}

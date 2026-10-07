@@ -1,0 +1,68 @@
+.as-sheet {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  border: var(--border-ink);
+  border-radius: var(--radius-22);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: var(--shadow-lg);
+}
+.as-sheet[data-variant='card'] {
+  height: auto;
+  max-height: 100%;
+  border-radius: var(--radius-18);
+  box-shadow: var(--shadow-md);
+}
+.as-sheet > .ui-band {
+  border-bottom: var(--border-ink);
+}
+
+.as-sheet__badge {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: var(--border-ink);
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--text-on-accent);
+  font: 800 14px/1 var(--font);
+}
+
+.as-sheet__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding: var(--space-10) var(--space-12);
+}
+.as-sheet__title {
+  flex: 1 1 auto;
+  margin: 0;
+  font: var(--type-panel-title);
+}
+
+.as-sheet__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: var(--space-12);
+  min-height: 0;
+  padding: var(--space-16) var(--space-16) var(--space-12);
+  overflow-y: auto;
+}
+.as-sheet[data-variant='card'] .as-sheet__body {
+  padding-top: var(--space-4);
+}
+
+.as-sheet__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  padding: var(--space-14) var(--space-16);
+  border-top: var(--border-divider);
+  background: var(--white);
+}

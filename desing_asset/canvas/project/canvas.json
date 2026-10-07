@@ -1,0 +1,197 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "EditorChip.dc.html": {
+      "expand": "fill",
+      "h": 940,
+      "is_interactive": true,
+      "title": "A5 · Editor — asset in chat, placed on the slide",
+      "w": 1440,
+      "x": 2120,
+      "y": 1710
+    },
+    "EditorPicker.dc.html": {
+      "expand": "fill",
+      "h": 940,
+      "is_interactive": true,
+      "title": "A4 · Editor — asset picker",
+      "w": 1440,
+      "x": 600,
+      "y": 1710
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 1170,
+      "is_interactive": true,
+      "title": "A1 · Your assets (library)",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "PlusMenu.dc.html": {
+      "h": 560,
+      "is_interactive": true,
+      "title": "A3 · + menu with Add asset",
+      "w": 520,
+      "x": 0,
+      "y": 1710
+    },
+    "Review.dc.html": {
+      "expand": "fill",
+      "h": 1310,
+      "is_interactive": true,
+      "title": "A2 · Check what I found (review extracted assets)",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "StyleAssets.dc.html": {
+      "expand": "fill",
+      "h": 1770,
+      "is_interactive": true,
+      "title": "A6 · Create a style — picture habits + assets found",
+      "w": 1440,
+      "x": 0,
+      "y": 3050
+    },
+    "ConnectAI.dc.html": {
+      "expand": "fill",
+      "h": 1290,
+      "is_interactive": true,
+      "title": "A7 · Setup — Claude + optional picture maker (Nano Banana Pro)",
+      "w": 1440,
+      "x": 1520,
+      "y": 3050
+    },
+    "MakeNew.dc.html": {
+      "expand": "fill",
+      "h": 1250,
+      "is_interactive": true,
+      "title": "A8 · Assets — select some, make a new one in the same style",
+      "w": 1440,
+      "x": 0,
+      "y": 5220
+    },
+    "FindOnline.dc.html": {
+      "expand": "fill",
+      "h": 1120,
+      "is_interactive": true,
+      "title": "A9 · Assets — find images online",
+      "w": 1440,
+      "x": 1520,
+      "y": 5220
+    },
+    "RegionAction.dc.html": {
+      "expand": "fill",
+      "h": 940,
+      "is_interactive": true,
+      "title": "A10 · Editor — circle something, then Add asset here",
+      "w": 1440,
+      "x": 0,
+      "y": 6870
+    },
+    "RegionPicker.dc.html": {
+      "expand": "fill",
+      "h": 940,
+      "is_interactive": true,
+      "title": "A11 · Editor — pick an asset, scaled to the circle",
+      "w": 1440,
+      "x": 1520,
+      "y": 6870
+    },
+    "SpotSlide.dc.html": {
+      "expand": "fill",
+      "h": 940,
+      "is_interactive": true,
+      "title": "A12 · Editor — picture spots left by Claude",
+      "w": 1440,
+      "x": 0,
+      "y": 8210
+    },
+    "SpotPicker.dc.html": {
+      "expand": "fill",
+      "h": 940,
+      "is_interactive": true,
+      "title": "A13 · Editor — fill a picture spot (assets, online, make one)",
+      "w": 1440,
+      "x": 1520,
+      "y": 8210
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-07T09:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "row1": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "1 · Your assets: library and review",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "row2": {
+      "kind": "title1",
+      "maxW": 3560,
+      "text": "2 · Using an asset while editing a lesson",
+      "w": 240,
+      "x": 0,
+      "y": 1410
+    },
+    "row3": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "3 · Style learning and setup",
+      "w": 240,
+      "x": 0,
+      "y": 2750
+    },
+    "row4": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "4 · Make new assets and find them online",
+      "w": 240,
+      "x": 0,
+      "y": 4920
+    },
+    "row5": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "5 · Add an asset where you circle",
+      "w": 240,
+      "x": 0,
+      "y": 6570
+    },
+    "row6": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "6 · Picture spots Claude leaves while generating",
+      "w": 240,
+      "x": 0,
+      "y": 7910
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Review.dc.html",
+    "PlusMenu.dc.html",
+    "EditorPicker.dc.html",
+    "EditorChip.dc.html",
+    "StyleAssets.dc.html",
+    "ConnectAI.dc.html",
+    "MakeNew.dc.html",
+    "FindOnline.dc.html",
+    "RegionAction.dc.html",
+    "RegionPicker.dc.html",
+    "SpotSlide.dc.html",
+    "SpotPicker.dc.html"
+  ],
+  "pages": [],
+  "title": "Assets feature — proposal"
+}

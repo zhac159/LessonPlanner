@@ -1,0 +1,49 @@
+.ui-toasts {
+  position: fixed;
+  inset: auto 0 var(--space-24) 0;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-10);
+  padding: 0 var(--space-16);
+  pointer-events: none;
+}
+
+.ui-toast {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  max-width: min(100%, 560px);
+  padding: var(--space-8) var(--space-8) var(--space-8) var(--space-16);
+  border: var(--border-ink);
+  border-radius: var(--radius-14);
+  background: var(--yellow);
+  box-shadow: var(--shadow-md);
+  color: var(--ink);
+  font: var(--type-label);
+  pointer-events: auto;
+  animation: ui-toast-in var(--dur-base) var(--ease-spring);
+}
+
+.ui-toast[data-tone='error'] {
+  background: var(--peach);
+}
+
+.ui-toast__message {
+  min-width: 0;
+  padding: var(--space-4) 0;
+}
+
+@keyframes ui-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-toast {
+    animation: none;
+  }
+}
